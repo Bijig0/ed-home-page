@@ -6,7 +6,6 @@ import Step4 from "./Step4";
 import Step5 from "./Step5";
 import Step6 from "./Step6";
 import Step7 from "./Step7";
-import Step8 from "./Step8";
 import type {
   MainFormState,
   PartialFormState,
@@ -23,7 +22,6 @@ const steps = {
   step5: (send: any) => <Step5 send={send} />,
   step6: (send: any) => <Step6 send={send} />,
   step7: (send: any) => <Step7 send={send} />,
-  step8: (send: any) => <Step8 send={send} />,
 };
 
 const updateContext = (
