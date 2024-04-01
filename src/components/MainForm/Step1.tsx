@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
-import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
-import { send } from "process";
 import { useWizard } from "react-use-wizard";
+import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
+import useFormStore from "./useFormStore";
 
 type FormValues = {
   whoNeedsTutoring: WhoNeedsTutoring;
@@ -14,12 +14,16 @@ const text = {
 } satisfies Record<WhoNeedsTutoring, string>;
 
 const Step1 = () => {
+  const updateStudentDetails = useFormStore(
+    (state) => state.updateStudentDetails
+  );
   const { handleStep, previousStep, nextStep } = useWizard();
 
   const { register, handleSubmit } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
     console.log(data);
-    send({ type: "NEXT", payload: { studentDetails: data } });
+    updateStudentDetails({ studentDetails: data });
+    nextStep();
   };
 
   return (
@@ -32,7 +36,6 @@ const Step1 = () => {
           defaultValue={value}
           value={value}
         >
-          {console.log(value)}
           {value}
         </button>
       ))}
