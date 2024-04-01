@@ -1,4 +1,3 @@
-import useStateMachine, { t } from "@cassiozen/usestatemachine";
 import { merge } from "ts-deepmerge";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
@@ -14,6 +13,7 @@ import type {
   Payload,
   StudentDetails,
 } from "./types";
+import useStateMachine, { t } from "./useStateMachine/useStateMachine";
 
 const steps = {
   step1: (send: any) => <Step1 send={send} />,

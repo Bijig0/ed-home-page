@@ -1,5 +1,3 @@
-import "little-state-machine";
-
 export const whoNeedsTutoring = ["Parent", "Child", "Self"] as const;
 export const gradeLevel = [
   "Elementary School",
