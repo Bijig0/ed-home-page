@@ -1,14 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useStateMachine } from "little-state-machine";
-import updateState from "./updateState";
+import updateState, { type Payload } from "./updateState";
 
-const Step1 = (props) => {
+const Step1 = () => {
   const { register, handleSubmit } = useForm();
   const { actions, state } = useStateMachine({ updateState });
-  const onSubmit = (data) => {
-    actions.updateAction(data);
-    props.history.push("./step2");
+  const onSubmit = (data: Payload) => {
+    actions.updateState(data);
   };
 
   return (

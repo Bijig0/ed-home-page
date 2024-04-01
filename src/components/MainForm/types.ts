@@ -40,15 +40,14 @@ type StudentDetails = {
 };
 
 type Step =
-  | "Who Needs Tutoring"
-  | "What Grade Level"
-  | "What Prompted"
-  | "How Soon"
-  | "Full Name"
-  | "Online Or In Person"
-  | "Zip Code"
-  | "Email"
-  | "Phone Number";
+  | "Step 1"
+  | "Step 2"
+  | "Step 3"
+  | "Step 4"
+  | "Step 5"
+  | "Step 6"
+  | "Step 7"
+  | "Step 8";
 
 declare module "little-state-machine" {
   interface GlobalState {
@@ -60,8 +59,8 @@ declare module "little-state-machine" {
 }
 
 export type GlobalState = {
-  yourDetails: {
-    firstname: string;
-    lastname: string;
+  formState: {
+    step: Step;
+    studentDetails: StudentDetails;
   };
 };

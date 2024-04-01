@@ -26,3 +26,5 @@ const Step2 = (props) => {
     </form>
   );
 };
+
+export default Step2;
