@@ -54,18 +54,3 @@ type Step =
   | "Step 7"
   | "Step 8";
 
-declare module "little-state-machine" {
-  interface GlobalState {
-    formState: {
-      step: Step;
-      studentDetails: StudentDetails;
-    };
-  }
-}
-
-export type GlobalState = {
-  formState: {
-    step: Step;
-    studentDetails: StudentDetails;
-  };
-};

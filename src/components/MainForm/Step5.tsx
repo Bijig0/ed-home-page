@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useStateMachine } from "little-state-machine";
-import updateState, { type Payload } from "./updateState";
+import updateState, { type Payload } from "./formStateMachine";
 
 const Step2 = () => {
   const { register, handleSubmit } = useForm();
