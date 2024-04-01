@@ -47,3 +47,11 @@ export type StudentDetails = {
 export type FormState = {
   studentDetails: StudentDetails;
 };
+
+export type PartialFormState = {
+  studentDetails: Partial<StudentDetails>;
+};
+
+export type Payload = {
+  payload: PartialFormState;
+}
