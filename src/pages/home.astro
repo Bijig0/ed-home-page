@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import MainForm from '../components/MainForm.tsx';
 ---
 <Layout>
     <div slot="body-content">
@@ -669,9 +670,11 @@ import Layout from '../layouts/Layout.astro';
         </figure>
         <div class="display-center">
             <div class="container">
+                <MainForm/>
                 <div class="hero-content">
-                    <h1>Learn a new language<br /> with an online tutor</h1>
-                    <p class="text-light">Hold an online language class with your favorite teacher!<br />Find your teacher, choose the time and start learning the language.</p>
+                    <h1>Award Winning Coding Tutors</h1>
+                    <p class="text-light">Welcome! Let's match you with the perfect Coding tutor</p>
+                    <p class="text-dark">Who needs tutoring?</p>
                 </div>
             </div>
         </div>
@@ -1727,3 +1730,4 @@ import Layout from '../layouts/Layout.astro';
     </div>
 </div>
 </Layout>
+../components/MainForm/MainForm.tsx
