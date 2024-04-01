@@ -2,28 +2,30 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useStateMachine } from "little-state-machine";
 import updateState, { type Payload } from "./updateState";
+import { whoNeedsTutoring } from "./types";
+import { type WhoNeedsTutoring } from "./types";
+
+type FormValues = {
+  whoNeedsTutoring: WhoNeedsTutoring;
+};
 
 const Step1 = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<FormValues>();
   const { actions, state } = useStateMachine({ updateState });
-  const onSubmit = (data: Payload) => {
+  const onSubmit = (data: FormValues) => {
     actions.updateState(data);
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <h2>Step 1</h2>
-      <label>
-        First Name:
-        <input {...register("firstName")} defaultValue={state.firstName} />
-      </label>
-      <label>
-        Last Name:
-        <input {...register("lastName")} defaultValue={state.lastName} />
-      </label>
-      <input type="submit" />
+      <h2>Who needs tutoring?</h2>
+      {whoNeedsTutoring.map((value) => (
+        <button type="submit" {...register("whoNeedsTutoring")} value={value}>
+          {value}
+        </button>
+      ))}
     </form>
   );
 };
 
-export default withRouter(Step1);
+export default Step1;

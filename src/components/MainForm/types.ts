@@ -1,23 +1,28 @@
 import "little-state-machine";
 
-type WhoNeedsTutoring = "Parent" | "Child" | "Self";
-type GradeLevel =
-  | "Elementary School"
-  | "Middle School"
-  | "High School"
-  | "College"
-  | "Adult Learner"
-  | "Other";
+export const whoNeedsTutoring = ["Parent", "Child", "Self"] as const;
+export const gradeLevel = [
+  "Elementary School",
+  "Middle School",
+  "High School",
+  "College",
+  "Adult Learner",
+  "Other",
+] as const;
+export const reasonForTutoring = [
+  "I need help with a class",
+  "I'm preparing for a test",
+  "I want to learn something new",
+  "Other",
+] as const;
+export const howSoon = ["Right away", "In a few weeks", "Not sure"] as const;
+export const tutoringMode = ["Online", "In-person"] as const;
 
-type ReasonForTutoring =
-  | "I need help with a class"
-  | "I'm preparing for a test"
-  | "I want to learn something new"
-  | "Other";
-
-type HowSoon = "Right away" | "In a few weeks" | "Not sure";
-
-type TutoringMode = "Online" | "In-person";
+export type WhoNeedsTutoring = (typeof whoNeedsTutoring)[number];
+export type GradeLevel = (typeof gradeLevel)[number];
+export type ReasonForTutoring = (typeof reasonForTutoring)[number];
+export type HowSoon = (typeof howSoon)[number];
+export type TutoringMode = (typeof tutoringMode)[number];
 
 // first name
 // zip code

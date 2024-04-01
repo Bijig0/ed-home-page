@@ -14,7 +14,6 @@ const MainForm = () => {
     <div className="main-form">
       <Step1 />
       <Step2 />
-      <Result />
     </div>
   );
 };
