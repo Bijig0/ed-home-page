@@ -31,7 +31,7 @@ export type TutoringMode = (typeof tutoringMode)[number];
 // and agree to terms of use
 // Describe the student
 
-type StudentDetails = {
+export type StudentDetails = {
   whoNeedsTutoring: WhoNeedsTutoring;
   gradeLevel: GradeLevel;
   reasonForTutoring: ReasonForTutoring;
@@ -44,13 +44,6 @@ type StudentDetails = {
   agreedToTermsOfUse: boolean;
 };
 
-type Step =
-  | "Step 1"
-  | "Step 2"
-  | "Step 3"
-  | "Step 4"
-  | "Step 5"
-  | "Step 6"
-  | "Step 7"
-  | "Step 8";
-
+export type FormState = {
+  studentDetails: StudentDetails;
+};

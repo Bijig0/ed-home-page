@@ -1,9 +1,19 @@
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import useStateMachine from "@cassiozen/usestatemachine";
+import type { FormState } from "./types";
+import { t } from "@cassiozen/usestatemachine";
+import { type StudentDetails } from "./types";
 
 const MainForm = () => {
   const [state, send] = useStateMachine({
+    schema: {
+      context: t<FormState>(),
+    },
+    context: {
+      studentDetails: {} as StudentDetails,
+    },
+    verbose: true,
     initial: "step1" as const,
     states: {
       step1: {
