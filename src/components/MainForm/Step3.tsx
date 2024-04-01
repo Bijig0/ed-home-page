@@ -8,7 +8,6 @@ type FormValues = {
 
 const Step1 = () => {
   const { register, handleSubmit } = useForm<FormValues>();
-  const { state, send } = useMainFormContext();
   const onSubmit = (data: FormValues) => {
     send({ type: "NEXT", payload: { studentDetails: data } });
   };

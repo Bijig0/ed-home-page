@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 
+import { send } from "process";
 import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
 
 type FormValues = {
@@ -8,7 +9,6 @@ type FormValues = {
 
 const Step1 = () => {
   const { register, handleSubmit } = useForm<FormValues>();
-  const { state, send } = useMainFormContext();
   const onSubmit = (data: FormValues) => {
     send({ type: "NEXT", payload: { studentDetails: data } });
   };
