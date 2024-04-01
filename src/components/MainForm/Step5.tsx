@@ -1,29 +1,28 @@
-import React from "react";
 import { useForm } from "react-hook-form";
-import { useStateMachine } from "little-state-machine";
-import updateState, { type Payload } from "./formStateMachine";
+import { useMainFormContext } from "./MainFormContext";
+import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
 
-const Step2 = () => {
-  const { register, handleSubmit } = useForm();
-  const { state, actions } = useStateMachine({ updateState });
-  const onSubmit = (data: Payload) => {
-    actions.updateState(data);
+type FormValues = {
+  whoNeedsTutoring: WhoNeedsTutoring;
+};
+
+const Step1 = () => {
+  const { register, handleSubmit } = useForm<FormValues>();
+  const { state, send } = useMainFormContext();
+  const onSubmit = (data: FormValues) => {
+    send({ type: "NEXT", payload: { studentDetails: data } });
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <h2>Step 2</h2>
-      <label>
-        Age:
-        <input {...register("age")} defaultValue={state.age} />
-      </label>
-      <label>
-        Years of experience:
-        <input {...register("yearsOfExp")} defaultValue={state.yearsOfExp} />
-      </label>
-      <input type="submit" />
+      <h2>Who needs tutoring?</h2>
+      {whoNeedsTutoring.map((value) => (
+        <button type="submit" {...register("whoNeedsTutoring")} value={value}>
+          {value}
+        </button>
+      ))}
     </form>
   );
 };
 
-export default Step2;
+export default Step1;
