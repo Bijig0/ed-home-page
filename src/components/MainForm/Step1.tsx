@@ -1,9 +1,6 @@
-import React from "react";
 import { useForm } from "react-hook-form";
-import { useStateMachine } from "little-state-machine";
-import updateState, { type Payload } from "./formStateMachine";
-import { whoNeedsTutoring } from "./types";
-import { type WhoNeedsTutoring } from "./types";
+import { useMainFormContext } from "./MainFormContext";
+import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
 
 type FormValues = {
   whoNeedsTutoring: WhoNeedsTutoring;
@@ -11,7 +8,7 @@ type FormValues = {
 
 const Step1 = () => {
   const { register, handleSubmit } = useForm<FormValues>();
-  const { actions, state } = useStateMachine({ updateState });
+  const { actions, state } = useMainFormContext();
   const onSubmit = (data: FormValues) => {
     actions.updateState(data);
   };
