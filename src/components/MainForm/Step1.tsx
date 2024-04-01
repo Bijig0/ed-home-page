@@ -13,6 +13,7 @@ const Step1 = (props: Props) => {
   const { send } = props;
   const { register, handleSubmit } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
+    console.log("Running");
     send({ type: "NEXT", payload: { studentDetails: data } });
   };
 
