@@ -44,7 +44,7 @@ export type StudentDetails = {
   agreedToTermsOfUse: boolean;
 };
 
-export type FormState = {
+export type MainFormState = {
   studentDetails: StudentDetails;
 };
 
@@ -54,4 +54,4 @@ export type PartialFormState = {
 
 export type Payload = {
   payload: PartialFormState;
-}
+};

@@ -1,14 +1,17 @@
 import { useForm } from "react-hook-form";
-import { useMainFormContext } from "./MainFormContext";
-import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
+import { whoNeedsTutoring, type Payload, type WhoNeedsTutoring } from "./types";
 
 type FormValues = {
   whoNeedsTutoring: WhoNeedsTutoring;
 };
 
-const Step1 = () => {
+type Props = {
+  send: (data: { type: string; payload: Payload["payload"] }) => void;
+};
+
+const Step1 = (props: Props) => {
+  const { send } = props;
   const { register, handleSubmit } = useForm<FormValues>();
-  const { state, send } = useMainFormContext();
   const onSubmit = (data: FormValues) => {
     send({ type: "NEXT", payload: { studentDetails: data } });
   };

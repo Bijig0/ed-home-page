@@ -9,34 +9,34 @@ import Step6 from "./Step6";
 import Step7 from "./Step7";
 import Step8 from "./Step8";
 import type {
-  FormState,
+  MainFormState,
   PartialFormState,
   Payload,
   StudentDetails,
 } from "./types";
 
 const steps = {
-  step1: <Step1 />,
-  step2: <Step2 />,
-  step3: <Step3 />,
-  step4: <Step4 />,
-  step5: <Step5 />,
-  step6: <Step6 />,
-  step7: <Step7 />,
-  step8: <Step8 />,
+  step1: (send: any) => <Step1 send={send} />,
+  step2: (send: any) => <Step2 send={send} />,
+  step3: (send: any) => <Step3 send={send} />,
+  step4: (send: any) => <Step4 send={send} />,
+  step5: (send: any) => <Step5 send={send} />,
+  step6: (send: any) => <Step6 send={send} />,
+  step7: (send: any) => <Step7 send={send} />,
+  step8: (send: any) => <Step8 send={send} />,
 };
 
 const updateContext = (
-  context: FormState,
+  context: MainFormState,
   toUpdate: PartialFormState
-): FormState => {
-  return merge(context, toUpdate) as FormState;
+): MainFormState => {
+  return merge(context, toUpdate) as MainFormState;
 };
 
 const MainForm = () => {
   const [state, send] = useStateMachine({
     schema: {
-      context: t<FormState>(),
+      context: t<MainFormState>(),
       events: {
         NEXT: t<Payload>(),
       },
@@ -77,7 +77,7 @@ const MainForm = () => {
     },
   });
 
-  return <div className="main-form">{steps[state.value]}</div>;
+  return <div className="main-form">{steps[state.value](send)}</div>;
 };
 
 export default MainForm;
