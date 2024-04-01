@@ -1,4 +1,4 @@
-export const whoNeedsTutoring = ["Parent", "Child", "Self"] as const;
+export const whoNeedsTutoring = ["Child", "Self", "Other"] as const;
 export const gradeLevel = [
   "Elementary School",
   "Middle School",
