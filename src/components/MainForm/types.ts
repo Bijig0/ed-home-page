@@ -49,7 +49,3 @@ export type MainFormState = {
 export type PartialFormState = {
   studentDetails: Partial<StudentDetails>;
 };
-
-export type Payload = {
-  payload: PartialFormState;
-};

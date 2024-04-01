@@ -1,12 +1,10 @@
 import { useForm } from "react-hook-form";
-import { whoNeedsTutoring, type Payload, type WhoNeedsTutoring } from "./types";
+import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
+import { send } from "process";
+import { useWizard } from "react-use-wizard";
 
 type FormValues = {
   whoNeedsTutoring: WhoNeedsTutoring;
-};
-
-type Props = {
-  send: (data: { type: string; payload: Payload["payload"] }) => void;
 };
 
 const text = {
@@ -15,8 +13,9 @@ const text = {
   Other: "Someone else",
 } satisfies Record<WhoNeedsTutoring, string>;
 
-const Step1 = (props: Props) => {
-  const { send } = props;
+const Step1 = () => {
+  const { handleStep, previousStep, nextStep } = useWizard();
+
   const { register, handleSubmit } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
     console.log(data);
