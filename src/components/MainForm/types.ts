@@ -27,25 +27,34 @@ type TutoringMode = "Online" | "In-person";
 // Describe the student
 
 type StudentDetails = {
-    whoNeedsTutoring: WhoNeedsTutoring;
-    gradeLevel: GradeLevel;
-    reasonForTutoring: ReasonForTutoring;
-    howSoon: HowSoon;
-    tutoringMode: TutoringMode;
-    firstName: string;
-    lastName: string;
-    email: string;
-    phoneNumber: string;
-    agreedToTermsOfUse: boolean;
-}
+  whoNeedsTutoring: WhoNeedsTutoring;
+  gradeLevel: GradeLevel;
+  reasonForTutoring: ReasonForTutoring;
+  howSoon: HowSoon;
+  tutoringMode: TutoringMode;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  agreedToTermsOfUse: boolean;
+};
+
+type Step =
+  | "Who Needs Tutoring"
+  | "What Grade Level"
+  | "What Prompted"
+  | "How Soon"
+  | "Full Name"
+  | "Online Or In Person"
+  | "Zip Code"
+  | "Email"
+  | "Phone Number";
 
 declare module "little-state-machine" {
   interface GlobalState {
-
     formState: {
-
-        studentDetails: StudentDetails;
-        
+      step: Step;
+      studentDetails: StudentDetails;
     };
   }
 }
