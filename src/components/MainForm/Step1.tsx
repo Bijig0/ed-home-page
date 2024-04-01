@@ -31,12 +31,13 @@ const Step1 = () => {
       <h2>Who needs tutoring?</h2>
       {whoNeedsTutoring.map((value) => (
         <button
+          key={value}
           type="submit"
           {...register("whoNeedsTutoring")}
           defaultValue={value}
           value={value}
         >
-          {value}
+          {text[value]}
         </button>
       ))}
     </form>

@@ -1,27 +1,50 @@
 import { useForm } from "react-hook-form";
-
-import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
+import { useWizard } from "react-use-wizard";
+import { gradeLevel, type GradeLevel } from "./types";
+import useFormStore from "./useFormStore";
 
 type FormValues = {
-  whoNeedsTutoring: WhoNeedsTutoring;
+  gradeLevel: GradeLevel;
 };
 
-const Step1 = () => {
+const text = {
+  "Elementary School": "Elementary School",
+  "Middle School": "Middle School",
+  "High School": "High School",
+  College: "College",
+  "Adult Learner": "Adult Learner",
+  Other: "Other",
+} satisfies Record<GradeLevel, string>;
+
+const Step2 = () => {
+  const updateStudentDetails = useFormStore(
+    (state) => state.updateStudentDetails
+  );
+  const { handleStep, previousStep, nextStep } = useWizard();
+
   const { register, handleSubmit } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
-    send({ type: "NEXT", payload: { studentDetails: data } });
+    console.log(data);
+    updateStudentDetails({ studentDetails: data });
+    nextStep();
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <h2>Who needs tutoring?</h2>
-      {whoNeedsTutoring.map((value) => (
-        <button type="submit" {...register("whoNeedsTutoring")} value={value}>
-          {value}
+      {gradeLevel.map((value) => (
+        <button
+          key={value}
+          type="submit"
+          {...register("gradeLevel")}
+          defaultValue={value}
+          value={value}
+        >
+          {text[value]}
         </button>
       ))}
     </form>
   );
 };
 
-export default Step1;
+export default Step2;
