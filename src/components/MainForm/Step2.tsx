@@ -29,21 +29,39 @@ const Step1 = () => {
     nextStep();
   };
 
+  const handleBack = () => previousStep();
+
   return (
-    <form>
-      <h2>What grade level are you in</h2>
-      {gradeLevels.map((value) => (
-        <button
-          type="button"
-          key={value}
-          defaultValue={value}
-          value={value}
-          onClick={() => handleSubmit(value)}
-        >
-          {text[value]}
-        </button>
-      ))}
-    </form>
+    <div>
+      <div className="flex flex-col items-start">
+        <h1 className="text-4xl text-white">What grade level are you in?</h1>
+        <div className="my-2"></div>
+        <form className="flex flex-col items-center justify-center">
+          <ul className="p-0">
+            {gradeLevels.map((value) => (
+              <li
+                onClick={() => handleSubmit(value)}
+                key={value}
+                className="cursor-pointer flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-96 max-w-full min-h-14"
+              >
+                <label className="text-lg  cursor-pointer">{text[value]}</label>
+                <input
+                  className="hover:text-white hidden"
+                  value={value}
+                  name="question3"
+                  type="radio"
+                />
+              </li>
+            ))}
+          </ul>
+        </form>
+        <div className="flex items-center justify-start">
+          <button className="hover:underline text-lg" onClick={handleBack}>
+            Back
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };
 
