@@ -1,10 +1,21 @@
+import { IoCaretBackOutline, IoDocumentTextSharp } from "react-icons/io5";
 import { useWizard } from "react-use-wizard";
-import { gradeLevels, type GradeLevel } from "./types";
+import { gradeLevels, type GradeLevel, type WhoNeedsTutoring } from "./types";
 import useFormStore from "./useFormStore";
 
 type FormValues = {
   gradeLevel: GradeLevel;
 };
+
+const BackIcon = () => {
+  return <IoCaretBackOutline className="text-black" />;
+};
+
+const headerText = {
+  Child: "What grade level is your child in?",
+  Self: "What grade level are you in?",
+  Other: "What grade level is the student in?",
+} satisfies Record<WhoNeedsTutoring, string>;
 
 const text = {
   "Elementary School": "Elementary School",
@@ -16,8 +27,8 @@ const text = {
 } satisfies Record<GradeLevel, string>;
 
 const Step1 = () => {
-  const updateStudentDetails = useFormStore(
-    (state) => state.updateStudentDetails
+  const { updateStudentDetails, studentDetails } = useFormStore(
+    (state) => state
   );
 
   const { handleStep, previousStep, nextStep } = useWizard();
@@ -32,9 +43,11 @@ const Step1 = () => {
   const handleBack = () => previousStep();
 
   return (
-    <div>
-      <div className="flex flex-col items-start">
-        <h1 className="text-4xl text-white">What grade level are you in?</h1>
+    <div className="flex ">
+      <div className="flex flex-col items-start flex-[3_3_0%]">
+        <h1 className="text-4xl text-white font-primary">
+          What grade level are you in?
+        </h1>
         <div className="my-2"></div>
         <form className="flex flex-col items-center justify-center">
           <ul className="p-0">
@@ -42,9 +55,11 @@ const Step1 = () => {
               <li
                 onClick={() => handleSubmit(value)}
                 key={value}
-                className="cursor-pointer flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-96 max-w-full min-h-14"
+                className="border border-black cursor-pointer px-5 flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-button min-h-14"
               >
-                <label className="text-lg  cursor-pointer">{text[value]}</label>
+                <label className="text-lg font-primary cursor-pointer">
+                  {text[value]}
+                </label>
                 <input
                   className="hover:text-white hidden"
                   value={value}
@@ -56,10 +71,24 @@ const Step1 = () => {
           </ul>
         </form>
         <div className="flex items-center justify-start">
-          <button className="hover:underline text-lg" onClick={handleBack}>
+          <BackIcon />
+          <button
+            className="hover:underline text-lg font-primary"
+            onClick={handleBack}
+          >
             Back
           </button>
         </div>
+      </div>
+      <div className="flex-[2_2_0%] flex items-center flex-col justify-end">
+        <IoDocumentTextSharp className="icon" size={72} filter="invert(1)" />
+        <p className="text-black text-lg font-primary font-light mb-12 mt-2">
+          Our experienced tutors{" "}
+          <p className="inline text-black text-lg font-primary font-semibold">
+            individualize their learning plans
+          </p>{" "}
+          to match each student's personal needs and goals!
+        </p>
       </div>
     </div>
   );

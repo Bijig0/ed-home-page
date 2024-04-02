@@ -1,1 +1,21 @@
 @import "../sass/index";
+
+.icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.icon {
+  position: relative;
+  z-index: 1;
+}
+
+.icon-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #b91c1c; /* The color you want to fill the transparent parts */
+  z-index: 0;
+}

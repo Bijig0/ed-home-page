@@ -13,9 +13,7 @@ const text = {
 } satisfies Record<WhoNeedsTutoring, string>;
 
 const Step1 = () => {
-  const updateStudentDetails = useFormStore(
-    (state) => state.updateStudentDetails
-  );
+  const { updateStudentDetails, studentDetails } = useFormStore();
 
   const { handleStep, previousStep, nextStep } = useWizard();
 
@@ -45,9 +43,9 @@ const Step1 = () => {
               <li
                 onClick={() => handleSubmit(value)}
                 key={value}
-                className="cursor-pointer flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-96 max-w-full min-h-14"
+                className="cursor-pointer flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-button max-w-full min-h-14"
               >
-                <label className="text-lg  cursor-pointer">{text[value]}</label>
+                <label className="text-lg cursor-pointer">{text[value]}</label>
                 <input
                   className="hover:text-white hidden"
                   value={value}

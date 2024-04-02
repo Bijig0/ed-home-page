@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         primary: ["Poppins", "sans-serif"],
       },
+      width: {
+        button: "28rem",
+      },
     },
   },
   plugins: [],
