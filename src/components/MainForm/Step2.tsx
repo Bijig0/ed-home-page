@@ -1,15 +1,8 @@
-import { IoCaretBackOutline, IoDocumentTextSharp } from "react-icons/io5";
+import { IoDocumentTextSharp } from "react-icons/io5";
 import { useWizard } from "react-use-wizard";
+import BackIcon from "./BackIcon";
 import { gradeLevels, type GradeLevel, type WhoNeedsTutoring } from "./types";
 import useFormStore from "./useFormStore";
-
-type FormValues = {
-  gradeLevel: GradeLevel;
-};
-
-const BackIcon = () => {
-  return <IoCaretBackOutline className="text-black" />;
-};
 
 const headerText = {
   Child: "What grade level is your child in?",
@@ -46,7 +39,7 @@ const Step1 = () => {
     <div className="flex ">
       <div className="flex flex-col items-start flex-[3_3_0%]">
         <h1 className="text-4xl text-white font-primary">
-          What grade level are you in?
+          {headerText[studentDetails.whoNeedsTutoring]}
         </h1>
         <div className="my-2"></div>
         <form className="flex flex-col items-center justify-center">
