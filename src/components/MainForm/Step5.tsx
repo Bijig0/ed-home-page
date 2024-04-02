@@ -25,7 +25,16 @@ const Step1 = () => {
       <h2>
         Let's finish up your profile so we can find you the perfect tutor:
       </h2>
-      <input {...register("fullName")} />
+      <input
+        {...register("fullName", {
+          required: "Full name is required",
+          pattern: {
+            value: /^[a-zA-Z]+ [a-zA-Z]+$/,
+            message:
+              "Full name must be alphanumeric and contain a space between the first and last name",
+          },
+        })}
+      />
       <button type="submit">Continue</button>
     </form>
   );

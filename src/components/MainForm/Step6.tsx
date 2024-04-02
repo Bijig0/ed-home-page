@@ -63,7 +63,15 @@ const Step1 = () => {
       ))}
       {lessonType === "in-person" && (
         <>
-          <input {...register("zipCode")} />
+          <input
+            {...register("zipCode", {
+              required: "Zip code is required",
+              pattern: {
+                value: /^\d{4}$/,
+                message: "Please enter a valid Australian zip code",
+              },
+            })}
+          />
           <button type="submit">Continue</button>
         </>
       )}

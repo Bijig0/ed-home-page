@@ -1,4 +1,6 @@
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 import { useWizard } from "react-use-wizard";
 import useFormStore from "./useFormStore";
 
@@ -12,10 +14,20 @@ const Step1 = () => {
     (state) => state.updateStudentDetails
   );
 
-  const { register, handleSubmit } = useForm<FormValues>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    control,
+  } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
     console.log(data);
-    updateStudentDetails({ studentDetails: { phoneNumber: data.phoneNumber } });
+    updateStudentDetails({
+      studentDetails: {
+        phoneNumber: data.phoneNumber,
+        agreedToTermsOfUse: true,
+      },
+    });
     nextStep();
   };
 
@@ -26,7 +38,26 @@ const Step1 = () => {
       <h2>
         Let's finish up your profile so we can find you the perfect tutor:
       </h2>
-      <input {...register("phoneNumber")} />
+      <label htmlFor="phone-input">Phone Number</label>
+      <Controller
+        name="phoneNumber"
+        control={control}
+        rules={{
+          validate: (value) =>
+            isValidPhoneNumber(value) || "Invalid Phone Number",
+        }}
+        render={({ field: { onChange, value } }) => (
+          <PhoneInput
+            value={value}
+            onChange={onChange}
+            defaultCountry="AU"
+            id="phone-input"
+          />
+        )}
+      />
+      {errors["phoneNumber"] && (
+        <p className="error-message">{errors["phoneNumber"].message}</p>
+      )}
       <div className="flex items-center justify-left">
         <input
           type="checkbox"

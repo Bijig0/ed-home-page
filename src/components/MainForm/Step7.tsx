@@ -25,7 +25,15 @@ const Step1 = () => {
       <h2>
         Let's finish up your profile so we can find you the perfect tutor:
       </h2>
-      <input {...register("email")} />
+      <input
+        {...register("email", {
+          required: "Email is required",
+          pattern: {
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+            message: "Please enter a valid email address",
+          },
+        })}
+      />
       <button type="submit">Continue</button>
     </form>
   );
