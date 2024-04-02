@@ -1,4 +1,4 @@
-import { IoDocumentTextSharp } from "react-icons/io5";
+import { FaQuoteLeft } from "react-icons/fa";
 import { useWizard } from "react-use-wizard";
 import BackIcon from "./BackIcon";
 import {
@@ -81,14 +81,18 @@ const Step1 = () => {
           </button>
         </div>
       </div>
+      
       <div className="flex-[2_2_0%] flex items-center flex-col justify-end">
-        <IoDocumentTextSharp className="icon" size={72} filter="invert(1)" />
+        <div className="text-left flex justify-start">
+          <FaQuoteLeft className="icon" size={16} />
+        </div>
         <p className="text-black text-lg font-primary font-light mb-12 mt-2">
-          Our experienced tutors{" "}
-          <p className="inline text-black text-lg font-primary font-semibold">
-            individualize their learning plans
-          </p>{" "}
-          to match each student's personal needs and goals!
+          Varsity Tutors really helped me understand the concepts during my
+          Calculus 2 class. My tutor has such amazing patience and is open to
+          many questions! Lastly, was always on time and very prompt. Highly
+          suggest Varsity Tutors.
+          <br />
+          <br />- Joey T
         </p>
       </div>
     </div>
