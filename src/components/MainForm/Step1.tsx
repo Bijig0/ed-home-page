@@ -20,6 +20,7 @@ const Step1 = () => {
   const { handleStep, previousStep, nextStep } = useWizard();
 
   const handleSubmit = (value: WhoNeedsTutoring) => {
+    console.log(value);
     updateStudentDetails({
       studentDetails: { whoNeedsTutoring: value },
     });
@@ -33,11 +34,12 @@ const Step1 = () => {
         <p className="text-light">
           Welcome! Let's match you with the perfect Coding tutor
         </p>
-        {/* <h3 className="text-center">Who needs tutoring</h3> */}
+        <h3 className="text-center">Who needs tutoring?</h3>
         <form className="flex flex-col items-center justify-center">
           <ul className="p-0">
             {whoNeedsTutoring.map((value) => (
               <li
+                onClick={() => handleSubmit(value)}
                 key={value}
                 className="cursor-pointer flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-80 max-w-full min-h-14"
               >
@@ -47,10 +49,8 @@ const Step1 = () => {
                 <input
                   className="hover:text-white hidden"
                   value={value}
-                  onClick={() => handleSubmit(value)}
                   name="question3"
                   type="radio"
-                  required
                 />
               </li>
             ))}
