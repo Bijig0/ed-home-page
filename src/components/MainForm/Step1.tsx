@@ -22,6 +22,7 @@ const Step1 = () => {
     updateStudentDetails({
       studentDetails: { whoNeedsTutoring: value },
     });
+    console.log({ studentDetails });
     nextStep();
   };
 

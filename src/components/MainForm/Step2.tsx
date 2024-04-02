@@ -35,6 +35,12 @@ const Step1 = () => {
 
   const handleBack = () => previousStep();
 
+  console.log(studentDetails);
+
+  console.log(studentDetails.whoNeedsTutoring);
+
+  console.log(headerText[studentDetails.whoNeedsTutoring]);
+
   return (
     <div className="flex ">
       <div className="flex flex-col items-start flex-[3_3_0%]">
@@ -77,9 +83,9 @@ const Step1 = () => {
         <IoDocumentTextSharp className="icon" size={72} filter="invert(1)" />
         <p className="text-black text-lg font-primary font-light mb-12 mt-2">
           Our experienced tutors{" "}
-          <p className="inline text-black text-lg font-primary font-semibold">
+          <span className="inline text-black text-lg font-primary font-semibold">
             individualize their learning plans
-          </p>{" "}
+          </span>{" "}
           to match each student's personal needs and goals!
         </p>
       </div>
