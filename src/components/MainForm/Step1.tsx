@@ -29,23 +29,25 @@ const Step1 = () => {
 
   return (
     <div>
-      <div className="hero-content">
-        <h1>Award Winning Coding Tutors</h1>
-        <p className="text-light">
+      <div className="text-center">
+        <h1 className="text-light text-5xl font-normal leading-normal mb-3">
+          Award Winning Programming <br /> Tutors
+        </h1>
+        <p className="text-light text-xl mb-7">
           Welcome! Let's match you with the perfect Coding tutor
         </p>
-        <h3 className="text-center">Who needs tutoring?</h3>
+        <h3 className="text-center text-xl font-semibold">
+          Who needs tutoring?
+        </h3>
         <form className="flex flex-col items-center justify-center">
           <ul className="p-0">
             {whoNeedsTutoring.map((value) => (
               <li
                 onClick={() => handleSubmit(value)}
                 key={value}
-                className="cursor-pointer flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-80 max-w-full min-h-14"
+                className="cursor-pointer flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-96 max-w-full min-h-14"
               >
-                <label className="font-bold cursor-pointer">
-                  {text[value]}
-                </label>
+                <label className="text-lg  cursor-pointer">{text[value]}</label>
                 <input
                   className="hover:text-white hidden"
                   value={value}
