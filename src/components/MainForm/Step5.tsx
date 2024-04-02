@@ -1,25 +1,32 @@
 import { useForm } from "react-hook-form";
-
-import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
+import { useWizard } from "react-use-wizard";
+import useFormStore from "./useFormStore";
 
 type FormValues = {
-  whoNeedsTutoring: WhoNeedsTutoring;
+  fullName: string;
 };
 
 const Step1 = () => {
+  const updateStudentDetails = useFormStore(
+    (state) => state.updateStudentDetails
+  );
+
   const { register, handleSubmit } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
-    send({ type: "NEXT", payload: { studentDetails: data } });
+    console.log(data);
+    updateStudentDetails({ studentDetails: { fullName: data.fullName } });
+    nextStep();
   };
+
+  const { nextStep } = useWizard();
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <h2>Who needs tutoring?</h2>
-      {whoNeedsTutoring.map((value) => (
-        <button type="submit" {...register("whoNeedsTutoring")} value={value}>
-          {value}
-        </button>
-      ))}
+      <h2>
+        Let's finish up your profile so we can find you the perfect tutor:
+      </h2>
+      <input />
+      <button type="submit">Continue</button>
     </form>
   );
 };
