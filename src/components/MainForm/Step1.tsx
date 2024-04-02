@@ -27,15 +27,18 @@ const Step1 = () => {
   };
 
   return (
-    <form className="stepper-body">
+    <form>
       <h3 className="stepper-head">Step 1</h3>
 
       <ul className="el-radio-option el-radio-option-text">
         {whoNeedsTutoring.map((value) => (
-          <li key={value} className=" hover:bg-green-600">
-            <label>I've had a private tutor</label>
+          <li
+            key={value}
+            className="hover:bg-cyan-500 bg-white hover:text-white rounded-md"
+          >
+            <label className="font-bold">{text[value]}</label>
             <input
-              className="hover:text-white hover:bg-green-600"
+              className="hover:text-white"
               value={value}
               onClick={() => handleSubmit(value)}
               name="question3"
