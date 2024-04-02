@@ -1,27 +1,48 @@
 import { useForm } from "react-hook-form";
-
-import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
+import { useWizard } from "react-use-wizard";
+import { reasonsForTutoring, type ReasonForTutoring } from "./types";
+import useFormStore from "./useFormStore";
 
 type FormValues = {
-  whoNeedsTutoring: WhoNeedsTutoring;
+  reasonForTutoring: ReasonForTutoring;
 };
 
-const Step1 = () => {
+const text = {
+  "Help with class": "I need help with a class",
+  "Preparing for est": "I'm preparing for a test",
+  "Want to learn something new": "I want to learn something new",
+  Other: "Other",
+} satisfies Record<ReasonForTutoring, string>;
+
+const Step2 = () => {
+  const updateStudentDetails = useFormStore(
+    (state) => state.updateStudentDetails
+  );
+  const { handleStep, previousStep, nextStep } = useWizard();
+
   const { register, handleSubmit } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
-    send({ type: "NEXT", payload: { studentDetails: data } });
+    console.log(data);
+    updateStudentDetails({ studentDetails: data });
+    nextStep();
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <h2>Who needs tutoring?</h2>
-      {whoNeedsTutoring.map((value) => (
-        <button type="submit" {...register("whoNeedsTutoring")} value={value}>
-          {value}
+      {reasonsForTutoring.map((value) => (
+        <button
+          key={value}
+          type="submit"
+          {...register("reasonForTutoring")}
+          defaultValue={value}
+          value={value}
+        >
+          {text[value]}
         </button>
       ))}
     </form>
   );
 };
 
-export default Step1;
+export default Step2;

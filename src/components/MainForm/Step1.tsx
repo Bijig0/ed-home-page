@@ -1,4 +1,3 @@
-import { useForm } from "react-hook-form";
 import { useWizard } from "react-use-wizard";
 import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
 import useFormStore from "./useFormStore";
@@ -17,25 +16,26 @@ const Step1 = () => {
   const updateStudentDetails = useFormStore(
     (state) => state.updateStudentDetails
   );
+
   const { handleStep, previousStep, nextStep } = useWizard();
 
-  const { register, handleSubmit } = useForm<FormValues>();
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
-    updateStudentDetails({ studentDetails: data });
+  const handleSubmit = (value: WhoNeedsTutoring) => {
+    updateStudentDetails({
+      studentDetails: { whoNeedsTutoring: value },
+    });
     nextStep();
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form>
       <h2>Who needs tutoring?</h2>
       {whoNeedsTutoring.map((value) => (
         <button
+          type="button"
           key={value}
-          type="submit"
-          {...register("whoNeedsTutoring")}
           defaultValue={value}
           value={value}
+          onClick={() => handleSubmit(value)}
         >
           {text[value]}
         </button>

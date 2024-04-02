@@ -1,5 +1,5 @@
 export const whoNeedsTutoring = ["Child", "Self", "Other"] as const;
-export const gradeLevel = [
+export const gradeLevels = [
   "Elementary School",
   "Middle School",
   "High School",
@@ -7,18 +7,18 @@ export const gradeLevel = [
   "Adult Learner",
   "Other",
 ] as const;
-export const reasonForTutoring = [
-  "I need help with a class",
-  "I'm preparing for a test",
-  "I want to learn something new",
+export const reasonsForTutoring = [
+  "Help with class",
+  "Preparing for est",
+  "Want to learn something new",
   "Other",
 ] as const;
 export const howSoon = ["Right away", "In a few weeks", "Not sure"] as const;
 export const tutoringMode = ["Online", "In-person"] as const;
 
 export type WhoNeedsTutoring = (typeof whoNeedsTutoring)[number];
-export type GradeLevel = (typeof gradeLevel)[number];
-export type ReasonForTutoring = (typeof reasonForTutoring)[number];
+export type GradeLevel = (typeof gradeLevels)[number];
+export type ReasonForTutoring = (typeof reasonsForTutoring)[number];
 export type HowSoon = (typeof howSoon)[number];
 export type TutoringMode = (typeof tutoringMode)[number];
 
