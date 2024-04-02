@@ -14,13 +14,20 @@ export const reasonsForTutoring = [
   "Other",
 ] as const;
 export const howSoon = ["Right away", "In a few weeks", "Not sure"] as const;
-export const tutoringMode = ["Online", "In-person"] as const;
 
 export type WhoNeedsTutoring = (typeof whoNeedsTutoring)[number];
 export type GradeLevel = (typeof gradeLevels)[number];
 export type ReasonForTutoring = (typeof reasonsForTutoring)[number];
 export type HowSoon = (typeof howSoon)[number];
-export type TutoringMode = (typeof tutoringMode)[number];
+
+export type LessonType =
+  | {
+      lessonType: "online";
+    }
+  | {
+      lessonType: "in-person";
+      zipCode: string;
+    };
 
 // first name
 // zip code
@@ -34,12 +41,11 @@ export type StudentDetails = {
   gradeLevel: GradeLevel;
   reasonForTutoring: ReasonForTutoring;
   howSoon: HowSoon;
-  tutoringMode: TutoringMode;
   fullName: string;
   email: string;
   phoneNumber: string;
   agreedToTermsOfUse: boolean;
-};
+} & LessonType;
 
 export type MainFormState = {
   studentDetails: StudentDetails;

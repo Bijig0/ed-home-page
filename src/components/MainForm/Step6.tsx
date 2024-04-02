@@ -1,12 +1,18 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useWizard } from "react-use-wizard";
 import useFormStore from "./useFormStore";
 
 type FormValues = {
-  fullName: string;
+  zipCode: string;
 };
 
+const lessonTypes = ["online", "in-person"] as const;
+type LessonType = (typeof lessonTypes)[number];
+
 const Step1 = () => {
+  const [lessonType, setLessonType] = useState<LessonType>();
+
   const updateStudentDetails = useFormStore(
     (state) => state.updateStudentDetails
   );
@@ -20,13 +26,37 @@ const Step1 = () => {
 
   const { nextStep } = useWizard();
 
+  const handleSelectLessonType = (value: LessonType) => {
+    if (value === "online") {
+      updateStudentDetails({ studentDetails: { lessonType: value } });
+      nextStep();
+      return;
+    }
+    setLessonType(value);
+  };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <h2>
         Let's finish up your profile so we can find you the perfect tutor:
       </h2>
-      <input {...register("fullName")} />
-      <button type="submit">Continue</button>
+      {lessonTypes.map((value) => (
+        <button
+          type="button"
+          key={value}
+          defaultValue={value}
+          value={value}
+          onClick={() => handleSelectLessonType(value)}
+        >
+          {value}
+        </button>
+      ))}
+      {lessonType === "in-person" && (
+        <>
+          <input {...register("zipCode")} />
+          <button type="submit">Continue</button>
+        </>
+      )}
     </form>
   );
 };
