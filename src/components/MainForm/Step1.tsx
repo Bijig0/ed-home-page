@@ -27,19 +27,24 @@ const Step1 = () => {
   };
 
   return (
-    <form>
-      <h2>Who needs tutoring?</h2>
-      {whoNeedsTutoring.map((value) => (
-        <button
-          type="button"
-          key={value}
-          defaultValue={value}
-          value={value}
-          onClick={() => handleSubmit(value)}
-        >
-          {text[value]}
-        </button>
-      ))}
+    <form className="stepper-body">
+      <h3 className="stepper-head">Step 1</h3>
+
+      <ul className="el-radio-option el-radio-option-text">
+        {whoNeedsTutoring.map((value) => (
+          <li key={value} className=" hover:bg-green-600">
+            <label>I've had a private tutor</label>
+            <input
+              className="hover:text-white hover:bg-green-600"
+              value={value}
+              onClick={() => handleSubmit(value)}
+              name="question3"
+              type="radio"
+              required
+            />
+          </li>
+        ))}
+      </ul>
     </form>
   );
 };
