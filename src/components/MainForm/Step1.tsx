@@ -27,28 +27,37 @@ const Step1 = () => {
   };
 
   return (
-    <form>
-      <h3 className="stepper-head">Step 1</h3>
-
-      <ul className="el-radio-option el-radio-option-text">
-        {whoNeedsTutoring.map((value) => (
-          <li
-            key={value}
-            className="hover:bg-cyan-500 bg-white hover:text-white rounded-md"
-          >
-            <label className="font-bold">{text[value]}</label>
-            <input
-              className="hover:text-white"
-              value={value}
-              onClick={() => handleSubmit(value)}
-              name="question3"
-              type="radio"
-              required
-            />
-          </li>
-        ))}
-      </ul>
-    </form>
+    <div>
+      <div className="hero-content">
+        <h1>Award Winning Coding Tutors</h1>
+        <p className="text-light">
+          Welcome! Let's match you with the perfect Coding tutor
+        </p>
+        {/* <h3 className="text-center">Who needs tutoring</h3> */}
+        <form className="flex flex-col items-center justify-center">
+          <ul className="p-0">
+            {whoNeedsTutoring.map((value) => (
+              <li
+                key={value}
+                className="cursor-pointer flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-80 max-w-full min-h-14"
+              >
+                <label className="font-bold cursor-pointer">
+                  {text[value]}
+                </label>
+                <input
+                  className="hover:text-white hidden"
+                  value={value}
+                  onClick={() => handleSubmit(value)}
+                  name="question3"
+                  type="radio"
+                  required
+                />
+              </li>
+            ))}
+          </ul>
+        </form>
+      </div>
+    </div>
   );
 };
 
