@@ -31,7 +31,7 @@ const Step1 = () => {
 
   return (
     <form>
-      <h2>Who needs tutoring?</h2>
+      <h2>What grade level are you in</h2>
       {gradeLevels.map((value) => (
         <button
           type="button"
