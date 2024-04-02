@@ -25,7 +25,7 @@ const Step1 = () => {
       <h2>
         Let's finish up your profile so we can find you the perfect tutor:
       </h2>
-      <input />
+      <input {...register("fullName")} />
       <button type="submit">Continue</button>
     </form>
   );
