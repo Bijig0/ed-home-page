@@ -42,10 +42,11 @@ export type StudentDetails = {
   reasonForTutoring: ReasonForTutoring;
   howSoon: HowSoon;
   fullName: string;
+  lessonType: LessonType;
   email: string;
   phoneNumber: string;
   agreedToTermsOfUse: boolean;
-} & LessonType;
+};
 
 export type MainFormState = {
   studentDetails: StudentDetails;

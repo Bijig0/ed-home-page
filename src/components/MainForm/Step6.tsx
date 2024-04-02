@@ -20,19 +20,29 @@ const Step1 = () => {
   const { register, handleSubmit } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
     console.log(data);
-    updateStudentDetails({ studentDetails: { fullName: data.fullName } });
+    updateStudentDetails({
+      studentDetails: {
+        lessonType: {
+          lessonType: "in-person",
+          zipCode: data.zipCode,
+        },
+      },
+    });
     nextStep();
+    return;
   };
 
   const { nextStep } = useWizard();
 
   const handleSelectLessonType = (value: LessonType) => {
     if (value === "online") {
-      updateStudentDetails({ studentDetails: { lessonType: value } });
+      updateStudentDetails({
+        studentDetails: { lessonType: { lessonType: "online" } },
+      });
       nextStep();
       return;
     }
-    setLessonType(value);
+    setLessonType("in-person");
   };
 
   return (
