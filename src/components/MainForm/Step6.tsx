@@ -1,9 +1,5 @@
-import { register } from "module";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useWizard } from "react-use-wizard";
 import BackIcon from "./BackIcon";
-import useFormStore from "./useFormStore";
 import useLessonTypeStateMachine from "./useLessonTypeStateMachine";
 
 type FormValues = {
@@ -16,42 +12,26 @@ type LessonType = (typeof lessonTypes)[number];
 const Step1 = () => {
   const [state, send] = useLessonTypeStateMachine();
 
-  const [lessonType, setLessonType] = useState<LessonType>();
-
-  const updateStudentDetails = useFormStore(
-    (state) => state.updateStudentDetails
-  );
-
   const { register, handleSubmit } = useForm<FormValues>();
   const onInPersonSubmissionCompleted = (data: FormValues) => {
-
-    console.log(data);
-    updateStudentDetails({
-      studentDetails: {
-        lessonType: {
-          lessonType: "in-person",
-          zipCode: data.zipCode,
-        },
+    send({
+      type: "CHOOSE_LOCATION",
+      value: {
+        zipCode: data.zipCode,
       },
     });
-    nextStep();
-    return;
   };
-
-  const { previousStep, nextStep } = useWizard();
 
   const handleSelectLessonType = (value: LessonType) => {
     if (value === "online") {
-      updateStudentDetails({
-        studentDetails: { lessonType: { lessonType: "online" } },
-      });
-      nextStep();
+      send({ type: "CHOOSE_ONLINE" });
       return;
+    } else if (value === "in-person") {
+      send({ type: "CHOOSE_IN_PERSON" });
     }
-    setLessonType("in-person");
   };
 
-  const handleBack = () => previousStep();
+  const handleBack = () => send({"BACK"})
 
   return (
     <div className="flex ">
@@ -69,7 +49,7 @@ const Step1 = () => {
               <ul className="p-0">
                 {lessonTypes.map((value) => (
                   <li
-                    onClick={() => send({ type: "CHOOSE_ONLINE" })}
+                    onClick={() => handleSelectLessonType(value)}
                     key={value}
                     className="border border-black cursor-pointer px-5 flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-button min-h-14"
                   >
@@ -89,7 +69,10 @@ const Step1 = () => {
           </>
         )}
         {state.value === "choosingLocation" && (
-          <>
+          <form
+            className="flex flex-col items-center justify-center"
+            onSubmit={handleSubmit(onInPersonSubmissionCompleted)}
+          >
             <input
               {...register("zipCode", {
                 required: "Zip code is required",
@@ -100,7 +83,7 @@ const Step1 = () => {
               })}
             />
             <button type="submit">Continue</button>
-          </>
+          </form>
         )}
         <div className="flex items-center justify-start">
           <BackIcon />
@@ -131,22 +114,3 @@ const Step1 = () => {
 };
 
 export default Step1;
-
-return (
-  <form onSubmit={handleSubmit(onSubmit)}>
-    {lessonType === "in-person" && (
-      <>
-        <input
-          {...register("zipCode", {
-            required: "Zip code is required",
-            pattern: {
-              value: /^\d{4}$/,
-              message: "Please enter a valid Australian zip code",
-            },
-          })}
-        />
-        <button type="submit">Continue</button>
-      </>
-    )}
-  </form>
-);

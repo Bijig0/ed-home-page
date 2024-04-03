@@ -1,10 +1,22 @@
+import { useWizard } from "react-use-wizard";
 import type { LessonType } from "./types";
+import useFormStore from "./useFormStore";
 import useStateMachine, { t } from "./useStateMachine/useStateMachine";
 
 const useLessonTypeStateMachine = () => {
+  const { previousStep, nextStep } = useWizard();
+
+  const updateStudentDetails = useFormStore(
+    (state) => state.updateStudentDetails
+  );
+
   return useStateMachine({
     schema: {
       context: t<{ lessonType: LessonType | undefined }>(),
+      events: {
+        CHOOSE_LOCATION: t<{ value: { zipCode: string } }>(),
+        LESSON_TYPE_FILLED: t<{ value: LessonType }>(),
+      },
     },
     context: {
       lessonType: undefined,
@@ -27,9 +39,8 @@ const useLessonTypeStateMachine = () => {
             target: "completed",
           },
         },
-        effect({ setContext, event }) {
-          const typedEvent = event as unknown as { value: LessonType };
-          setContext(() => ({ lessonType: typedEvent.value }));
+        effect({ send }) {
+          send({ type: "LESSON_TYPE_FILLED", value: { lessonType: "online" } });
         },
       },
       "in-person": {
@@ -52,12 +63,25 @@ const useLessonTypeStateMachine = () => {
             target: "completed",
           },
         },
-        effect({ setContext, event }) {
-          const typedEvent = event as unknown as { value: LessonType };
-          setContext(() => ({ lessonType: typedEvent.value }));
+        effect({ send, event }) {
+          const zipCode = event.value.zipCode;
+          const inPersonLessonType = {
+            lessonType: "in-person",
+            zipCode,
+          } as const;
+          send({ type: "LESSON_TYPE_FILLED", value: inPersonLessonType });
         },
       },
-      completed: {},
+      completed: {
+        effect({ setContext, event }) {
+          const lessonType = event.value;
+          setContext(() => ({ lessonType }));
+          updateStudentDetails({
+            studentDetails: { lessonType },
+          });
+          nextStep();
+        },
+      },
     },
   });
 };
