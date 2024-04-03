@@ -72,36 +72,44 @@ const Step1 = () => {
           </>
         )}
         {state.value === "choosingLocation" && (
-          <form
-            className="flex flex-col items-center justify-center"
-            onSubmit={handleSubmit(onInPersonSubmissionCompleted)}
-          >
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="zipCode"
+          <>
+            {/* <h1 className="text-4xl text-white font-primary">
+          {headerText[studentDetails.whoNeedsTutoring]}
+        </h1> */}
+            <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
+              Let's finish up your profile:
+            </h1>
+            <form
+              className="flex flex-col items-start justify-center gap-4"
+              onSubmit={handleSubmit(onInPersonSubmissionCompleted)}
             >
-              Full Name *
-            </label>
-            <input
-              className="border-px border-black h-16 text-lg shadow bg-light appearance-none border rounded w-80 px-4 py-2text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="zipCode"
-              type="text"
-              placeholder="Zip Code"
-              {...register("zipCode", {
-                required: "Zip code is required",
-                pattern: {
-                  value: /^\d{4}$/,
-                  message: "Please enter a valid Australian zip code",
-                },
-              })}
-            />
-            <button
-              className="button button-primary px-16 py-3 text-xl"
-              type="submit"
-            >
-              Continue
-            </button>
-          </form>
+              <label
+                className="block text-gray-700 text-sm font-bold"
+                htmlFor="zipCode"
+              >
+                Zip Code *
+              </label>
+              <input
+                className="border-px border-black h-16 text-lg shadow bg-light appearance-none border rounded w-80 px-4 py-2text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="zipCode"
+                type="text"
+                placeholder="Zip Code"
+                {...register("zipCode", {
+                  required: "Zip code is required",
+                  pattern: {
+                    value: /^\d{4}$/,
+                    message: "Please enter a valid Australian zip code",
+                  },
+                })}
+              />
+              <button
+                className="button button-primary px-16 py-3 text-xl"
+                type="submit"
+              >
+                Continue
+              </button>
+            </form>
+          </>
         )}
         <div className="flex items-center justify-start">
           <BackIcon />
