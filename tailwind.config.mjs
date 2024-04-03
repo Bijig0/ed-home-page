@@ -9,6 +9,9 @@ export default {
       width: {
         button: "28rem",
       },
+      colors: {
+        grey: "#717f94",
+      },
     },
   },
   plugins: [],

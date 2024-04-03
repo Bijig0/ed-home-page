@@ -1,4 +1,4 @@
-import { FaQuoteLeft } from "react-icons/fa";
+import { FaCaretDown, FaQuoteLeft } from "react-icons/fa";
 import { useWizard } from "react-use-wizard";
 import BackIcon from "./BackIcon";
 import {
@@ -46,8 +46,8 @@ const Step1 = () => {
   return (
     <div className="flex ">
       <div className="flex flex-col items-start flex-[3_3_0%]">
-        <h1 className="text-4xl text-white font-primary">
-          {headerText[studentDetails.whoNeedsTutoring]}
+        <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
+          Why do you need help?
         </h1>
         <div className="my-2"></div>
         <form className="flex flex-col items-center justify-center">
@@ -81,7 +81,7 @@ const Step1 = () => {
           </button>
         </div>
       </div>
-      <div className="flex-[2_2_0%] self-end h-64 bg-light rounded-lg flex justify-center flex-col px-12 gap-4">
+      <div className="flex-[2_2_0%] relative self-end h-64 bg-light rounded-lg flex justify-center flex-col px-12 gap-4">
         <div className="flex flex-col justify-end items-start gap-5">
           <FaQuoteLeft className="icon" size={16} />
           <p className="text-black text-lg font-primary font-light mt-2">
@@ -90,6 +90,11 @@ const Step1 = () => {
             many questions! Lastly, was always on time and very prompt. Highly
             suggest Varsity Tutors.
           </p>
+          <FaCaretDown
+            className="icon absolute left-8 bottom-[-38px]"
+            color="white"
+            size={80}
+          />
         </div>
       </div>
     </div>
