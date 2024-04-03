@@ -43,16 +43,28 @@ const Step1 = () => {
           className="flex flex-col items-center justify-center"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <input
-            {...register("fullName", {
-              required: "Full name is required",
-              pattern: {
-                value: /^[a-zA-Z]+ [a-zA-Z]+$/,
-                message:
-                  "Full name must be alphanumeric and contain a space between the first and last name",
-              },
-            })}
-          />
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="username"
+            >
+              Full Name
+            </label>
+            <input
+              className="shadow bg-light appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="username"
+              type="text"
+              placeholder="Full Name"
+              {...register("fullName", {
+                required: "Full name is required",
+                pattern: {
+                  value: /^[a-zA-Z]+ [a-zA-Z]+$/,
+                  message:
+                    "Full name must be alphanumeric and contain a space between the first and last name",
+                },
+              })}
+            />
+          </div>
           <button type="submit">Continue</button>
         </form>
         <div className="flex items-center justify-start">
