@@ -36,14 +36,14 @@ const Step1 = () => {
           {headerText[studentDetails.whoNeedsTutoring]}
         </h1> */}
         <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
-          Let's finish up your profile so we can find you the perfect tutor:
+          Let's finish up your profile:
         </h1>
         <div className="my-2"></div>
         <form
-          className="flex flex-col items-center justify-center"
+          className="flex flex-col items-start justify-center gap-4"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="mb-4">
+          <div>
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="username"
@@ -51,7 +51,7 @@ const Step1 = () => {
               Full Name
             </label>
             <input
-              className="shadow bg-light appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bordr-px border-black h-16 text-lg shadow bg-light appearance-none border rounded w-80 px-4 py-2text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
               type="text"
               placeholder="Full Name"
@@ -65,7 +65,13 @@ const Step1 = () => {
               })}
             />
           </div>
-          <button type="submit">Continue</button>
+          <button
+            className="button button-primary px-16 py-3 text-xl"
+            type="submit"
+          >
+            Continue
+          </button>
+          <div className="my-1"></div>
         </form>
         <div className="flex items-center justify-start">
           <BackIcon />
