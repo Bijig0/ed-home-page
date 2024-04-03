@@ -1,24 +1,65 @@
-import useStateMachine from "./useStateMachine/useStateMachine";
+import type { LessonType } from "./types";
+import useStateMachine, { t } from "./useStateMachine/useStateMachine";
 
 const useLessonTypeStateMachine = () => {
-  const [state, send] = useStateMachine({
-    initial: "online",
+  return useStateMachine({
+    schema: {
+      context: t<{ lessonType: LessonType | undefined }>(),
+    },
+    context: {
+      lessonType: undefined,
+    },
+    initial: "choosingLessonType",
     states: {
+      choosingLessonType: {
+        on: {
+          CHOOSE_ONLINE: {
+            target: "online",
+          },
+          CHOOSE_IN_PERSON: {
+            target: "in-person",
+          },
+        },
+      },
       online: {
         on: {
-          next: "in-person",
+          LESSON_TYPE_FILLED: {
+            target: "completed",
+          },
+        },
+        effect({ setContext, event }) {
+          const typedEvent = event as unknown as { value: LessonType };
+          setContext(() => ({ lessonType: typedEvent.value }));
         },
       },
       "in-person": {
         on: {
-          next: "online",
+          CHOOSE_IN_PERSON_LOCATION: {
+            target: "choosingLocation",
+          },
         },
       },
-    },
-    context: {
-      lessonType: "online",
+      choosingLocation: {
+        on: {
+          CHOOSE_LOCATION: {
+            target: "locationChosen",
+          },
+        },
+      },
+      locationChosen: {
+        on: {
+          LESSON_TYPE_FILLED: {
+            target: "completed",
+          },
+        },
+        effect({ setContext, event }) {
+          const typedEvent = event as unknown as { value: LessonType };
+          setContext(() => ({ lessonType: typedEvent.value }));
+        },
+      },
+      completed: {},
     },
   });
-
-  return [state, send];
 };
+
+export default useLessonTypeStateMachine;

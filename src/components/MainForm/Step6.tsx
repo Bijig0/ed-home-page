@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useWizard } from "react-use-wizard";
 import BackIcon from "./BackIcon";
 import useFormStore from "./useFormStore";
+import useLessonTypeStateMachine from "./useLessonTypeStateMachine";
 
 type FormValues = {
   zipCode: string;
@@ -13,6 +14,8 @@ const lessonTypes = ["online", "in-person"] as const;
 type LessonType = (typeof lessonTypes)[number];
 
 const Step1 = () => {
+  const [state, send] = useLessonTypeStateMachine();
+
   const [lessonType, setLessonType] = useState<LessonType>();
 
   const updateStudentDetails = useFormStore(
@@ -20,7 +23,8 @@ const Step1 = () => {
   );
 
   const { register, handleSubmit } = useForm<FormValues>();
-  const onSubmit = (data: FormValues) => {
+  const onInPersonSubmissionCompleted = (data: FormValues) => {
+
     console.log(data);
     updateStudentDetails({
       studentDetails: {
@@ -55,31 +59,49 @@ const Step1 = () => {
         {/* <h1 className="text-4xl text-white font-primary">
           {headerText[studentDetails.whoNeedsTutoring]}
         </h1> */}
-        <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
-          Do you want it online or in-person
-        </h1>
-        <div className="my-2"></div>
-        <form className="flex flex-col items-center justify-center">
-          <ul className="p-0">
-            {lessonTypes.map((value) => (
-              <li
-                onClick={() => handleSelectLessonType(value)}
-                key={value}
-                className="border border-black cursor-pointer px-5 flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-button min-h-14"
-              >
-                <label className="text-lg font-primary cursor-pointer">
-                  {value}
-                </label>
-                <input
-                  className="hover:text-white hidden"
-                  value={value}
-                  name="question3"
-                  type="radio"
-                />
-              </li>
-            ))}
-          </ul>
-        </form>
+        {state.value === "choosingLessonType" && (
+          <>
+            <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
+              Do you want it online or in-person
+            </h1>
+            <div className="my-2"></div>
+            <form className="flex flex-col items-center justify-center">
+              <ul className="p-0">
+                {lessonTypes.map((value) => (
+                  <li
+                    onClick={() => send({ type: "CHOOSE_ONLINE" })}
+                    key={value}
+                    className="border border-black cursor-pointer px-5 flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-button min-h-14"
+                  >
+                    <label className="text-lg font-primary cursor-pointer">
+                      {value}
+                    </label>
+                    <input
+                      className="hover:text-white hidden"
+                      value={value}
+                      name="question3"
+                      type="radio"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </form>
+          </>
+        )}
+        {state.value === "choosingLocation" && (
+          <>
+            <input
+              {...register("zipCode", {
+                required: "Zip code is required",
+                pattern: {
+                  value: /^\d{4}$/,
+                  message: "Please enter a valid Australian zip code",
+                },
+              })}
+            />
+            <button type="submit">Continue</button>
+          </>
+        )}
         <div className="flex items-center justify-start">
           <BackIcon />
           <button
@@ -112,18 +134,6 @@ export default Step1;
 
 return (
   <form onSubmit={handleSubmit(onSubmit)}>
-    <h2>Let's finish up your profile so we can find you the perfect tutor:</h2>
-    {lessonTypes.map((value) => (
-      <button
-        type="button"
-        key={value}
-        defaultValue={value}
-        value={value}
-        onClick={() => handleSelectLessonType(value)}
-      >
-        {value}
-      </button>
-    ))}
     {lessonType === "in-person" && (
       <>
         <input
