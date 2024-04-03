@@ -16,6 +16,7 @@ const useLessonTypeStateMachine = () => {
       events: {
         CHOOSE_LOCATION: t<{ value: { zipCode: string } }>(),
         LESSON_TYPE_FILLED: t<{ value: LessonType }>(),
+        BACK: t<{ value: { prevState: string } }>(),
       },
     },
     context: {
@@ -36,7 +37,10 @@ const useLessonTypeStateMachine = () => {
           },
         },
         effect({ event }) {
-          if (event.type === "BACK") {
+          if (
+            event.type === "BACK" &&
+            event.value.prevState === "choosingLessonType"
+          ) {
             previousStep();
           }
         },
@@ -56,6 +60,9 @@ const useLessonTypeStateMachine = () => {
           CHOOSE_IN_PERSON_LOCATION: {
             target: "choosingLocation",
           },
+        },
+        effect({ send }) {
+          send({ type: "CHOOSE_IN_PERSON_LOCATION" });
         },
       },
       choosingLocation: {

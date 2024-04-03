@@ -31,7 +31,10 @@ const Step1 = () => {
     }
   };
 
-  const handleBack = () => send({"BACK"})
+  const handleBack = () =>
+    send({ type: "BACK", value: { prevState: state.value } });
+
+  console.log(state.value);
 
   return (
     <div className="flex ">
@@ -73,7 +76,17 @@ const Step1 = () => {
             className="flex flex-col items-center justify-center"
             onSubmit={handleSubmit(onInPersonSubmissionCompleted)}
           >
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="zipCode"
+            >
+              Full Name *
+            </label>
             <input
+              className="border-px border-black h-16 text-lg shadow bg-light appearance-none border rounded w-80 px-4 py-2text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="zipCode"
+              type="text"
+              placeholder="Zip Code"
               {...register("zipCode", {
                 required: "Zip code is required",
                 pattern: {
@@ -82,7 +95,12 @@ const Step1 = () => {
                 },
               })}
             />
-            <button type="submit">Continue</button>
+            <button
+              className="button button-primary px-16 py-3 text-xl"
+              type="submit"
+            >
+              Continue
+            </button>
           </form>
         )}
         <div className="flex items-center justify-start">
