@@ -79,14 +79,14 @@ const Step1 = () => {
             {errors["phoneNumber"] && (
               <p className="error-message">{errors["phoneNumber"].message}</p>
             )}
-            <div className="flex items-center justify-left">
+            <div className="my-2"></div>
+            <div className="flex gap-2 items-center justify-left">
               <input
                 type="checkbox"
                 {...register("agreeToTermsOfUse", { required: true })}
               />
-              <p>I agree to the terms of use</p>
+              <p className="m-0 text-gray-700">I agree to the terms of use</p>
             </div>
-            ;
           </div>
           <button
             className="button button-primary px-16 py-3 text-xl"
