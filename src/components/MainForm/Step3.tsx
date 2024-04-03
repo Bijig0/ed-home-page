@@ -81,19 +81,16 @@ const Step1 = () => {
           </button>
         </div>
       </div>
-      
-      <div className="flex-[2_2_0%] flex items-center flex-col justify-end">
-        <div className="text-left flex justify-start">
+      <div className="flex-[2_2_0%] h-64 bg-light rounded-lg flex justify-center flex-col px-12 gap-4">
+        <div className="flex flex-col justify-end items-start gap-5">
           <FaQuoteLeft className="icon" size={16} />
+          <p className="text-black text-lg font-primary font-light mt-2">
+            Varsity Tutors really helped me understand the concepts during my
+            Calculus 2 class. My tutor has such amazing patience and is open to
+            many questions! Lastly, was always on time and very prompt. Highly
+            suggest Varsity Tutors.
+          </p>
         </div>
-        <p className="text-black text-lg font-primary font-light mb-12 mt-2">
-          Varsity Tutors really helped me understand the concepts during my
-          Calculus 2 class. My tutor has such amazing patience and is open to
-          many questions! Lastly, was always on time and very prompt. Highly
-          suggest Varsity Tutors.
-          <br />
-          <br />- Joey T
-        </p>
       </div>
     </div>
   );

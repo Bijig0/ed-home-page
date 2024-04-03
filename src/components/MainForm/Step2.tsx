@@ -84,7 +84,7 @@ const Step1 = () => {
       </div>
       <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
         <div className="bg-light rounded-lg flex justify-center flex-col items-center px-12 py-8 gap-4">
-          <IoDocumentTextSharp className="icon" size={72} filter="invert(1)" />
+          <IoDocumentTextSharp className="icon" size={72} color="#f43f5e" />
           <p className="text-black text-lg font-primary font-light">
             Our experienced tutors{" "}
             <span className="inline text-black text-lg font-primary font-semibold">
