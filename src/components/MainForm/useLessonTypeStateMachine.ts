@@ -31,6 +31,14 @@ const useLessonTypeStateMachine = () => {
           CHOOSE_IN_PERSON: {
             target: "in-person",
           },
+          BACK: {
+            target: "choosingLessonType",
+          },
+        },
+        effect({ event }) {
+          if (event.type === "BACK") {
+            previousStep();
+          }
         },
       },
       online: {
@@ -54,6 +62,9 @@ const useLessonTypeStateMachine = () => {
         on: {
           CHOOSE_LOCATION: {
             target: "locationChosen",
+          },
+          BACK: {
+            target: "choosingLessonType",
           },
         },
       },
