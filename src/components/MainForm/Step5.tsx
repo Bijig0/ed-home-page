@@ -30,7 +30,7 @@ const Step1 = () => {
   };
 
   return (
-    <div className="flex ">
+    <div className="flex">
       <div className="flex flex-col items-start flex-[3_3_0%]">
         {/* <h1 className="text-4xl text-white font-primary">
           {headerText[studentDetails.whoNeedsTutoring]}
@@ -48,7 +48,7 @@ const Step1 = () => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="username"
             >
-              Full Name
+              Full Name *
             </label>
             <input
               className="bordr-px border-black h-16 text-lg shadow bg-light appearance-none border rounded w-80 px-4 py-2text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
