@@ -37,11 +37,13 @@ const Step1 = () => {
           Welcome! Let's match you with the perfect programming tutor
         </p>
 
-        <button className="flex text-center mt-6 mx-auto justify-center w-64 items-center px-6 py-2 font-semibold bg-rose-500 rounded-lg">
+        <div className="flex text-center mt-6 mx-auto justify-center w-64 items-center px-6 py-2 font-semibold bg-rose-500 rounded-lg">
           <p className="text-light text-lg text-center m-0">
             Who needs tutoring?
           </p>
-        </button>
+        </div>
+
+        <div className="my-4"></div>
 
         <form className="flex flex-col items-center justify-center">
           <ul className="p-0">
