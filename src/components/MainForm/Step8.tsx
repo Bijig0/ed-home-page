@@ -1,5 +1,7 @@
 import { Controller, useForm } from "react-hook-form";
-import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import { isValidPhoneNumber } from "react-phone-number-input";
+import PhoneInput from "react-phone-number-input/input";
+
 import "react-phone-number-input/style.css";
 import { useWizard } from "react-use-wizard";
 import BackIcon from "./BackIcon";
@@ -70,7 +72,6 @@ const Step1 = () => {
                   className="border-px border-black h-16 text-lg shadow bg-light appearance-none border rounded w-80 px-4 py-2text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   value={value}
                   onChange={onChange}
-                  defaultCountry="AU"
                   id="phone-input"
                 />
               )}
