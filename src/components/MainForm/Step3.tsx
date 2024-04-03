@@ -81,7 +81,7 @@ const Step1 = () => {
           </button>
         </div>
       </div>
-      <div className="flex-[2_2_0%] h-64 bg-light rounded-lg flex justify-center flex-col px-12 gap-4">
+      <div className="flex-[2_2_0%] self-end h-64 bg-light rounded-lg flex justify-center flex-col px-12 gap-4">
         <div className="flex flex-col justify-end items-start gap-5">
           <FaQuoteLeft className="icon" size={16} />
           <p className="text-black text-lg font-primary font-light mt-2">
