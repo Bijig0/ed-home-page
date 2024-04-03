@@ -85,9 +85,9 @@ const Step1 = () => {
       <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
         <div className="bg-light rounded-lg flex justify-center flex-col items-center px-8 py-8 gap-4">
           <IoDocumentTextSharp className="icon" size={60} color="#f43f5e" />
-          <p className="text-black text-md font-primary font-light">
+          <p className="text-grey text-md font-primary font-light">
             Our experienced tutors{" "}
-            <span className="inline text-black text-md font-primary font-semibold">
+            <span className="inline text-grey text-md font-primary font-semibold">
               individualize their learning plans
             </span>{" "}
             to match each student's personal needs and goals!
