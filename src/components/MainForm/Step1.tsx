@@ -29,15 +29,18 @@ const Step1 = () => {
   return (
     <div>
       <div className="text-center">
-        <h1 className="text-light text-5xl font-normal leading-normal mb-3">
-          Award Winning Programming <br /> Tutors
+        <h1 className="text-white mx-auto mb-6 text-6xl text-center font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
+          Award Winning Programming Tutors
         </h1>
+
         <p className="text-light text-xl mb-7">
-          Welcome! Let's match you with the perfect Coding tutor
+          Welcome! Let's match you with the perfect programming tutor
         </p>
-        <h3 className="text-center text-xl font-semibold">
-          Who needs tutoring?
-        </h3>
+
+        <button className="flex text-center mt-6 md:mx-auto md:justify-center md:w-60 md:items-center px-6 py-2 font-semibold text-white bg-rose-500 rounded-lg">
+          <p className="text-light text-lg text-center">Who needs tutoring?</p>
+        </button>
+
         <form className="flex flex-col items-center justify-center">
           <ul className="p-0">
             {whoNeedsTutoring.map((value) => (
