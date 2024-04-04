@@ -37,6 +37,9 @@ const Step1 = () => {
 
   console.log(state.value);
 
+  const capitalize = (value: string) =>
+    `${value.charAt(0).toUpperCase()}${value.slice(1)}`;
+
   return (
     <div className="flex ">
       <div className="flex flex-col items-start flex-[3_3_0%]">
@@ -58,7 +61,7 @@ const Step1 = () => {
                     className="border border-black cursor-pointer px-5 flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-button min-h-14"
                   >
                     <label className="text-lg font-primary cursor-pointer">
-                      {value}
+                      {capitalize(value)}
                     </label>
                     <input
                       className="hover:text-white hidden"
