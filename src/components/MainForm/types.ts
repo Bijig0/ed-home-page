@@ -48,6 +48,10 @@ export type StudentDetails = {
   agreedToTermsOfUse: boolean;
 };
 
+type UnionOfValues<T> = T[keyof T];
+
+export type AllStudentDetailsValues = UnionOfValues<StudentDetails>;
+
 export type MainFormState = {
   studentDetails: StudentDetails;
 };
