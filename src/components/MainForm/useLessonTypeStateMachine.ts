@@ -1,14 +1,10 @@
 import { useWizard } from "react-use-wizard";
 import type { LessonType } from "./types";
-import useFormStore from "./useFormStore";
+import { updateStudentDetails } from "./useFormStore";
 import useStateMachine, { t } from "./useStateMachine/useStateMachine";
 
 const useLessonTypeStateMachine = () => {
   const { previousStep, nextStep } = useWizard();
-
-  const updateStudentDetails = useFormStore(
-    (state) => state.updateStudentDetails
-  );
 
   return useStateMachine({
     schema: {

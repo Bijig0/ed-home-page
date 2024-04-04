@@ -3,7 +3,7 @@ import { useWizard } from "react-use-wizard";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
 import { gradeLevels, type GradeLevel, type WhoNeedsTutoring } from "./types";
-import useFormStore from "./useFormStore";
+import { studentDetails, updateStudentDetails } from "./useFormStore";
 
 const headerText = {
   Child: "What grade level is your child in?",
@@ -21,9 +21,6 @@ const text = {
 } satisfies Record<GradeLevel, string>;
 
 const Step1 = () => {
-  const { updateStudentDetails, studentDetails, whoNeedsTutoring } =
-    useFormStore();
-
   const { handleStep, previousStep, nextStep } = useWizard();
 
   const handleSubmit = (value: GradeLevel) => {
@@ -33,7 +30,7 @@ const Step1 = () => {
     nextStep();
   };
 
-  console.log(whoNeedsTutoring);
+  console.log(studentDetails.get());
 
   return (
     <div className="flex ">

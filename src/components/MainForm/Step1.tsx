@@ -1,6 +1,6 @@
 import { useWizard } from "react-use-wizard";
 import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
-import useFormStore from "./useFormStore";
+import { studentDetails, updateStudentDetails } from "./useFormStore";
 
 type FormValues = {
   whoNeedsTutoring: WhoNeedsTutoring;
@@ -13,8 +13,6 @@ const text = {
 } satisfies Record<WhoNeedsTutoring, string>;
 
 const Step1 = () => {
-  const { updateStudentDetails, studentDetails } = useFormStore();
-
   const { handleStep, previousStep, nextStep } = useWizard();
 
   const handleSubmit = (value: WhoNeedsTutoring) => {
@@ -22,7 +20,7 @@ const Step1 = () => {
     updateStudentDetails({
       studentDetails: { whoNeedsTutoring: value },
     });
-    console.log({ studentDetails });
+    console.log(studentDetails.get());
     nextStep();
   };
 

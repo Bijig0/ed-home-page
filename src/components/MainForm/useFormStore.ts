@@ -1,23 +1,14 @@
-import { merge } from "ts-deepmerge";
-import { create } from "zustand";
-import type { MainFormState, PartialFormState, StudentDetails } from "./types";
+import { map } from "nanostores";
+import type { PartialFormState, StudentDetails } from "./types";
 
-type FormState = MainFormState & {
-  fullName: () => string;
-  phoneNumber: () => string;
-  email: () => string;
-  whoNeedsTutoring: () => string;
-  updateStudentDetails: (toUpdate: PartialFormState) => void;
+export const studentDetails = map<StudentDetails>();
+
+export const updateStudentDetails = (toUpdate: PartialFormState) => {
+  const keys = Object.keys(toUpdate.studentDetails) as (keyof StudentDetails)[];
+  console.log({ keys });
+  keys.forEach((key) => {
+    studentDetails.setKey(key, toUpdate.studentDetails[key]);
+  });
 };
 
-const useFormStore = create<FormState>((set, get) => ({
-  studentDetails: {} as StudentDetails,
-  fullName: () => get().studentDetails.fullName,
-  phoneNumber: () => get().studentDetails.phoneNumber,
-  email: () => get().studentDetails.email,
-  whoNeedsTutoring: () => get().studentDetails.whoNeedsTutoring,
-  updateStudentDetails: (toUpdate) =>
-    set((state) => ({ studentDetails: merge(state.studentDetails, toUpdate) })),
-}));
-
-export default useFormStore;
+// set((state) => ({ studentDetails: merge(state.studentDetails, toUpdate) }));

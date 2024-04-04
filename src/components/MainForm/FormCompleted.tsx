@@ -1,7 +1,7 @@
 import emailjs from "@emailjs/browser";
 import { useMutation } from "@tanstack/react-query";
 import { useEffect } from "react";
-import useFormStore from "./useFormStore";
+import { studentDetails } from "./useFormStore";
 
 type ErrorTextProps = {
   children: React.ReactNode;
@@ -16,8 +16,6 @@ const ErrorText = (props: ErrorTextProps) => {
 };
 
 const FormCompleted = () => {
-  const studentDetails = useFormStore((state) => state.studentDetails);
-
   const sendEmail = async () => {
     const templateParams = {
       to_name: "Brady",

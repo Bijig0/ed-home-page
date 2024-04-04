@@ -1,25 +1,19 @@
 import { useForm } from "react-hook-form";
 import { useWizard } from "react-use-wizard";
-import BackIcon from "./BackIcon";
-import useFormStore from "./useFormStore";
 import BackButton from "./BackButton";
+import BackIcon from "./BackIcon";
+import { studentDetails, updateStudentDetails } from "./useFormStore";
 
 type FormValues = {
   email: string;
 };
 
 const Step1 = () => {
-  const { updateStudentDetails, studentDetails } = useFormStore(
-    (state) => state
-  );
-
   const { handleStep, previousStep, nextStep } = useWizard();
 
   const handleBack = () => previousStep();
 
   console.log(studentDetails);
-
-  console.log(studentDetails.whoNeedsTutoring);
 
   // console.log(headerText[studentDetails.whoNeedsTutoring]);
 
