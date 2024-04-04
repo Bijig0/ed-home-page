@@ -2,7 +2,8 @@ import { FaCaretDown, FaQuoteLeft } from "react-icons/fa";
 import { useWizard } from "react-use-wizard";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
-import SelectButtonWithCheckMark from "./SelectButtonWithCheckMark";
+import CheckIcon from "./CheckIcon";
+import SelectButton from "./SelectButton";
 import {
   reasonsForTutoring,
   whoNeedsTutoring,
@@ -50,11 +51,18 @@ const Step1 = () => {
         <form className="flex flex-col items-center justify-center">
           <ul className="p-0">
             {reasonsForTutoring.map((value) => (
-              <SelectButtonWithCheckMark
-                value={value}
-                text={text[value]}
-                handleSubmit={handleSubmit}
-              />
+              <div className="relative">
+                <SelectButton
+                mappingOver="reasonForTutoring"
+                  value={value}
+                  text={text[value]}
+                  handleSubmit={handleSubmit}
+                />
+                <CheckIcon
+                  className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2"
+                  enabled={value === studentDetails.get().reasonForTutoring}
+                />
+              </div>
             ))}
           </ul>
         </form>
