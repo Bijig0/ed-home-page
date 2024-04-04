@@ -66,7 +66,7 @@ const Step1 = () => {
                   />
                 </li>
                 <CheckIcon
-                  // enabled={value === studentDetails.get().whoNeedsTutoring}
+                  enabled={value === studentDetails.get().whoNeedsTutoring}
                   className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2"
                 />
               </div>
