@@ -44,14 +44,13 @@ const Step1 = () => {
       "https://calendly.com/bradysuryasie/edututor/2024-04-05T09:00:00+11:00"
     );
 
-    console.log({ studentDetails });
-
     meetingLink.searchParams.set("name", studentDetails.get().fullName);
-    meetingLink.searchParams.set(
-      "phoneNumber",
-      studentDetails.get().phoneNumber
-    );
+    // This is just how you do it with calendly, location is associated with the phone number
+    meetingLink.searchParams.set("location", studentDetails.get().phoneNumber);
     meetingLink.searchParams.set("email", studentDetails.get().email);
+
+    console.log({ meetingLink });
+    console.log(meetingLink.toString());
 
     return meetingLink;
   };
@@ -130,8 +129,7 @@ const Step1 = () => {
             </button>
             <FaCheckCircle
               size={26}
-              className="bg-white text-green-500 rounded-full"
-              display={stepOneCompleted ? "block" : "none"}
+              className={`bg-white text-green-500 rounded-full ${!stepOneCompleted && "hidden"}`}
             />
           </div>
           {stepOneCompleted && (
