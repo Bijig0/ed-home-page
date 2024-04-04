@@ -29,6 +29,7 @@ const Step1 = () => {
 
   const {
     register,
+    watch,
     handleSubmit,
     formState: { errors },
     control,
