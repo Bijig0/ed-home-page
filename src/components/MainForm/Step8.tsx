@@ -1,5 +1,4 @@
 import { Controller, useForm } from "react-hook-form";
-import { FaCheckCircle } from "react-icons/fa";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import PhoneInput from "react-phone-number-input/input";
 
@@ -9,6 +8,7 @@ import { useWizard } from "react-use-wizard";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
 import { studentDetails, updateStudentDetails } from "./useFormStore";
+import CheckIcon from "./CheckIcon";
 
 type FormValues = {
   phoneNumber: string;
@@ -126,10 +126,7 @@ const Step1 = () => {
             >
               Continue
             </button>
-            <FaCheckCircle
-              size={26}
-              className={`bg-white text-green-500 rounded-full ${!stepOneCompleted && "hidden"}`}
-            />
+            <CheckIcon enabled={stepOneCompleted} />
           </div>
           {stepOneCompleted && (
             <a
