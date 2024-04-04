@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useWizard } from "react-use-wizard";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
+import ErrorText from "./ErrorText";
 import { studentDetails, updateStudentDetails } from "./useFormStore";
 
 type FormValues = {
@@ -60,6 +61,9 @@ const Step1 = () => {
                 },
               })}
             />
+            {errors["fullName"] && (
+              <ErrorText>{errors["fullName"].message}</ErrorText>
+            )}
           </div>
           <button
             className="button button-primary px-16 py-3 text-xl"
