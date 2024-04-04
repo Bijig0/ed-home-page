@@ -17,7 +17,11 @@ const Step1 = () => {
 
   // console.log(headerText[studentDetails.whoNeedsTutoring]);
 
-  const { register, handleSubmit } = useForm<FormValues>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
     console.log(data);
     updateStudentDetails({ studentDetails: { fullName: data.fullName } });
