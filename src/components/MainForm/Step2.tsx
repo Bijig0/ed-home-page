@@ -2,6 +2,7 @@ import { IoDocumentTextSharp } from "react-icons/io5";
 import { useWizard } from "react-use-wizard";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
+import SelectButtonWithCheckMark from "./SelectButtonWithCheckMark";
 import { gradeLevels, type GradeLevel, type WhoNeedsTutoring } from "./types";
 import { studentDetails, updateStudentDetails } from "./useFormStore";
 
@@ -45,21 +46,11 @@ const Step1 = () => {
         <form className="flex flex-col items-center justify-center">
           <ul className="p-0">
             {gradeLevels.map((value) => (
-              <li
-                onClick={() => handleSubmit(value)}
-                key={value}
-                className="border border-black cursor-pointer px-5 flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-button min-h-14"
-              >
-                <label className="text-lg font-primary cursor-pointer">
-                  {text[value]}
-                </label>
-                <input
-                  className="hover:text-white hidden"
-                  value={value}
-                  name="question3"
-                  type="radio"
-                />
-              </li>
+              <SelectButtonWithCheckMark
+                value={value}
+                text={text[value]}
+                handleSubmit={handleSubmit}
+              />
             ))}
           </ul>
         </form>
