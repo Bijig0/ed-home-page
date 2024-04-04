@@ -8,8 +8,14 @@ type FormValues = {
   howSoon: HowSoon;
 };
 
+const headerText = {
+  Child: "How soon does your child need help?",
+  Self: "How soon do you need help?",
+  Other: "How soon does the student need help?",
+};
+
 const Step1 = () => {
-  const { handleStep, previousStep, nextStep } = useWizard();
+  const { nextStep } = useWizard();
 
   const handleSubmit = (value: HowSoon) => {
     updateStudentDetails({
@@ -17,8 +23,6 @@ const Step1 = () => {
     });
     nextStep();
   };
-
-  const handleBack = () => previousStep();
 
   console.log(studentDetails);
 
@@ -31,7 +35,7 @@ const Step1 = () => {
           {headerText[studentDetails.whoNeedsTutoring]}
         </h1> */}
         <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
-          How soon do you need help?
+          {headerText[studentDetails.get().whoNeedsTutoring]}
         </h1>
         <div className="my-2"></div>
         <form className="flex flex-col items-center justify-center">
