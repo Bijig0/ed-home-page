@@ -62,7 +62,9 @@ const Step1 = () => {
                   return (
                     <div className="relative" key={value}>
                       <SelectButton
-                        mappingOver="whoNeedsTutoring"
+                        selected={(value) =>
+                          value === studentDetails.get().lessonType?.lessonType
+                        }
                         value={value}
                         text={capitalize(value)}
                         handleSubmit={handleSelectLessonType}
@@ -119,9 +121,7 @@ const Step1 = () => {
         )}
         <div className="flex items-center justify-start">
           <BackIcon />
-          <BackButton
-            onClick={handleBack}
-          />
+          <BackButton onClick={handleBack} />
         </div>
       </div>
       <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">

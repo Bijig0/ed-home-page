@@ -50,7 +50,9 @@ const Step1 = () => {
             {whoNeedsTutoring.map((value) => (
               <div className="relative" key={value}>
                 <SelectButton
-                mappingOver="whoNeedsTutoring"
+                  selected={(value) =>
+                    value === studentDetails.get().whoNeedsTutoring
+                  }
                   value={value}
                   text={text[value]}
                   handleSubmit={handleSubmit}

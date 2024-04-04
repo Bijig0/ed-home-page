@@ -49,7 +49,9 @@ const Step1 = () => {
             {gradeLevels.map((value) => (
               <div className="relative">
                 <SelectButton
-                mappingOver="gradeLevel"
+                  selected={(value) =>
+                    value === studentDetails.get().gradeLevel
+                  }
                   value={value}
                   text={text[value]}
                   handleSubmit={handleSubmit}

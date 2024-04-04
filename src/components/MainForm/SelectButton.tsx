@@ -8,7 +8,7 @@ import { studentDetails } from "./useFormStore";
 type Props<T> = {
   value: T;
   text: string;
-  mappingOver: keyof StudentDetails;
+  selected: (value: T) => boolean; 
   handleSubmit: (value: T) => void;
 };
 
@@ -17,12 +17,12 @@ const SelectButton = <
 >(
   props: Props<T>
 ) => {
-  const { value, text, mappingOver, handleSubmit } = props;
+  const { value, text, selected, handleSubmit } = props;
   return (
     <div key={value} className="relative">
       <li
         onClick={() => handleSubmit(value)}
-        data-selected={value === studentDetails.get()[mappingOver]}
+        data-selected={selected(value)}
         className="cursor-pointer data-[selected=true]:bg-cyan-500 data-[selected=true]:text-white flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-button max-w-full min-h-14"
       >
         <label className="text-lg cursor-pointer">{text}</label>

@@ -45,7 +45,7 @@ const Step1 = () => {
             {howSoon.map((value) => (
               <div className="relative">
                 <SelectButton
-                  mappingOver="howSoon"
+                  selected={(value) => value === studentDetails.get().howSoon}
                   value={value}
                   text={value}
                   handleSubmit={handleSubmit}
