@@ -43,6 +43,8 @@ const Step1 = () => {
       "https://calendly.com/bradysuryasie/edututor/2024-04-05T09:00:00+11:00"
     );
 
+    console.log({ studentDetails });
+
     meetingLink.searchParams.set("name", "Brady");
     meetingLink.searchParams.set("month", "2024-04");
     meetingLink.searchParams.set("date", "2024-04-05");
@@ -107,7 +109,7 @@ const Step1 = () => {
           </button>
           {stepOneCompleted && (
             <a
-              className="button button-primary bg-rose-500 px-16 py-3 text-xl"
+              className="button button-box-shadow text-light bg-rose-500 hover:bg-rose-700 px-16 py-3 text-xl"
               href="https://www.google.com"
               onClick={nextStep}
             >

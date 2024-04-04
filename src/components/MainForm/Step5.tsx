@@ -27,9 +27,6 @@ const Step1 = () => {
   return (
     <div className="flex">
       <div className="flex flex-col items-start flex-[3_3_0%]">
-        {/* <h1 className="text-4xl text-white font-primary">
-          {headerText[studentDetails.whoNeedsTutoring]}
-        </h1> */}
         <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
           Let's finish up your profile:
         </h1>

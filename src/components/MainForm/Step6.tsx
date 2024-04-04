@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
+import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
 import useLessonTypeStateMachine from "./useLessonTypeStateMachine";
-import BackButton from "./BackButton";
 
 type FormValues = {
   zipCode: string;
@@ -74,9 +74,6 @@ const Step1 = () => {
         )}
         {state.value === "choosingLocation" && (
           <>
-            {/* <h1 className="text-4xl text-white font-primary">
-          {headerText[studentDetails.whoNeedsTutoring]}
-        </h1> */}
             <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
               Let's finish up your profile:
             </h1>
