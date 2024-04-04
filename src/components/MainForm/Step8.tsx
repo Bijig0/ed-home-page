@@ -1,4 +1,5 @@
 import { Controller, useForm } from "react-hook-form";
+import { FaCheckCircle } from "react-icons/fa";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import PhoneInput from "react-phone-number-input/input";
 
@@ -61,6 +62,8 @@ const Step1 = () => {
     nextStep();
   };
 
+  console.log({ stepOneCompleted });
+
   return (
     <div className="flex">
       <div className="flex flex-col items-start flex-[3_3_0%]">
@@ -110,14 +113,27 @@ const Step1 = () => {
               <p className="m-0 text-gray-700">I agree to the terms of use</p>
             </div>
           </div>
-          <button
-            className="button data-[disabled]:opacity-45 data-[disabled]:pointer-events-none button-primary px-16 py-3 text-xl"
-            type="submit"
-            disabled={!stepOneCompleted}
-            data-disabled={stepOneCompleted}
-          >
-            Continue
-          </button>
+          <div className="flex items-center justify-start gap-4">
+            <a
+              className="button data-[disabled]:hidden button-box-shadow text-light bg-rose-500 hover:bg-rose-700 px-16 py-3 text-xl"
+              onClick={handleBookMeeting}
+              data-disabled={!stepOneCompleted}
+            >
+              Book a meeting
+            </a>
+            <button
+              className="button disabled:opacity-45 disabled:pointer-events-none button-primary px-16 py-3 text-xl"
+              type="submit"
+              disabled={stepOneCompleted}
+            >
+              Continue
+            </button>
+            <FaCheckCircle
+              size={26}
+              className="bg-white text-green-500 rounded-full"
+              display={stepOneCompleted ? "block" : "none"}
+            />
+          </div>
           {stepOneCompleted && (
             <a
               className="button button-box-shadow text-light bg-rose-500 hover:bg-rose-700 px-16 py-3 text-xl"
