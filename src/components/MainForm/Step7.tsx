@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useWizard } from "react-use-wizard";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
+import ErrorText from "./ErrorText";
 import { studentDetails, updateStudentDetails } from "./useFormStore";
 
 type FormValues = {
@@ -17,7 +18,11 @@ const Step1 = () => {
 
   // console.log(headerText[studentDetails.whoNeedsTutoring]);
 
-  const { register, handleSubmit } = useForm<FormValues>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
     console.log(data);
     updateStudentDetails({ studentDetails: { email: data.email } });
@@ -55,6 +60,10 @@ const Step1 = () => {
                 },
               })}
             />
+
+            {errors["email"] && (
+              <ErrorText>{errors["email"].message}</ErrorText>
+            )}
           </div>
           <button
             className="button button-primary px-16 py-3 text-xl"

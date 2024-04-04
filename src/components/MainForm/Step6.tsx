@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
 import CheckIcon from "./CheckIcon";
+import ErrorText from "./ErrorText";
 import SelectButton from "./SelectButton";
 import { studentDetails } from "./useFormStore";
 import useLessonTypeStateMachine from "./useLessonTypeStateMachine";
@@ -16,7 +17,11 @@ type LessonType = (typeof lessonTypes)[number];
 const Step1 = () => {
   const [state, send] = useLessonTypeStateMachine();
 
-  const { register, handleSubmit } = useForm<FormValues>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>();
   const onInPersonSubmissionCompleted = (data: FormValues) => {
     send({
       type: "CHOOSE_LOCATION",
@@ -110,6 +115,9 @@ const Step1 = () => {
                   },
                 })}
               />
+              {errors["zipCode"] && (
+                <ErrorText>{errors["zipCode"].message}</ErrorText>
+              )}
               <button
                 className="button button-primary px-16 py-3 text-xl"
                 type="submit"

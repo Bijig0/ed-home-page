@@ -7,8 +7,9 @@ import "react-phone-number-input/style.css";
 import { useWizard } from "react-use-wizard";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
-import { studentDetails, updateStudentDetails } from "./useFormStore";
 import CheckIcon from "./CheckIcon";
+import ErrorText from "./ErrorText";
+import { studentDetails, updateStudentDetails } from "./useFormStore";
 
 type FormValues = {
   phoneNumber: string;
@@ -100,7 +101,7 @@ const Step1 = () => {
               )}
             />
             {errors["phoneNumber"] && (
-              <p className="error-message">{errors["phoneNumber"].message}</p>
+              <ErrorText>{errors["phoneNumber"].message}</ErrorText>
             )}
             <div className="my-2"></div>
             <div className="flex gap-2 items-center justify-left">
