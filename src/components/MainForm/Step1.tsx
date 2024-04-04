@@ -1,4 +1,5 @@
 import { useWizard } from "react-use-wizard";
+import CheckIcon from "./CheckIcon";
 import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
 import { studentDetails, updateStudentDetails } from "./useFormStore";
 
@@ -43,25 +44,32 @@ const Step1 = () => {
 
         <div className="my-4"></div>
 
-        {console.log(studentDetails.get())}
-
         <form className="flex flex-col items-center justify-center">
           <ul className="p-0">
             {whoNeedsTutoring.map((value) => (
-              <li
-                onClick={() => handleSubmit(value)}
-                key={value}
-                data-selected={value === studentDetails.get().whoNeedsTutoring}
-                className="cursor-pointer data-[selected=true]:bg-cyan-500 data-[selected=true]:text-white flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-button max-w-full min-h-14"
-              >
-                <label className="text-lg cursor-pointer">{text[value]}</label>
-                <input
-                  className="hover:text-white hidden"
-                  value={value}
-                  name="question3"
-                  type="radio"
+              <div key={value} className="relative">
+                <li
+                  onClick={() => handleSubmit(value)}
+                  data-selected={
+                    value === studentDetails.get().whoNeedsTutoring
+                  }
+                  className="cursor-pointer data-[selected=true]:bg-cyan-500 data-[selected=true]:text-white flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-button max-w-full min-h-14"
+                >
+                  <label className="text-lg cursor-pointer">
+                    {text[value]}
+                  </label>
+                  <input
+                    className="hover:text-white hidden"
+                    value={value}
+                    name="question3"
+                    type="radio"
+                  />
+                </li>
+                <CheckIcon
+                  // enabled={value === studentDetails.get().whoNeedsTutoring}
+                  className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2"
                 />
-              </li>
+              </div>
             ))}
           </ul>
         </form>
