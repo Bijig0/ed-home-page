@@ -75,9 +75,9 @@ const Step1 = () => {
           <h2 className="mb-4 bg-rose-200 text-red-600 px-4 py-2 rounded-lg md:w-84 md:mx-auto text-xs font-semibold tracking-widest uppercase title-font">
             DID YOU KNOW?
           </h2>
-          <p className="text-grey text-md font-primary font-light">
+          <p className="text-black text-base font-primary font-light">
             Our experienced tutors{" "}
-            <span className="inline text-grey text-md font-primary font-semibold">
+            <span className="inline text-black text-base font-primary font-semibold">
               individualize their learning plans
             </span>{" "}
             to match each student's personal needs and goals!

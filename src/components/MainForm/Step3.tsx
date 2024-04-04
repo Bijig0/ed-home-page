@@ -81,10 +81,10 @@ const Step1 = () => {
           </button>
         </div>
       </div>
-      <div className="flex-[2_2_0%] relative self-end h-60 bg-light rounded-lg flex justify-center flex-col px-12 gap-4">
+      <div className="flex-[2_2_0%] relative self-end h-72 bg-light rounded-lg flex justify-center flex-col px-12 gap-4">
         <div className="flex flex-col justify-end items-start gap-5">
           <FaQuoteLeft className="icon" size={16} />
-          <p className="text-grey text-sm font-primary font-light mt-2">
+          <p className="text-black text-base font-primary font-light mt-2">
             Varsity Tutors really helped me understand the concepts during my
             Calculus 2 class. My tutor has such amazing patience and is open to
             many questions! Lastly, was always on time and very prompt. Highly
@@ -95,7 +95,7 @@ const Step1 = () => {
             color="white"
             size={80}
           />
-          <p className="text-grey text-sm font-primary font-light">
+          <p className="text-black text-base font-primary font-light">
             -- John Woo
           </p>
         </div>
