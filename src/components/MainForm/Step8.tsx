@@ -2,11 +2,12 @@ import { Controller, useForm } from "react-hook-form";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import PhoneInput from "react-phone-number-input/input";
 
+import { useState } from "react";
 import "react-phone-number-input/style.css";
 import { useWizard } from "react-use-wizard";
+import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
 import useFormStore from "./useFormStore";
-import BackButton from "./BackButton";
 
 type FormValues = {
   phoneNumber: string;
@@ -28,6 +29,8 @@ const Step1 = () => {
 
   // console.log(headerText[studentDetails.whoNeedsTutoring]);
 
+  const [stepOneCompleted, setStepOneCompleted] = useState(false);
+
   const {
     register,
     watch,
@@ -38,7 +41,19 @@ const Step1 = () => {
   const onSubmit = (data: FormValues) => {
     console.log(data);
     updateStudentDetails({ studentDetails: { phoneNumber: data.phoneNumber } });
-    nextStep();
+    setStepOneCompleted(true);
+  };
+
+  const retrieveLink = () => {
+    const meetingLink = new URL(
+      "https://calendly.com/bradysuryasie/edututor/2024-04-05T09:00:00+11:00"
+    );
+
+    meetingLink.searchParams.set("name", "Brady");
+    meetingLink.searchParams.set("month", "2024-04");
+    meetingLink.searchParams.set("date", "2024-04-05");
+
+    window.open(meetingLink.toString(), "_blank");
   };
 
   return (
@@ -96,6 +111,15 @@ const Step1 = () => {
           >
             Continue
           </button>
+          {stepOneCompleted && (
+            <a
+              className="button button-primary bg-rose-500 px-16 py-3 text-xl"
+              href="https://www.google.com"
+              onClick={nextStep}
+            >
+              Book a meeting
+            </a>
+          )}
           <div className="my-1"></div>
         </form>
         <div className="flex items-center justify-start">

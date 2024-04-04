@@ -1,9 +1,9 @@
 import { IoDocumentTextSharp } from "react-icons/io5";
 import { useWizard } from "react-use-wizard";
+import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
 import { gradeLevels, type GradeLevel, type WhoNeedsTutoring } from "./types";
 import useFormStore from "./useFormStore";
-import BackButton from "./BackButton";
 
 const headerText = {
   Child: "What grade level is your child in?",
@@ -21,9 +21,8 @@ const text = {
 } satisfies Record<GradeLevel, string>;
 
 const Step1 = () => {
-  const { updateStudentDetails, studentDetails } = useFormStore(
-    (state) => state
-  );
+  const { updateStudentDetails, studentDetails, whoNeedsTutoring } =
+    useFormStore();
 
   const { handleStep, previousStep, nextStep } = useWizard();
 
@@ -34,13 +33,7 @@ const Step1 = () => {
     nextStep();
   };
 
-  const handleBack = () => previousStep();
-
-  console.log(studentDetails);
-
-  console.log(studentDetails.whoNeedsTutoring);
-
-  console.log(headerText[studentDetails.whoNeedsTutoring]);
+  console.log(whoNeedsTutoring);
 
   return (
     <div className="flex ">

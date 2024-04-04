@@ -27,6 +27,10 @@ const Step1 = () => {
     (state) => state
   );
 
+  const whoNeedsTutoring = useFormStore(
+    (state) => state.studentDetails.whoNeedsTutoring
+  );
+
   const { handleStep, previousStep, nextStep } = useWizard();
 
   const handleSubmit = (value: ReasonForTutoring) => {
@@ -36,13 +40,11 @@ const Step1 = () => {
     nextStep();
   };
 
+  console.log(whoNeedsTutoring);
+
   const handleBack = () => previousStep();
 
   console.log(studentDetails);
-
-  console.log(studentDetails.whoNeedsTutoring);
-
-  console.log(headerText[studentDetails.whoNeedsTutoring]);
 
   return (
     <div className="flex ">
