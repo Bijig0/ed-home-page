@@ -1,5 +1,6 @@
 import { FaCaretDown, FaQuoteLeft } from "react-icons/fa";
 import { useWizard } from "react-use-wizard";
+import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
 import {
   reasonsForTutoring,
@@ -73,17 +74,12 @@ const Step1 = () => {
         </form>
         <div className="flex items-center justify-start">
           <BackIcon />
-          <button
-            className="hover:underline text-lg font-primary"
-            onClick={handleBack}
-          >
-            Back
-          </button>
+          <BackButton />
         </div>
       </div>
       <div className="flex-[2_2_0%] relative self-end h-72 bg-light rounded-lg flex justify-center flex-col px-12 gap-4">
         <div className="flex flex-col justify-end items-start gap-5">
-          <FaQuoteLeft className="icon" size={16} />
+          <FaQuoteLeft className="icon" size={16} color="#f43f5e" />
           <p className="text-black text-base font-primary font-light mt-2">
             Varsity Tutors really helped me understand the concepts during my
             Calculus 2 class. My tutor has such amazing patience and is open to

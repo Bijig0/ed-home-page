@@ -2,6 +2,7 @@ import { useWizard } from "react-use-wizard";
 import BackIcon from "./BackIcon";
 import { howSoon, type HowSoon } from "./types";
 import useFormStore from "./useFormStore";
+import BackButton from "./BackButton";
 
 type FormValues = {
   howSoon: HowSoon;
@@ -62,12 +63,7 @@ const Step1 = () => {
         </form>
         <div className="flex items-center justify-start">
           <BackIcon />
-          <button
-            className="hover:underline text-lg font-primary"
-            onClick={handleBack}
-          >
-            Back
-          </button>
+          <BackButton />
         </div>
       </div>
       <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">

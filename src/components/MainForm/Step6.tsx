@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import BackIcon from "./BackIcon";
 import useLessonTypeStateMachine from "./useLessonTypeStateMachine";
+import BackButton from "./BackButton";
 
 type FormValues = {
   zipCode: string;
@@ -113,12 +114,7 @@ const Step1 = () => {
         )}
         <div className="flex items-center justify-start">
           <BackIcon />
-          <button
-            className="hover:underline text-lg font-primary"
-            onClick={handleBack}
-          >
-            Back
-          </button>
+          <BackButton />
         </div>
       </div>
       <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
