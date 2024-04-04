@@ -39,7 +39,7 @@ const Step1 = () => {
           {headerText[studentDetails.whoNeedsTutoring]}
         </h1> */}
         <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
-          What grade level is your child in?
+          {headerText[studentDetails.get().whoNeedsTutoring]}
         </h1>
         <div className="my-2"></div>
         <form className="flex flex-col items-center justify-center">
