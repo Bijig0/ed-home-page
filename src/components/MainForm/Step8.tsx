@@ -40,9 +40,8 @@ const Step1 = () => {
   };
 
   const createOrRetrieveMeetingLink = (): URL => {
-    const meetingLink = new URL(
-      "https://calendly.com/bradysuryasie/edututor/2024-04-05T09:00:00+11:00"
-    );
+    const baseLink = "https://calendly.com/bradysuryasie/edututor/";
+    const meetingLink = new URL(baseLink);
 
     meetingLink.searchParams.set("name", studentDetails.get().fullName);
     // This is just how you do it with calendly, location is associated with the phone number
