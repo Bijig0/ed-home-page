@@ -38,18 +38,27 @@ const Step1 = () => {
     setStepOneCompleted(true);
   };
 
-  const retrieveLink = () => {
+  const createOrRetrieveMeetingLink = (): URL => {
     const meetingLink = new URL(
       "https://calendly.com/bradysuryasie/edututor/2024-04-05T09:00:00+11:00"
     );
 
     console.log({ studentDetails });
 
-    meetingLink.searchParams.set("name", "Brady");
-    meetingLink.searchParams.set("month", "2024-04");
-    meetingLink.searchParams.set("date", "2024-04-05");
+    meetingLink.searchParams.set("name", studentDetails.get().fullName);
+    meetingLink.searchParams.set(
+      "phoneNumber",
+      studentDetails.get().phoneNumber
+    );
+    meetingLink.searchParams.set("email", studentDetails.get().email);
 
+    return meetingLink;
+  };
+
+  const handleBookMeeting = () => {
+    const meetingLink = createOrRetrieveMeetingLink();
     window.open(meetingLink.toString(), "_blank");
+    nextStep();
   };
 
   return (
@@ -102,16 +111,17 @@ const Step1 = () => {
             </div>
           </div>
           <button
-            className="button button-primary px-16 py-3 text-xl"
+            className="button data-[disabled]:opacity-45 data-[disabled]:pointer-events-none button-primary px-16 py-3 text-xl"
             type="submit"
+            disabled={!stepOneCompleted}
+            data-disabled={stepOneCompleted}
           >
             Continue
           </button>
           {stepOneCompleted && (
             <a
               className="button button-box-shadow text-light bg-rose-500 hover:bg-rose-700 px-16 py-3 text-xl"
-              href="https://www.google.com"
-              onClick={nextStep}
+              onClick={handleBookMeeting}
             >
               Book a meeting
             </a>
