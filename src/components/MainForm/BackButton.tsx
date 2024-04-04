@@ -1,12 +1,17 @@
 import { useWizard } from "react-use-wizard";
 
-const BackButton = () => {
+type Props = {
+  onClick?: (...args: any[]) => any;
+};
+
+const BackButton = (props: Props) => {
+  const { onClick } = props;
   const { previousStep } = useWizard();
   const handleBack = () => previousStep();
   return (
     <button
       className="hover:underline text-lg text-light font-primary"
-      onClick={handleBack}
+      onClick={onClick || handleBack}
     >
       Back
     </button>

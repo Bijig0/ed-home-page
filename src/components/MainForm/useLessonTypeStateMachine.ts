@@ -58,6 +58,11 @@ const useLessonTypeStateMachine = () => {
           },
         },
         effect({ send }) {
+          updateStudentDetails({
+            studentDetails: {
+              lessonType: { lessonType: "in-person", zipCode: "" },
+            },
+          });
           send({ type: "CHOOSE_IN_PERSON_LOCATION" });
         },
       },

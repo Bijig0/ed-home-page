@@ -1,6 +1,9 @@
 import { useForm } from "react-hook-form";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
+import CheckIcon from "./CheckIcon";
+import SelectButton from "./SelectButton";
+import { studentDetails } from "./useFormStore";
 import useLessonTypeStateMachine from "./useLessonTypeStateMachine";
 
 type FormValues = {
@@ -54,23 +57,25 @@ const Step1 = () => {
             <div className="my-2"></div>
             <form className="flex flex-col items-center justify-center">
               <ul className="p-0">
-                {lessonTypes.map((value) => (
-                  <li
-                    onClick={() => handleSelectLessonType(value)}
-                    key={value}
-                    className="border border-black cursor-pointer px-5 flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-button min-h-14"
-                  >
-                    <label className="text-lg font-primary cursor-pointer">
-                      {capitalize(value)}
-                    </label>
-                    <input
-                      className="hover:text-white hidden"
-                      value={value}
-                      name="question3"
-                      type="radio"
-                    />
-                  </li>
-                ))}
+                {lessonTypes.map((value) => {
+                  console.log({ value });
+                  return (
+                    <div className="relative" key={value}>
+                      <SelectButton
+                        mappingOver="whoNeedsTutoring"
+                        value={value}
+                        text={capitalize(value)}
+                        handleSubmit={handleSelectLessonType}
+                      />
+                      <CheckIcon
+                        className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2"
+                        enabled={
+                          value === studentDetails.get().lessonType?.lessonType
+                        }
+                      />
+                    </div>
+                  );
+                })}
               </ul>
             </form>
           </>
@@ -114,7 +119,9 @@ const Step1 = () => {
         )}
         <div className="flex items-center justify-start">
           <BackIcon />
-          <BackButton />
+          <BackButton
+            onClick={handleBack}
+          />
         </div>
       </div>
       <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
