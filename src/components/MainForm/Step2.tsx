@@ -41,13 +41,13 @@ const BreadCrumb = () => {
     <ol className="flex items-center whitespace-nowrap p-0">
       <li className="inline-flex items-center">
         <a
-          className="flex items-center text-base text-black font-semithin hover:text-blue-600 focus:outline-none focus:text-blue-600 dark:focus:text-blue-500"
+          className="flex items-center text-base text-light font-semithin hover:text-blue-600 focus:outline-none focus:text-blue-600 dark:focus:text-blue-500"
           href="#"
         >
           Home
         </a>
         <svg
-          className="flex-shrink-0 mx-2 overflow-visible size-4 text-gray-400 dark:text-neutral-600"
+          className="flex-shrink-0 mx-2 overflow-visible size-4 text-light dark:text-neutral-600"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -62,7 +62,7 @@ const BreadCrumb = () => {
         </svg>
       </li>
       <li
-        className="inline-flex items-center text-base font-bold font-primary text-gray-800 truncate dark:text-gray-200"
+        className="inline-flex items-center text-base font-bold font-primary text-light truncate dark:text-gray-200"
         aria-current="page"
       >
         Schedule
@@ -94,10 +94,11 @@ const Step1 = () => {
           <ProgressBar />
           <div className="my-2"></div>
           <div className="flex justify-center">
-            <p className="font-primary text-sm text-black">2 of 8</p>
+            <p className="font-primary text-sm text-light">2 of 8</p>
           </div>
+          <div className="my-4"></div>
         </div>
-        <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
+        <h1 className="text-white mb-0 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
           {headerText[studentDetails.get().whoNeedsTutoring]}
         </h1>
         <div className="my-2"></div>
