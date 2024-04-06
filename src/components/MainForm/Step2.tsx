@@ -1,13 +1,14 @@
 import { IoDocumentTextSharp } from "react-icons/io5";
 import { useWizard } from "react-use-wizard";
+import { isStepOne } from "../../globalStore";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
+import BreadCrumb from "./BreadCrumb";
 import CheckIcon from "./CheckIcon";
 import ProgressBar from "./ProgressBar";
 import SelectButton from "./SelectButton";
 import { gradeLevels, type GradeLevel, type WhoNeedsTutoring } from "./types";
 import { studentDetails, updateStudentDetails } from "./useFormStore";
-import BreadCrumb from "./BreadCrumb";
 
 const headerText = {
   Child: "What grade level is your child in?",
@@ -35,6 +36,11 @@ const Step1 = () => {
   };
 
   console.log(studentDetails.get());
+
+  const handleBack = () => {
+    isStepOne.set(true);
+    previousStep();
+  };
 
   return (
     <div className="flex ">
@@ -74,7 +80,7 @@ const Step1 = () => {
         </form>
         <div className="flex items-center justify-start">
           <BackIcon />
-          <BackButton />
+          <BackButton onClick={handleBack} />
         </div>
       </div>
       <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">

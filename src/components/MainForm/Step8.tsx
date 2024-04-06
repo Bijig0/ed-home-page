@@ -7,11 +7,11 @@ import "react-phone-number-input/style.css";
 import { useWizard } from "react-use-wizard";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
+import BreadCrumb from "./BreadCrumb";
 import CheckIcon from "./CheckIcon";
 import ErrorText from "./ErrorText";
-import { studentDetails, updateStudentDetails } from "./useFormStore";
-import BreadCrumb from "./BreadCrumb";
 import ProgressBar from "./ProgressBar";
+import { studentDetails, updateStudentDetails } from "./useFormStore";
 
 type FormValues = {
   phoneNumber: string;
@@ -68,12 +68,13 @@ const Step1 = () => {
   return (
     <div className="flex">
       <div className="flex flex-col items-start flex-[3_3_0%]">
-        <div>
-          <BreadCrumb />
-          <ProgressBar step={8} />
-
-          <div className="my-4"></div>
+        <div className="flex items-center justify-start">
+          <div>
+            <BreadCrumb />
+            <ProgressBar step={8} />
+          </div>
         </div>
+        <div className="my-4"></div>
         {/* <h1 className="text-4xl text-white font-primary">
           {headerText[studentDetails.whoNeedsTutoring]}
         </h1> */}
