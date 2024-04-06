@@ -6,6 +6,8 @@ import ErrorText from "./ErrorText";
 import SelectButton from "./SelectButton";
 import { studentDetails } from "./useFormStore";
 import useLessonTypeStateMachine from "./useLessonTypeStateMachine";
+import BreadCrumb from "./BreadCrumb";
+import ProgressBar from "./ProgressBar";
 
 type FormValues = {
   zipCode: string;
@@ -51,6 +53,12 @@ const Step1 = () => {
   return (
     <div className="flex ">
       <div className="flex flex-col items-start flex-[3_3_0%]">
+        <div>
+          <BreadCrumb />
+          <ProgressBar step={6} />
+
+          <div className="my-4"></div>
+        </div>
         {/* <h1 className="text-4xl text-white font-primary">
           {headerText[studentDetails.whoNeedsTutoring]}
         </h1> */}

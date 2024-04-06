@@ -1,7 +1,9 @@
 import { useWizard } from "react-use-wizard";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
+import BreadCrumb from "./BreadCrumb";
 import CheckIcon from "./CheckIcon";
+import ProgressBar from "./ProgressBar";
 import SelectButton from "./SelectButton";
 import { howSoon, type HowSoon } from "./types";
 import { studentDetails, updateStudentDetails } from "./useFormStore";
@@ -36,6 +38,11 @@ const Step1 = () => {
         {/* <h1 className="text-4xl text-white font-primary">
           {headerText[studentDetails.whoNeedsTutoring]}
         </h1> */}
+        <div>
+          <BreadCrumb />
+          <ProgressBar step={4} />
+        </div>
+        <div className="my-4"></div>
         <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
           {headerText[studentDetails.get().whoNeedsTutoring]}
         </h1>

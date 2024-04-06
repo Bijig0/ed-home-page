@@ -3,6 +3,7 @@ import { useWizard } from "react-use-wizard";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
 import CheckIcon from "./CheckIcon";
+import ProgressBar from "./ProgressBar";
 import SelectButton from "./SelectButton";
 import {
   reasonsForTutoring,
@@ -11,6 +12,7 @@ import {
   type WhoNeedsTutoring,
 } from "./types";
 import { studentDetails, updateStudentDetails } from "./useFormStore";
+import BreadCrumb from "./BreadCrumb";
 
 const headerText = {
   Child: "What grade level is your child in?",
@@ -44,6 +46,12 @@ const Step1 = () => {
   return (
     <div className="flex ">
       <div className="flex flex-col items-start flex-[3_3_0%]">
+        <div>
+          <BreadCrumb />
+          <ProgressBar step={3} />
+
+          <div className="my-4"></div>
+        </div>
         <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
           {headerText[studentDetails.get().whoNeedsTutoring]}
         </h1>
@@ -51,7 +59,7 @@ const Step1 = () => {
         <form className="flex flex-col items-center justify-center">
           <ul className="p-0">
             {reasonsForTutoring.map((value) => (
-              <div className="relative">
+              <div className="relative" key={value}>
                 <SelectButton
                   selected={(value) =>
                     value === studentDetails.get().reasonForTutoring
