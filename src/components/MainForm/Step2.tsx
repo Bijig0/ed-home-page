@@ -2,7 +2,9 @@ import { IoDocumentTextSharp } from "react-icons/io5";
 import { useWizard } from "react-use-wizard";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
+import BreadCrumb from "./Breadcrumb";
 import CheckIcon from "./CheckIcon";
+import ProgressBar from "./ProgressBar";
 import SelectButton from "./SelectButton";
 import { gradeLevels, type GradeLevel, type WhoNeedsTutoring } from "./types";
 import { studentDetails, updateStudentDetails } from "./useFormStore";
@@ -21,55 +23,6 @@ const text = {
   "Adult Learner": "Adult Learner",
   Other: "Other",
 } satisfies Record<GradeLevel, string>;
-
-const ProgressBar = () => {
-  return (
-    <div
-      className="flex w-[450px] h-3 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700"
-      role="progressbar"
-    >
-      <div
-        className="flex flex-col justify-center rounded-full overflow-hidden bg-blue-600 text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-blue-500"
-        style={{ width: "25%" }}
-      ></div>
-    </div>
-  );
-};
-
-const BreadCrumb = () => {
-  return (
-    <ol className="flex items-center whitespace-nowrap p-0">
-      <li className="inline-flex items-center">
-        <a
-          className="flex items-center text-base text-light font-semithin hover:text-blue-600 focus:outline-none focus:text-blue-600 dark:focus:text-blue-500"
-          href="#"
-        >
-          Home
-        </a>
-        <svg
-          className="flex-shrink-0 mx-2 overflow-visible size-4 text-light dark:text-neutral-600"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="m9 18 6-6-6-6"></path>
-        </svg>
-      </li>
-      <li
-        className="inline-flex items-center text-base font-bold font-primary text-light truncate dark:text-gray-200"
-        aria-current="page"
-      >
-        Schedule
-      </li>
-    </ol>
-  );
-};
 
 const Step1 = () => {
   const { handleStep, previousStep, nextStep } = useWizard();
@@ -91,11 +44,8 @@ const Step1 = () => {
         </h1> */}
         <div>
           <BreadCrumb />
-          <ProgressBar />
-          <div className="my-2"></div>
-          <div className="flex justify-center">
-            <p className="font-primary text-sm text-light">2 of 8</p>
-          </div>
+          <ProgressBar step={2} />
+
           <div className="my-4"></div>
         </div>
         <h1 className="text-white mb-0 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
