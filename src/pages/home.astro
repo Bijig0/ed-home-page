@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import MainForm from '../components/MainForm/MainForm.tsx';
+import Shapes from '../components/MainForm/Shapes';
+
 ---
 <Layout>
     <div slot="body-content">
@@ -674,6 +676,10 @@ import MainForm from '../components/MainForm/MainForm.tsx';
         
             </div>
         </div>
+
+        <Shapes client:visible/>
+  
+
     </section>
     <!--/-->
      <!--Features-->

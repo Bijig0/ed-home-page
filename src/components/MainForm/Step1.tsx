@@ -1,4 +1,5 @@
 import { useWizard } from "react-use-wizard";
+import { isStepOne } from "../../globalStore";
 import CheckIcon from "./CheckIcon";
 import SelectButton from "./SelectButton";
 import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
@@ -24,6 +25,7 @@ const Step1 = () => {
     });
     console.log(studentDetails.get());
     nextStep();
+    isStepOne.set(false);
   };
 
   return (
