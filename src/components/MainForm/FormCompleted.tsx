@@ -1,6 +1,7 @@
 import emailjs from "@emailjs/browser";
 import { useMutation } from "@tanstack/react-query";
 import { useWizard } from "react-use-wizard";
+import CheckIcon from "./CheckIcon";
 import { studentDetails } from "./useFormStore";
 
 type ErrorTextProps = {
@@ -51,22 +52,26 @@ const FormCompleted = () => {
   };
 
   return (
-    <>
-      <h1 className="text-white mb-0 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
-        You're all set!
-      </h1>
-      <p className="text-light text-xl mb-7">
-        We'll be in touch with you soon!
-      </p>
-      <button
-        onClick={handleBack}
-        className="button button-primary px-16 py-3 text-xl"
-      >
-        Back to home
-      </button>
-      <SuccessToast />
-      <p>Success good job, all completed</p>
-    </>
+    <div className="flex justify-center text-center items-center">
+      <div className="flex flex-col">
+        <div className="flex justify-center">
+          <CheckIcon enabled={true} size={48} />
+        </div>
+        <div className="my-2"></div>
+
+        <h1 className="text-white mb-0 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
+          You're all set!
+        </h1>
+        <div className="my-3"></div>
+        <p className="text-light text-xl">We'll be in touch with you soon!</p>
+        <button
+          onClick={handleBack}
+          className="button button-primary px-16 py-3 text-xl"
+        >
+          Back to home
+        </button>
+      </div>
+    </div>
   );
 
   if (isPending) {
