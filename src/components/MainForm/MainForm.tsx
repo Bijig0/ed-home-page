@@ -17,6 +17,7 @@ const MainForm = () => {
     <div className="main-form">
       <QueryClientProvider client={queryClient}>
         <Wizard>
+          <FormCompleted />
           <Step1 />
           <Step2 />
           <Step3 />
@@ -25,7 +26,6 @@ const MainForm = () => {
           <Step6 />
           <Step7 />
           <Step8 />
-          <FormCompleted />
         </Wizard>
       </QueryClientProvider>
     </div>

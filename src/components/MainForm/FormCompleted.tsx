@@ -1,6 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { useMutation } from "@tanstack/react-query";
-import { useEffect } from "react";
+import { useWizard } from "react-use-wizard";
 import { studentDetails } from "./useFormStore";
 
 type ErrorTextProps = {
@@ -16,6 +16,8 @@ const ErrorText = (props: ErrorTextProps) => {
 };
 
 const FormCompleted = () => {
+  const { goToStep } = useWizard();
+
   const sendEmail = async () => {
     const templateParams = {
       to_name: "Brady",
@@ -40,9 +42,32 @@ const FormCompleted = () => {
     mutationKey: ["sendEmail"],
   });
 
-  useEffect(() => {
-    sendEmailMutate();
-  }, []);
+  // useEffect(() => {
+  //   sendEmailMutate();
+  // }, []);
+
+  const handleBack = () => {
+    goToStep(0);
+  };
+
+  return (
+    <>
+      <h1 className="text-white mb-0 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
+        You're all set!
+      </h1>
+      <p className="text-light text-xl mb-7">
+        We'll be in touch with you soon!
+      </p>
+      <button
+        onClick={handleBack}
+        className="button button-primary px-16 py-3 text-xl"
+      >
+        Back to home
+      </button>
+      <SuccessToast />
+      <p>Success good job, all completed</p>
+    </>
+  );
 
   if (isPending) {
     return null;
