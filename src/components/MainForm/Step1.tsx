@@ -4,6 +4,7 @@ import CheckIcon from "./CheckIcon";
 import SelectButton from "./SelectButton";
 import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
 import { studentDetails, updateStudentDetails } from "./useFormStore";
+import { useEffect } from "react";
 
 type FormValues = {
   whoNeedsTutoring: WhoNeedsTutoring;
@@ -17,6 +18,10 @@ const text = {
 
 const Step1 = () => {
   const { handleStep, previousStep, nextStep } = useWizard();
+
+  useEffect(() => {
+    isStepOne.set(true);
+  }, []);
 
   const handleSubmit = (value: WhoNeedsTutoring) => {
     console.log(value);

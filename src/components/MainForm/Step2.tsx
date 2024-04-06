@@ -1,6 +1,5 @@
 import { IoDocumentTextSharp } from "react-icons/io5";
 import { useWizard } from "react-use-wizard";
-import { isStepOne } from "../../globalStore";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
 import BreadCrumb from "./BreadCrumb";
@@ -36,11 +35,6 @@ const Step1 = () => {
   };
 
   console.log(studentDetails.get());
-
-  const handleBack = () => {
-    isStepOne.set(true);
-    previousStep();
-  };
 
   return (
     <div className="flex ">
@@ -80,7 +74,7 @@ const Step1 = () => {
         </form>
         <div className="flex items-center justify-start">
           <BackIcon />
-          <BackButton onClick={handleBack} />
+          <BackButton />
         </div>
       </div>
       <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">

@@ -17,3 +17,4 @@ export const updateGlobals = (toUpdate: Partial<Globals>) => {
 
 import { atom } from "nanostores";
 export const isStepOne = atom(true);
+export const isLastStep = atom(false);

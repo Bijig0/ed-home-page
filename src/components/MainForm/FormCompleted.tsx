@@ -1,6 +1,8 @@
 import emailjs from "@emailjs/browser";
 import { useMutation } from "@tanstack/react-query";
+import { useEffect } from "react";
 import { useWizard } from "react-use-wizard";
+import { isLastStep } from "../../globalStore";
 import CheckIcon from "./CheckIcon";
 import { studentDetails } from "./useFormStore";
 
@@ -43,11 +45,16 @@ const FormCompleted = () => {
     mutationKey: ["sendEmail"],
   });
 
-  // useEffect(() => {
-  //   sendEmailMutate();
-  // }, []);
+  useEffect(() => {
+    isLastStep.set(true);
+  }, []);
+
+  useEffect(() => {
+    sendEmailMutate();
+  }, []);
 
   const handleBack = () => {
+    isLastStep.set(false);
     goToStep(0);
   };
 

@@ -1,10 +1,18 @@
 import { useStore } from "@nanostores/react";
-import { isStepOne } from "../../globalStore";
+import { isLastStep, isStepOne } from "../../globalStore";
 
 const Shapes = () => {
   const $isStepOne = useStore(isStepOne);
+  const $isLastStep = useStore(isLastStep);
 
-  if (!$isStepOne) {
+  console.log({ $isStepOne });
+  console.log({ $isLastStep });
+
+  const shouldShow = $isStepOne || $isLastStep;
+
+  console.log({ shouldShow });
+
+  if (!shouldShow) {
     return null;
   }
 

@@ -5,6 +5,7 @@ import PhoneInput from "react-phone-number-input/input";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
 import { useWizard } from "react-use-wizard";
+import { isLastStep } from "../../globalStore";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
 import BreadCrumb from "./BreadCrumb";
@@ -60,6 +61,7 @@ const Step1 = () => {
   const handleBookMeeting = () => {
     const meetingLink = createOrRetrieveMeetingLink();
     window.open(meetingLink.toString(), "_blank");
+    isLastStep.set(true);
     nextStep();
   };
 
@@ -118,7 +120,9 @@ const Step1 = () => {
                 type="checkbox"
                 {...register("agreeToTermsOfUse", { required: true })}
               />
-              <p className="m-0 text-gray-700">I agree to the terms of use</p>
+              <label htmlFor="agreeToTermsOfUse" className="m-0 text-gray-700">
+                I agree to the terms of use
+              </label>
             </div>
           </div>
           <div className="flex items-center justify-start gap-4">
