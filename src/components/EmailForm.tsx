@@ -30,16 +30,29 @@ const ErrorText = (props: ErrorTextProps) => {
 
 const SuccessToast = () => {
   return (
-    <div className="alert alert-success" role="alert">
-      We have received your message and will be in touch soon!
+    <div
+      className="bg-teal-100 border border-teal-400 text-teal-700 px-4 py-3 rounded relative"
+      role="alert"
+    >
+      <strong className="font-bold">Success!</strong>
+      <span className="block sm:inline">
+        We have received your message and a representative will be in touch
+        soon!
+      </span>
     </div>
   );
 };
 
 const ErrorToast = () => {
   return (
-    <div className="alert alert-danger" role="alert">
-      Something went wrong, please try again
+    <div
+      className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+      role="alert"
+    >
+      <strong className="font-bold">Error!</strong>
+      <span className="block sm:inline">
+        Something went wrong, please try again
+      </span>
     </div>
   );
 };
@@ -112,9 +125,9 @@ const EmailForm = () => {
                         <div className="form-item">
                           <label className="form-label">Full Name</label>
                           <input
+                            required
                             {...register("name", { required: true })}
                             type="text"
-                            name="text"
                           />
                           {errors.name && (
                             <ErrorText>{errors.name?.message}</ErrorText>
@@ -125,9 +138,9 @@ const EmailForm = () => {
                         <div className="form-item">
                           <label className="form-label">E-Mail</label>
                           <input
+                            required
                             {...register("email", { required: true })}
                             type="text"
-                            name="text"
                           />
                           {errors.email && (
                             <ErrorText>{errors.email?.message}</ErrorText>
@@ -138,9 +151,8 @@ const EmailForm = () => {
                         <div className="form-item">
                           <label className="form-label">Your Message</label>
                           <textarea
+                            required
                             {...register("message", { required: true })}
-                            name=""
-                            id=""
                             cols={30}
                             rows={10}
                           ></textarea>
@@ -162,6 +174,7 @@ const EmailForm = () => {
                         </button>
                       </div>
                     </div>
+                    <div className="my-4"></div>
                     {error ? <ErrorToast /> : null}
                     {isSuccess ? <SuccessToast /> : null}
                   </form>
