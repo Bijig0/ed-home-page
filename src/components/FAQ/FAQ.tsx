@@ -7,24 +7,6 @@ type SingleAccordionProps = {
   isExpanded: boolean;
 };
 
-const createUUID = (title: string): string => title.replaceAll(" ", "");
-
-const AccordionHeader = ({ title }: { title: string }) => {
-  return (
-    <div
-      style={{ width: "100%", willChange: "auto" }}
-      className={`accordion-header`}
-    >
-      <button
-        style={{ width: "100%" }}
-        className={`accordion-button collapsed`}
-      >
-        {title}
-      </button>
-    </div>
-  );
-};
-
 const SingleAccordion = (props: SingleAccordionProps) => {
   const { title, text } = props;
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
