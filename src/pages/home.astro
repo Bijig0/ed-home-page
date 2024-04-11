@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import MainForm from '../components/MainForm/MainForm.tsx';
 import Shapes from '../components/MainForm/Shapes';
 import subjects from '../lib/subjects';
-
+import whyUs from '../lib/whyUs'
 ---
 <Layout>
     <div slot="body-content">
@@ -686,88 +686,29 @@ import subjects from '../lib/subjects';
             <div class="container">
                 <header class="el-heading center">
                     <h2>Tutoring For Parents Who Care</h2>
-                    <p>We provide the best service that comes with the best results.</p>
+                    <p>Here's why parents love working with us (and you will too)</p>
                     <div class="divider divider-line"></div>
                 </header>
                 <div class="row mb--45">
                     <!--Item-->
+                    {
+                        whyUs.map(({title, description, image}) => {
+                            return (
+                                <div class="col-12 col-sm-6 col-md-4">
+                                    <div class="item">
+                                        <div class="icon">
+                                            <img src={image} alt="alt" />
+                                        </div>
+                                        <div class="details">
+                                            <h3>{title}</h3>
+                                            <p>{description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
                     <div class="col-12 col-sm-6 col-md-4">
-                        <div class="item">
-                            <div class="icon">
-                                <img src="assets/images/icons/feature-1.svg" alt="features">
-                            </div>
-                            <div class="details">
-                                <h3>Earn money</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!---->
-                    <!--Item-->
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <div class="item">
-                            <div class="icon">
-                                <img src="assets/images/icons/feature-2.svg" alt="features">
-                            </div>
-                            <div class="details">
-                                <h3>Teach anytime</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!---->
-                    <!--Item-->
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <div class="item">
-                            <div class="icon">
-                                <img src="assets/images/icons/feature-3.svg" alt="features">
-                            </div>
-                            <div class="details">
-                                <h3>Work anywhere</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!---->
-                    <!--Item-->
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <div class="item">
-                            <div class="icon">
-                                <img src="assets/images/icons/feature-4.svg" alt="features">
-                            </div>
-                            <div class="details">
-                                <h3>Gain followers</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!---->
-                    <!--Item-->
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <div class="item">
-                            <div class="icon">
-                                <img src="assets/images/icons/feature-5.svg" alt="features">
-                            </div>
-                            <div class="details">
-                                <h3>International community</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!---->
-                    <!--Item-->
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <div class="item">
-                            <div class="icon">
-                                <img src="assets/images/icons/feature-6.svg" alt="features">
-                            </div>
-                            <div class="details">
-                                <h3>Flexibility</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!---->
                 </div>
             </div>
         </div>
