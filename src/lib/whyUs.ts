@@ -30,7 +30,7 @@ const whyUs = [
     image: "https://img.icons8.com/bubbles/50/receive-cash.png",
   },
   {
-    title: "Direct Communication",
+    title: "Oh-So Easy Booking",
     description:
       "We believe in open communication and transparency. We encourage our students to ask questions and seek clarification whenever needed. We also provide a dedicated support team to help you with any issues you may encounter.",
     image: "https://img.icons8.com/bubbles/50/chat.png",
