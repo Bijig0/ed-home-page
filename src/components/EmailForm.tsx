@@ -1,18 +1,16 @@
 import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  QueryClient,
-  QueryClientProvider,
-  useMutation,
-} from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 
 const schema = z.object({
   name: z.string(),
   email: z.string().email(),
-  message: z.string().nullable(),
+  message: z.string(),
 });
+
+type Inputs = z.infer<typeof schema>;
 
 type ErrorTextProps = {
   children: React.ReactNode;
@@ -26,98 +24,10 @@ const ErrorText = (props: ErrorTextProps) => {
   );
 };
 
-type Inputs = z.infer<typeof schema>;
-
-const EmailForm = () => {
-
-
-  return (
-    <>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="seller_offer_form mt-40"
-      >
-        <div className="row g-3">
-          <div className="col-6">
-            <div className="input-field">
-              <label>First Name</label>
-              <input
-                required
-                className="color-secondary"
-                {...register("firstName", { required: true })}
-                type="text"
-              />
-              {errors.firstName && (
-                <ErrorText>First name is required</ErrorText>
-              )}
-            </div>
-          </div>
-          <div className="col-6">
-            <div className="input-field">
-              <label>Last Name</label>
-              <input
-                required
-                className="color-secondary"
-                {...register("lastName", { required: true })}
-                type="text"
-              />
-              {errors.lastName && <ErrorText>Last name is required</ErrorText>}
-            </div>
-          </div>
-          <div className="col-6">
-            <div className="input-field">
-              <label>Email</label>
-              <input
-                className="color-secondary"
-                {...register("email", { required: true })}
-                type="email"
-              />
-              {errors.email && <ErrorText>Email is required</ErrorText>}
-            </div>
-          </div>
-          <div className="col-6">
-            <div className="input-field">
-              <label>Phone</label>
-              <input
-                className="color-secondary"
-                {...register("phoneNumber", { required: true })}
-                type="tel"
-              />
-              {errors.phoneNumber && (
-                <ErrorText>Phone Number is required</ErrorText>
-              )}
-            </div>
-          </div>
-          <div className="col-12">
-            <div className="input-field">
-              <label>Message</label>
-              <textarea
-                className="color-secondary"
-                {...register("message")}
-              ></textarea>
-            </div>
-          </div>
-        </div>
-        <button type="submit" className="btn btn-primary btn-md mt-30">
-          {isPending ? (
-            <div className="spinner-border text-light" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
-          ) : (
-            "Request a quote"
-          )}
-        </button>
-      </form>
-      {isSuccess ? <SuccessToast /> : null}
-      {error ? <ErrorToast /> : null}
-    </>
-  );
-};
-
 const SuccessToast = () => {
   return (
     <div className="alert alert-success" role="alert">
-      We have received your quote request and will be in touch soon!
+      We have received your message and will be in touch soon!
     </div>
   );
 };
@@ -130,14 +40,160 @@ const ErrorToast = () => {
   );
 };
 
-const queryClient = new QueryClient();
-
-const Main = () => {
+const Spinner = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <EmailForm />
-    </QueryClientProvider>
+    <div className="spinner-border text-light" role="status">
+      <span className="sr-only">Loading...</span>
+    </div>
   );
 };
 
-export default Main;
+const EmailForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>({
+    resolver: zodResolver(schema),
+  });
+
+  const sendEmail = async (inputs: Inputs) => {
+    const templateParams = {
+      to_name: "Brady",
+      from_name: "Tutoring",
+      subject: "New Tutoring Person From Contact us",
+      message: `New From Contact Us, details: ${JSON.stringify(inputs)}`,
+    };
+
+    const serviceId = "service_010xydf";
+    const templateName = "template_1dcm4rn";
+    const publicKey = "Yd6r5t5etWEKD3GNh";
+    return emailjs.send(serviceId, templateName, templateParams, publicKey);
+  };
+
+  const {
+    mutate: sendEmailMutate,
+    isPending,
+    error,
+    isSuccess,
+  } = useMutation({
+    mutationFn: sendEmail,
+    mutationKey: ["sendEmail"],
+  });
+
+  const onSubmit: SubmitHandler<Inputs> = (inputs) => {
+    sendEmailMutate(inputs);
+  };
+  return (
+    <section className="section section-faq section-faq-1">
+      <div className="display-spacing">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8">
+              <div className="el-panel">
+                <div className="el-panel-body">
+                  <div className="el-panel-title">
+                    <h3>Contact Us</h3>
+                  </div>
+                  <p>
+                    Our staff are available 24/7 to help answer any of your
+                    questions {":)"}
+                  </p>
+                  <hr />
+                  <form onSubmit={handleSubmit(onSubmit)} className="form-3">
+                    <div className="row">
+                      <div className="col-12 col-sm-12 col-md-12 col-lg-6">
+                        <div className="form-item">
+                          <label className="form-label">Full Name</label>
+                          <input
+                            {...register("name", { required: true })}
+                            type="text"
+                            name="text"
+                          />
+                          {errors.name && (
+                            <ErrorText>{errors.name?.message}</ErrorText>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-12 col-sm-12 col-md-12 col-lg-6">
+                        <div className="form-item">
+                          <label className="form-label">E-Mail</label>
+                          <input
+                            {...register("email", { required: true })}
+                            type="text"
+                            name="text"
+                          />
+                          {errors.email && (
+                            <ErrorText>{errors.email?.message}</ErrorText>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div className="form-item">
+                          <label className="form-label">Your Message</label>
+                          <textarea
+                            {...register("message", { required: true })}
+                            name=""
+                            id=""
+                            cols={30}
+                            rows={10}
+                          ></textarea>
+                          {errors.message && (
+                            <ErrorText>{errors.message?.message}</ErrorText>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <button
+                          type="submit"
+                          className="button button-md button-primary"
+                        >
+                          {isPending ? (
+                            <Spinner />
+                          ) : (
+                            <span className="text">Send</span>
+                          )}
+                        </button>
+                      </div>
+                    </div>
+                    {error ? <ErrorToast /> : null}
+                    {isSuccess ? <SuccessToast /> : null}
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-lg-4">
+              <div className="el-panel el-panel-teacher-info">
+                <div className="el-panel-body">
+                  <div className="el-panel-title">
+                    <h3>Quick Access</h3>
+                  </div>
+                  <ul className="el-list">
+                    <li>
+                      <a href="page-about.html">
+                        <span className="text">About us</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="page-faq.html">
+                        <span className="text">FAQ</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="page-contact.html">
+                        <span className="text">Contact us</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default EmailForm;
