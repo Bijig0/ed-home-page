@@ -86,11 +86,9 @@ const Step1 = () => {
         <a
           target="_blank"
           href={callbackLink}
-          className="flex hover:opacity-80 text-center mt-6 mx-auto justify-center w-80 items-center px-6 py-2 font-semibold bg-rose-500 rounded-lg"
+          className="bg-white hover:bg-[#eee] animate-none hover:transition-none hover:transform-none hover:text-black text-[#5b70f9] text-md text-center w-80 px-6 py-4 font-semibold rounded-lg"
         >
-          <span className="text-light text-lg text-center m-0">
-            Skip The Questions And Request A Callback
-          </span>
+          Skip The Questions And Request A Callback
         </a>
       </div>
     </div>
