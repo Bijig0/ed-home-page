@@ -22,11 +22,11 @@ const subjects = [
   },
   {
     name: "Biology",
-    src: "https://img.icons8.com/bubbles/50/bouncing-ball.png",
+    src: "https://img.icons8.com/bubbles/50/biotech.png",
   },
   {
     name: "Economics",
-    src: "https://img.icons8.com/bubbles/50/calculator--v1.png",
+    src: "https://img.icons8.com/bubbles/50/economic-improvement.png",
   },
   {
     name: "Business Studies",
