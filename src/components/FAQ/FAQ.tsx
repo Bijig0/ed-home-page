@@ -12,7 +12,7 @@ const SingleAccordion = (props: SingleAccordionProps) => {
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
 
   return (
-    <div key={title} className="el-accordion">
+    <div key={title} className="el-accordion relative rounded-md bg-white px-3">
       <div className="el-accordion-head">
         <div className="inner d-flex align-items-center">
           <div className="accordion-image">
@@ -36,7 +36,7 @@ const SingleAccordion = (props: SingleAccordionProps) => {
 };
 const FAQ = () => {
   return (
-    <div className="items mb--15">
+    <div className="flex flex-col gap-4">
       {faqList.map(({ title, text }) => {
         console.log({ title, text });
         return <SingleAccordion isExpanded={true} title={title} text={text} />;

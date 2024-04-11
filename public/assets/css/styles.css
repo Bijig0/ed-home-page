@@ -4870,17 +4870,8 @@ Forms
     Element: Accordion
 ------------------------------------*/
 .el-accordion {
-  width: 992px;
-  max-width: 100%;
-  overflow: hidden;
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 15px;
   -webkit-box-shadow: 0 3px 6px 0 rgba(140, 152, 164, 0.25);
   box-shadow: 0 3px 6px 0 rgba(140, 152, 164, 0.25);
-  border-radius: 9px;
-  background-color: var(--base-0);
   -webkit-transition: all 0.45s;
   transition: all 0.45s;
 }
