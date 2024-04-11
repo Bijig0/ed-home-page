@@ -4,12 +4,11 @@ import faqList from "./faqList";
 type SingleAccordionProps = {
   title: string;
   text: string;
-  isExpanded: boolean;
 };
 
 const SingleAccordion = (props: SingleAccordionProps) => {
   const { title, text } = props;
-  const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
+  const { getCollapseProps, getToggleProps } = useCollapse();
 
   return (
     <div key={title} className="el-accordion relative rounded-md bg-white px-3">
@@ -44,7 +43,7 @@ const FAQ = () => {
     <div className="flex flex-col gap-4">
       {faqList.map(({ title, text }) => {
         console.log({ title, text });
-        return <SingleAccordion isExpanded={true} title={title} text={text} />;
+        return <SingleAccordion key={title} title={title} text={text} />;
       })}
     </div>
   );
