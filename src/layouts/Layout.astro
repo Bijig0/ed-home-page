@@ -1,3 +1,9 @@
+---
+interface Props {
+    headerType: "empty" | "boxed";
+}
+const { headerType } = Astro.props;
+---
 <doctype html>
 <html lang="en" dir="ltr">
 
@@ -18,7 +24,7 @@
 </head>
 
 <body>
-<header class="app-header app-header-1 empty">
+<header class=`app-header app-header-1 ${headerType}`>
         <div class="container">
             <div class="header-wrap">
                 <button class="button button-menu button-open-sidenav">
