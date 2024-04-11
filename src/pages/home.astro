@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import MainForm from '../components/MainForm/MainForm.tsx';
 import Shapes from '../components/MainForm/Shapes';
+import subjects from '../lib/subjects';
 
 ---
 <Layout>
@@ -655,173 +656,24 @@ import Shapes from '../components/MainForm/Shapes';
     <div class="container">
         <div class="row row-xs">
             <!--Col-->
-            <div class="col-6 col-sm-4 col-md-4 col-lg-2">
-                <a href="page-departements.html">
-                    <div class="item">
-                        <div class="inner">
-                            <img src="assets/images/flags/uk.svg" alt="alt" />
-                            <h3>
-                                <span class="text">Math</span>
-                            </h3>
-                        </div>
+            {
+                subjects.map(({name, src}) => {
+                    return (
+                        <div class="col-6 col-sm-4 col-md-4 col-lg-2">
+                        <a href="page-departements.html">
+                            <div class="item">
+                                <div class="inner flex items-center flex-col">
+                                    <img src={src} alt="alt" />
+                                    <h3>
+                                        <span class="text">{name}</span>
+                                    </h3>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <!--/-->
-            <!--Col-->
-            <div class="col-6 col-sm-4 col-md-4 col-lg-2">
-                <a href="page-departements.html">
-                    <div class="item">
-                        <div class="inner flex items-center flex-col">
-                            <img src="https://img.icons8.com/bubbles/50/literature.png" alt="alt" />
-                            <h3>
-                                <span class="text">English</span>
-                            </h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--/-->
-            <!--Col-->
-            <div class="col-6 col-sm-4 col-md-4 col-lg-2">
-                <a href="page-departements.html">
-                    <div class="item">
-                        <div class="inner">
-                            <img src="assets/images/flags/germany.svg" alt="alt" />
-                            <h3>
-                                <span class="text">Chemistry</span>
-                            </h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--/-->
-            <!--Col-->
-            <div class="col-6 col-sm-4 col-md-4 col-lg-2">
-                <a href="page-departements.html">
-                    <div class="item">
-                        <div class="inner">
-                            <img src="assets/images/flags/italy.svg" alt="alt" />
-                            <h3>
-                                <span class="text">Physics</span>
-                            </h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--/-->
-            <!--Col-->
-            <div class="col-6 col-sm-4 col-md-4 col-lg-2">
-                <a href="page-departements.html">
-                    <div class="item">
-                        <div class="inner">
-                            <img src="assets/images/flags/france.svg" alt="alt" />
-                            <h3>
-                                <span class="text">Biology</span>
-                            </h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--/-->
-            <!--Col-->
-            <div class="col-6 col-sm-4 col-md-4 col-lg-2">
-                <a href="page-departements.html">
-                    <div class="item">
-                        <div class="inner">
-                            <img src="assets/images/flags/portugal.svg" alt="alt" />
-                            <h3>
-                                <span class="text">Economics</span>
-                            </h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--/-->
-            <!--Col-->
-            <div class="col-6 col-sm-4 col-md-4 col-lg-2">
-                <a href="page-departements.html">
-                    <div class="item">
-                        <div class="inner">
-                            <img src="assets/images/flags/russia.svg" alt="alt" />
-                            <h3>
-                                <span class="text">Business Studies</span>
-                            </h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--/-->
-            <!--Col-->
-            <div class="col-6 col-sm-4 col-md-4 col-lg-2">
-                <a href="page-departements.html">
-                    <div class="item">
-                        <div class="inner">
-                            <img src="assets/images/flags/china.svg" alt="alt" />
-                            <h3>
-                                <span class="text">I.T (Information Technology)</span>
-                            </h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--/-->
-            <!--Col-->
-            <div class="col-6 col-sm-4 col-md-4 col-lg-2">
-                <a href="page-departements.html">
-                    <div class="item">
-                        <div class="inner">
-                            <img src="assets/images/flags/japan.svg" alt="alt" />
-                            <h3>
-                                <span class="text">History</span>
-                            </h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--/-->
-            <!--Col-->
-            <div class="col-6 col-sm-4 col-md-4 col-lg-2">
-                <a href="page-departements.html">
-                    <div class="item">
-                        <div class="inner">
-                            <img src="assets/images/flags/iran.svg" alt="alt" />
-                            <h3>
-                                <span class="text">Psychology</span>
-                            </h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--/-->
-            <!--Col-->
-            <div class="col-6 col-sm-4 col-md-4 col-lg-2">
-                <a href="page-departements.html">
-                    <div class="item">
-                        <div class="inner">
-                            <img src="assets/images/flags/india.svg" alt="alt" />
-                            <h3>
-                                <span class="text">Geography</span>
-                            </h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--/-->
-            <!--Col-->
-            <div class="col-6 col-sm-4 col-md-4 col-lg-2">
-                <a href="page-departements.html">
-                    <div class="item">
-                        <div class="inner">
-                            <img src="assets/images/flags/turkey.svg" alt="alt" />
-                            <h3>
-                                <span class="text">...More</span>
-                            </h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--/-->
+                    )
+                })
+            }
         </div>
     </div>
 </section>
