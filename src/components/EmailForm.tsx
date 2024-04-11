@@ -1,6 +1,10 @@
 import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useMutation,
+} from "@tanstack/react-query";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 
@@ -56,6 +60,8 @@ const EmailForm = () => {
   } = useForm<Inputs>({
     resolver: zodResolver(schema),
   });
+
+  console.log({ errors });
 
   const sendEmail = async (inputs: Inputs) => {
     const templateParams = {
@@ -196,4 +202,14 @@ const EmailForm = () => {
   );
 };
 
-export default EmailForm;
+const queryClient = new QueryClient();
+
+const Main = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <EmailForm />
+    </QueryClientProvider>
+  );
+};
+
+export default Main;
