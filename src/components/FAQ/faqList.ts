@@ -25,7 +25,7 @@ const faqList = [
     text: "You can cancel and get a full refund up to  24 hours before your trip starts. If you book a trip with less than  24 hours’ notice, you have one hour after booking to cancel free of charge. If you cancel after the free cancellation period ends, you will be charged a small cancellation fee. In the rare event a host cancels, you’ll be notified immediately so you can book another car, or we’ll help you find one. Your refund can be temporarily held to expedite rebooking, or the funds can be returned to your bank account — your choice.",
   },
   {
-    title: "Who will be my child (or me)?",
+    title: "Who will be tutoring my child (or me)?",
     text: "If there’s an emergency or an issue with the car, call our emergency roadside assistance provider, available  24/7. We’ll make sure you’re safe, then help you get back on your way.",
   },
 ] satisfies FAQ[];

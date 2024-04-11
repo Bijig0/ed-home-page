@@ -16,6 +16,9 @@ const text = {
   Other: "Someone else",
 } satisfies Record<WhoNeedsTutoring, string>;
 
+const callbackLink =
+  "https://calendly.com/bradysuryasie/eduline-tutoring-callback";
+
 const Step1 = () => {
   const { handleStep, previousStep, nextStep } = useWizard();
 
@@ -72,21 +75,23 @@ const Step1 = () => {
             ))}
           </ul>
         </form>
-        <div
-          className="divider divider-line bg-rose-600"
-          style={{ backgroundColor: "#e11d48" }}
-        ></div>
+        <div className="flex justify-center items-center">
+          <div className="divider divider-line bg-light"></div>
+          <p className="font-primary text-lg font-bold text-center my-4 text-light">
+            OR
+          </p>
+          <div className="divider divider-line bg-light"></div>
+        </div>
         <div className="my-4"></div>
-        <p className="text-light text-md mb-7">
-          Skip the questions and request a{" "}
-          <a
-            target="_blank"
-            href="https://calendly.com/bradysuryasie/eduline-tutoring-callback"
-            className="text-rose-600 hover:text-rose-600 cursor-pointer hover:underline hover:transition-none hover:transform-none"
-          >
-            callback
-          </a>
-        </p>
+        <a
+          target="_blank"
+          href={callbackLink}
+          className="flex hover:opacity-80 text-center mt-6 mx-auto justify-center w-80 items-center px-6 py-2 font-semibold bg-rose-500 rounded-lg"
+        >
+          <span className="text-light text-lg text-center m-0">
+            Skip The Questions And Request A Callback
+          </span>
+        </a>
       </div>
     </div>
   );
