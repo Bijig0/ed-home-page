@@ -1,10 +1,10 @@
+import { useEffect } from "react";
 import { useWizard } from "react-use-wizard";
 import { isStepOne } from "../../globalStore";
 import CheckIcon from "./CheckIcon";
 import SelectButton from "./SelectButton";
 import { whoNeedsTutoring, type WhoNeedsTutoring } from "./types";
 import { studentDetails, updateStudentDetails } from "./useFormStore";
-import { useEffect } from "react";
 
 type FormValues = {
   whoNeedsTutoring: WhoNeedsTutoring;
@@ -72,6 +72,17 @@ const Step1 = () => {
             ))}
           </ul>
         </form>
+        <div
+          className="divider divider-line bg-rose-600"
+          style={{ backgroundColor: "#e11d48" }}
+        ></div>
+        <div className="my-4"></div>
+        <p className="text-light text-md mb-7">
+          Skip the questions and request a{" "}
+          <a className="text-rose-600 hover:text-rose-600 cursor-pointer hover:underline hover:transition-none hover:transform-none">
+            callback
+          </a>
+        </p>
       </div>
     </div>
   );
