@@ -32,7 +32,7 @@ const SingleAccordion = (props: SingleAccordionProps) => {
           </div>
         </div>
       </div>
-      <div {...getCollapseProps()} className="el-accordion-body">
+      <div {...getCollapseProps()} className="text-sm rounded-md">
         <p>{text}</p>
       </div>
     </div>
