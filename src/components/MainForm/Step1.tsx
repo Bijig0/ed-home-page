@@ -79,7 +79,11 @@ const Step1 = () => {
         <div className="my-4"></div>
         <p className="text-light text-md mb-7">
           Skip the questions and request a{" "}
-          <a className="text-rose-600 hover:text-rose-600 cursor-pointer hover:underline hover:transition-none hover:transform-none">
+          <a
+            target="_blank"
+            href="https://calendly.com/bradysuryasie/eduline-tutoring-callback"
+            className="text-rose-600 hover:text-rose-600 cursor-pointer hover:underline hover:transition-none hover:transform-none"
+          >
             callback
           </a>
         </p>
