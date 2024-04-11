@@ -14,12 +14,17 @@ const SingleAccordion = (props: SingleAccordionProps) => {
   return (
     <div key={title} className="el-accordion relative rounded-md bg-white px-3">
       <div className="el-accordion-head">
-        <div className="inner d-flex align-items-center">
-          <div className="accordion-image">
-            <img src="assets/images/icons/click.svg" alt="Click me" />
-          </div>
-          <div {...getToggleProps()} className="accordion-title">
-            <h4>{title}</h4>
+        <div
+          {...getToggleProps()}
+          className="flex items-center justify-between"
+        >
+          <div className="flex items-center justify-start gap-5">
+            <div className="w-6 h-6 relative bottom-1">
+              <img src="assets/images/icons/click.svg" alt="Click me" />
+            </div>
+            <div className="">
+              <h4 className="text-[#717f94] text-sm p-0 m-0">{title}</h4>
+            </div>
           </div>
           <div className="accordion-arrow">
             <div className="display-center">
