@@ -4,6 +4,7 @@ import MainForm from '../components/MainForm/MainForm.tsx';
 import Shapes from '../components/MainForm/Shapes';
 import subjects from '../lib/subjects';
 import whyUs from '../lib/whyUs'
+import tutors from '../lib/tutors'
 ---
 <Layout>
     <div slot="body-content">
@@ -741,8 +742,11 @@ import whyUs from '../lib/whyUs'
                 <div class="swiper-container swiper-teachers">
                     <div class="swiper-wrapper">
                         <!-- Slides -->
+                        {
+                            tutors.map(({name, image, description}) => {
+                                return (
                         <div class="swiper-slide">
-                            <div class="card el-card">
+                            <div class="card el-card pb-4">
                                 <a href="page-teacher.html">
                                     <div class="inner">
                                         <div class="avatar">
@@ -752,28 +756,13 @@ import whyUs from '../lib/whyUs'
                                             <h3>Miranda Fox</h3>
                                             <p>Lorem ipsum dolor sit amet consectetur elit sed do.</p>
                                         </div>
-                                        <div class="other">
-                                            <p class="price">
-                                                <span>Price</span>
-                                                <span class="text-color">$25.00</span>
-                                            </p>
-                                        </div>
-                                        <ul class="icons icons-left">
-                                            <li>
-                                                <div class="icon-lang">
-                                                    <img src="assets/images/flags/russia.svg" alt="Lang" />
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="icon-lang">
-                                                    <img src="assets/images/icons/graduation.svg" alt="Is experienced" />
-                                                </div>
-                                            </li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
                         </div>
+                                )
+                            })
+                        }
                         <!-- Slides -->
                         <div class="swiper-slide">
                             <div class="card el-card">

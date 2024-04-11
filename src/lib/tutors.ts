@@ -35,7 +35,6 @@ const tutors = [
         description: "Lorem ipsum dolor sit amet consectetur elit sed do.",
         image: "assets/images/people/6.jpg",
     },      
-
 ] satisfies Tutor[];
 
 export default tutors;
