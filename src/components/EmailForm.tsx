@@ -206,6 +206,11 @@ const EmailForm = () => {
                   </div>
                   <ul className="el-list">
                     <li>
+                      <a href="home.html">
+                        <span className="text">Home</span>
+                      </a>
+                    </li>
+                    <li>
                       <a href="page-about.html">
                         <span className="text">About us</span>
                       </a>
