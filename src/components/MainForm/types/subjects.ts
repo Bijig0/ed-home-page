@@ -90,6 +90,7 @@ const yearByYearDetails = {
   "Year 11 or 12": year11or12,
 } satisfies Record<(typeof years)[number], GenericYearDetails>;
 
-type YearDetails = typeof yearByYearDetails[keyof typeof yearByYearDetails];
+export type YearDetails =
+  (typeof yearByYearDetails)[keyof typeof yearByYearDetails];
 
 export default yearByYearDetails;

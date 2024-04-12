@@ -1,3 +1,5 @@
+import type { YearDetails } from "./subjects";
+
 export const whoNeedsTutoring = ["Self", "Child", "Other"] as const;
 export const gradeLevels = [
   "PreK/K",
@@ -37,7 +39,7 @@ export type LessonType =
 
 export type StudentDetails = {
   whoNeedsTutoring: WhoNeedsTutoring;
-  yearAndSubject: Year;
+  yearAndSubject: YearDetails;
   reasonForTutoring: ReasonForTutoring;
   howSoon: HowSoon;
   fullName: string;
