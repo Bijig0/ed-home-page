@@ -1,4 +1,4 @@
-import type { YearDetails } from "./subjects";
+import type { Subject } from "./subjects";
 
 export const whoNeedsTutoring = ["Self", "Child", "Other"] as const;
 export const gradeLevels = [
@@ -39,7 +39,8 @@ export type LessonType =
 
 export type StudentDetails = {
   whoNeedsTutoring: WhoNeedsTutoring;
-  yearAndSubject: YearDetails;
+  year: Year;
+  subject: Subject;
   reasonForTutoring: ReasonForTutoring;
   howSoon: HowSoon;
   fullName: string;

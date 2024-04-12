@@ -6,11 +6,8 @@ import BreadCrumb from "../BreadCrumb";
 import CheckIcon from "../CheckIcon";
 import ProgressBar from "../ProgressBar";
 import SelectButton from "../SelectButton";
-import {
-  gradeLevels,
-  type GradeLevel,
-  type WhoNeedsTutoring,
-} from "../types/types";
+import yearByYearDetails from "../types/subjects";
+import { type GradeLevel, type WhoNeedsTutoring } from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 const headerText = {
@@ -19,12 +16,16 @@ const headerText = {
   Other: "What year is the student in?",
 } satisfies Record<WhoNeedsTutoring, string>;
 
-const Step1 = () => {
-  const { handleStep, previousStep, nextStep } = useWizard();
+const ChooseYear = () => {
+  const { nextStep } = useWizard();
+
+  const years = Object.values(yearByYearDetails).map(({ name }) => name);
 
   const handleSubmit = (value: GradeLevel) => {
     updateStudentDetails({
-      studentDetails: { gradeLevel: value },
+      studentDetails: {
+        year: value,
+      },
     });
     nextStep();
   };
@@ -32,11 +33,8 @@ const Step1 = () => {
   console.log(studentDetails.get());
 
   return (
-    <div className="flex ">
+    <div className="flex">
       <div className="flex flex-col items-start flex-[3_3_0%]">
-        {/* <h1 className="text-4xl text-white font-primary">
-          {headerText[studentDetails.whoNeedsTutoring]}
-        </h1> */}
         <div>
           <BreadCrumb />
           <ProgressBar step={2} />
@@ -49,19 +47,17 @@ const Step1 = () => {
         <div className="my-2"></div>
         <form className="flex flex-col items-center justify-center">
           <ul className="p-0">
-            {gradeLevels.map((value) => (
+            {years.map((value) => (
               <div className="relative" key={value}>
                 <SelectButton
-                  selected={(value) =>
-                    value === studentDetails.get().gradeLevel
-                  }
+                  selected={(value) => value === studentDetails.get().year}
                   value={value}
                   text={value}
                   handleSubmit={handleSubmit}
                 />
                 <CheckIcon
                   className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2"
-                  enabled={value === studentDetails.get().gradeLevel}
+                  enabled={value === studentDetails.get().year}
                 />
               </div>
             ))}
@@ -88,4 +84,4 @@ const Step1 = () => {
   );
 };
 
-export default Step1;
+export default ChooseYear;

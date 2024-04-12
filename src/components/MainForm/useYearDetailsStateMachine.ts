@@ -4,7 +4,7 @@ import type { Year } from "./types/types";
 import { updateStudentDetails } from "./useFormStore";
 import useStateMachine, { t } from "./useStateMachine/useStateMachine";
 
-const useLessonTypeStateMachine = () => {
+const useYearDetailsStateMachine = () => {
   const { previousStep, nextStep } = useWizard();
 
   return useStateMachine({
@@ -114,4 +114,4 @@ const useLessonTypeStateMachine = () => {
   });
 };
 
-export default useLessonTypeStateMachine;
+export default useYearDetailsStateMachine;
