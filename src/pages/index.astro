@@ -1,11 +1,14 @@
 ---
 import MainForm from "../components/MainForm/MainForm.tsx";
 import Shapes from "../components/MainForm/Shapes";
+import { isStepOne } from "../globalStore";
 import Layout from "../layouts/Layout.astro";
 import subjects from "../lib/subjects";
 import tutors from "../lib/tutors";
 import whyUs from "../lib/whyUs";
 import { reviewFive, reviewFour, reviewSix } from "../reviews";
+
+const $isStepOne = isStepOne.get();
 
 const HOME_LINK = "/#:~:text=Australia%27s%20%231%20Top%20Rated%20Tutors";
 ---
@@ -38,9 +41,7 @@ const HOME_LINK = "/#:~:text=Australia%27s%20%231%20Top%20Rated%20Tutors";
             <img src="assets/images/shapes/1.svg" alt="Image Description" />
         </figure> -->
 
-          <div class="container mt-12 pt-6 pb-16 md:pt-24 md:pb-32">
-            <MainForm client:visible />
-          </div>
+          <MainForm client:visible />
 
           <Shapes client:visible />
         </section>
