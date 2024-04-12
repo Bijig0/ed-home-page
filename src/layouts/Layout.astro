@@ -1,4 +1,6 @@
 ---
+import Sidebar from "../components/Sidebar/Sidebar";
+
 interface Props {
   headerType: "empty" | "boxed";
 }
@@ -49,9 +51,6 @@ const { headerType } = Astro.props;
       <header class=`app-header app-header-1 ${headerType}`>
         <div class="container">
           <div class="header-wrap">
-            <button class="button button-menu button-open-sidenav">
-              <span></span>
-            </button>
             <div class="header-menu">
               <ul>
                 <li>
@@ -81,12 +80,6 @@ const { headerType } = Astro.props;
               </a>
             </div>
             <div class="header-links flex justify-end gap-3">
-              <!-- <a href="page-login.html" class="button button-md button-light button-line-primary">
-                        <span class="title">Sign In</span>
-                    </a>
-                    <a href="page-register.html" class="button button-md button-primary">
-                        <span class="title">Sign Up</span>
-                    </a> -->
               <a
                 href="/#:~:text=Australia%27s%20%231%20Top%20Rated%20Tutors"
                 class="button button-md button-light button-line-primary"
@@ -97,6 +90,8 @@ const { headerType } = Astro.props;
           </div>
         </div>
       </header>
+
+      <Sidebar headerType={headerType} client:load />
 
       <slot name="body-content" />
 

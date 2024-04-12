@@ -1,7 +1,41 @@
-const Sidebar = () => {
+import { useState } from "react";
+
+type Props = {
+  headerType: "empty" | "boxed";
+};
+
+const Sidebar = (props: Props) => {
+  const { headerType } = props;
+
+  const [open, setOpen] = useState(false);
+
+  const onHamburgerClick = () => {
+    setOpen(!open);
+  };
+
+  console.log({ open });
+
   return (
     <>
-      <div className="app-sidenav app-sidenav-1">
+      <header className={`app-header app-header-1 ${headerType}`}>
+        <div className="container">
+          <div className="header-wrap">
+            <button
+              onClick={onHamburgerClick}
+              className="button button-menu button-open-sidenav"
+            >
+              <span></span>
+            </button>
+            <div className="header-logo">
+              <a href="/" className="primary-logo">
+                <span className="text-1">Edu</span>
+                <span className="text-2"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div className={`app-sidenav app-sidenav-1 ${open ? "active" : ""}`}>
         <div className="sidenav-menu">
           <div className="sidenav-head">
             <img src="assets/images/sidenav.jpg" alt="sidenav banner" />
@@ -40,3 +74,5 @@ const Sidebar = () => {
     </>
   );
 };
+
+export default Sidebar;
