@@ -9,7 +9,7 @@ const Sidebar = (props: Props) => {
 
   const [open, setOpen] = useState(false);
 
-  const onHamburgerClick = () => {
+  const toggleOpen = () => {
     setOpen(!open);
   };
 
@@ -21,7 +21,7 @@ const Sidebar = (props: Props) => {
         <div className="container">
           <div className="header-wrap">
             <button
-              onClick={onHamburgerClick}
+              onClick={toggleOpen}
               className="button button-menu button-open-sidenav"
             >
               <span></span>
@@ -39,7 +39,10 @@ const Sidebar = (props: Props) => {
         <div className="sidenav-menu">
           <div className="sidenav-head">
             <img src="assets/images/sidenav.jpg" alt="sidenav banner" />
-            <button className="button button-close-sidenav"></button>
+            <button
+              onClick={toggleOpen}
+              className="button button-close-sidenav"
+            ></button>
           </div>
           <div className="sidenav-body">
             <div className="sidenav-body-inner">
@@ -48,19 +51,31 @@ const Sidebar = (props: Props) => {
                   href="page-login.html"
                   className="button button-md button-block button-line-primary"
                 >
-                  <span className="text">Sign In</span>
-                </a>
-                <a
-                  href="page-register.html"
-                  className="button button-md button-block button-primary"
-                >
-                  <span className="text">Sign Up</span>
+                  <span className="text">Book Now!</span>
                 </a>
               </div>
               <ul>
                 <li>
                   <a href="home.html">
                     <span className="text">Home</span>
+                    <span className="icon fa fa-angle-right"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="home.html">
+                    <span className="text">About</span>
+                    <span className="icon fa fa-angle-right"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="home.html">
+                    <span className="text">Contact Us</span>
+                    <span className="icon fa fa-angle-right"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="home.html">
+                    <span className="text">FAQ</span>
                     <span className="icon fa fa-angle-right"></span>
                   </a>
                 </li>
