@@ -1,455 +1,494 @@
 ---
 interface Props {
-    headerType: "empty" | "boxed";
+  headerType: "empty" | "boxed";
 }
 const { headerType } = Astro.props;
 ---
+
 <doctype html>
-<html lang="en" dir="ltr">
+  <html lang="en" dir="ltr">
+    <head>
+      <title>Eduline</title>
+      <meta charset="UTF-8" />
+      <meta name="keywords" content="" />
+      <meta name="description" content="" />
+      <meta name="theme-color" content="#ffffff" />
+      <meta name="msapplication-TileColor" content="#9f00a7" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="favicon.ico" />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Poppins:100,300,500,600,700,900&display=swap"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet"
+      />
+      <link rel="stylesheet" href="assets/css/plugins.min.css" />
+      <link rel="stylesheet" href="assets/css/styles.css" />
+      <link rel="stylesheet" href="assets/css/theme-preview.css" />
+    </head>
 
-<head>
-    <title>Eduline</title>
-    <meta charset="UTF-8" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="theme-color" content="#ffffff">
-    <meta name="msapplication-TileColor" content="#9f00a7">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,300,500,600,700,900&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/plugins.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="assets/css/theme-preview.css" />
-</head>
-
-<body>
-<header class=`app-header app-header-1 ${headerType}`>
+    <body>
+      <header class=`app-header app-header-1 ${headerType}`>
         <div class="container">
-            <div class="header-wrap">
-                <button class="button button-menu button-open-sidenav">
-                    <span></span>
-                </button>
-                <div class="header-menu">
-            <ul>
+          <div class="header-wrap">
+            <button class="button button-menu button-open-sidenav">
+              <span></span>
+            </button>
+            <div class="header-menu">
+              <ul>
                 <li>
-                    <a href="page-about.html">
-                        <span class="text">About</span>
-                        <span class="icon fa fa-angle-left"></span>
-                    </a>
+                  <a href="page-about.html">
+                    <span class="text">About</span>
+                    <span class="icon fa fa-angle-left"></span>
+                  </a>
                 </li>
                 <li>
-                    <a href="page-contact.html">
-                        <span class="text">Contact Us</span>
-                        <span class="icon fa fa-angle-left"></span>
-                    </a>
+                  <a href="page-contact.html">
+                    <span class="text">Contact Us</span>
+                    <span class="icon fa fa-angle-left"></span>
+                  </a>
                 </li>
                 <li>
-                    <a href="page-faq.html">
-                        <span class="text">FAQ</span>
-                        <span class="icon fa fa-angle-left"></span>
-                    </a>
+                  <a href="page-faq.html">
+                    <span class="text">FAQ</span>
+                    <span class="icon fa fa-angle-left"></span>
+                  </a>
                 </li>
-            </ul>
-        </div>
-                <div class="header-logo">
-                    <a href="/" class="primary-logo">
-                        <span class="text-1">Edu</span>
-                        <span class="text-2"></span>
-                    </a>
-                </div>
-                <div class="header-links flex justify-end gap-3">
-                    <!-- <a href="page-login.html" class="button button-md button-light button-line-primary">
+              </ul>
+            </div>
+            <div class="header-logo">
+              <a href="/" class="primary-logo">
+                <span class="text-1">Edu</span>
+                <span class="text-2"></span>
+              </a>
+            </div>
+            <div class="header-links flex justify-end gap-3">
+              <!-- <a href="page-login.html" class="button button-md button-light button-line-primary">
                         <span class="title">Sign In</span>
                     </a>
                     <a href="page-register.html" class="button button-md button-primary">
                         <span class="title">Sign Up</span>
                     </a> -->
-                    <a href="http://localhost:4321/" class="button button-md button-light button-line-primary">
-                        <span class="title">Book Now!</span>
-                    </a>
-                </div>
+              <a
+                href="http://localhost:4321/"
+                class="button button-md button-light button-line-primary"
+              >
+                <span class="title">Book Now!</span>
+              </a>
             </div>
+          </div>
         </div>
-    </header>
+      </header>
 
-    <div class="app-sidenav app-sidenav-1">
-    <div class="sidenav-menu">
-        <div class="sidenav-head">
-            <img src="assets/images/sidenav.jpg" alt="sidenav banner">
+      <div class="app-sidenav app-sidenav-1">
+        <div class="sidenav-menu">
+          <div class="sidenav-head">
+            <img src="assets/images/sidenav.jpg" alt="sidenav banner" />
             <button class="button button-close-sidenav"></button>
-        </div>
-        <div class="sidenav-body">
+          </div>
+          <div class="sidenav-body">
             <div class="sidenav-body-inner">
-                <div class="sidenav-links">
-                    <a href="page-login.html" class="button button-md button-block button-line-primary">
-                        <span class="text">Sign In</span>
-                    </a>
-                    <a href="page-register.html" class="button button-md button-block button-primary">
-                        <span class="text">Sign Up</span>
-                    </a>
-                </div>
-                <ul>
-                    <li>
-                        <a href="/">
-                            <span class="text">Home</span>
-                            <span class="icon fa fa-angle-right"></span>
+              <div class="sidenav-links">
+                <a
+                  href="page-login.html"
+                  class="button button-md button-block button-line-primary"
+                >
+                  <span class="text">Sign In</span>
+                </a>
+                <a
+                  href="page-register.html"
+                  class="button button-md button-block button-primary"
+                >
+                  <span class="text">Sign Up</span>
+                </a>
+              </div>
+              <ul>
+                <li>
+                  <a href="/">
+                    <span class="text">Home</span>
+                    <span class="icon fa fa-angle-right"></span>
+                  </a>
+                </li>
+                <li class="has-menu">
+                  <a href="#">
+                    <span class="text">All Pages</span>
+                    <span class="icon fa fa-angle-right"></span>
+                  </a>
+                  <div class="mega-menu">
+                    <p class="title">Quick Access</p>
+                    <ul class="sidenav-menu-ul">
+                      <li>
+                        <a href="page-blog.html">
+                          <span class="text">Blog/News</span>
                         </a>
-                    </li>
-                    <li class="has-menu">
-                        <a href="#">
-                            <span class="text">All Pages</span>
-                            <span class="icon fa fa-angle-right"></span>
+                      </li>
+                      <li>
+                        <a href="page-single-post.html">
+                          <span class="text">Single Post</span>
                         </a>
-                        <div class="mega-menu">
-                            <p class="title">Quick Access</p>
-                            <ul class="sidenav-menu-ul">
-                                <li>
-                                    <a href="page-blog.html">
-                                        <span class="text">Blog/News</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page-single-post.html">
-                                        <span class="text">Single Post</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page-cooperation.html">
-                                        <span class="text">Cooperation</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page-start.html">
-                                        <span class="text">Getting Started!</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <p class="title">Quick Access</p>
-                            <ul class="sidenav-menu-ul">
-                                <li>
-                                    <a href="page-teacher.html">
-                                        <span class="text">Teacher</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page-teachers.html">
-                                        <span class="text">List of Teachers</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page-course.html">
-                                        <span class="text">Course Details</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page-courses.html">
-                                        <span class="text">List of Courses</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <p class="title">Dashboard</p>
-                            <ul class="sidenav-menu-ul">
-                                <li>
-                                    <a href="teacher/dashboard.html">
-                                        <span class="text">Dashboard</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="teacher/dashboard-profile.html">
-                                        <span class="text">Profile</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="teacher/dashboard-skills.html">
-                                        <span class="text">Edit Skills</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="teacher/dashboard-classrooms.html">
-                                        <span class="text">Classrooms</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <p class="title">Communication</p>
-                            <ul class="sidenav-menu-ul">
-                                <li>
-                                    <a href="page-about.html">
-                                        <span class="text">About Us</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page-contact.html">
-                                        <span class="text">Contact Us</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page-faq.html">
-                                        <span class="text">FAQ</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page-policy.html">
-                                        <span class="text">Policy</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <p class="title">Other Pages</p>
-                            <ul class="sidenav-menu-ul">
-                                <li>
-                                    <a href="page-login.html">
-                                        <span class="text">Sign-In</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page-register.html">
-                                        <span class="text">Sign-Up</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page-departements.html">
-                                        <span class="text">Departements</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="has-menu">
-                        <a href="#">
-                            <span class="text">Languages</span>
-                            <span class="icon fa fa-angle-right"></span>
-                        </a>
-                        <div class="mega-menu">
-                            <ul>
-                                <li class="el-flag">
-                                    <div class="inner">
-                                        <a href="page-departements.html">
-                                            <img src="assets/images/flags/uk.svg" alt="alt" />
-                                            <h3>English</h3>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="el-flag">
-                                    <div class="inner">
-                                        <a href="page-departements.html">
-                                            <img src="assets/images/flags/germany.svg" alt="alt" />
-                                            <h3>German</h3>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="el-flag">
-                                    <div class="inner">
-                                        <a href="page-departements.html">
-                                            <img src="assets/images/flags/france.svg" alt="alt" />
-                                            <h3>French</h3>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="el-flag">
-                                    <div class="inner">
-                                        <a href="page-departements.html">
-                                            <img src="assets/images/flags/italy.svg" alt="alt" />
-                                            <h3>Italian</h3>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="el-flag">
-                                    <div class="inner">
-                                        <a href="page-departements.html">
-                                            <img src="assets/images/flags/china.svg" alt="alt" />
-                                            <h3>Chinese</h3>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="el-flag">
-                                    <div class="inner">
-                                        <a href="page-departements.html">
-                                            <img src="assets/images/flags/japan.svg" alt="alt" />
-                                            <h3>Japanese</h3>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="el-flag">
-                                    <div class="inner">
-                                        <a href="page-departements.html">
-                                            <img src="assets/images/flags/south-korea.svg" alt="alt" />
-                                            <h3>Korean</h3>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="el-flag">
-                                    <div class="inner">
-                                        <a href="page-departements.html">
-                                            <img src="assets/images/flags/russia.svg" alt="alt" />
-                                            <h3>Russian</h3>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="el-flag">
-                                    <div class="inner">
-                                        <a href="page-departements.html">
-                                            <img src="assets/images/flags/arabic.svg" alt="alt" />
-                                            <h3>Arabic</h3>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="el-flag">
-                                    <div class="inner">
-                                        <a href="page-departements.html">
-                                            <img src="assets/images/flags/turkey.svg" alt="alt" />
-                                            <h3>Turkish</h3>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="el-flag">
-                                    <div class="inner">
-                                        <a href="page-departements.html">
-                                            <img src="assets/images/flags/iran.svg" alt="alt" />
-                                            <h3>Persian</h3>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="el-flag">
-                                    <div class="inner">
-                                        <a href="page-departements.html">
-                                            <img src="assets/images/flags/spain.svg" alt="alt" />
-                                            <h3>Spanish</h3>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="page-teachers.html">
-                            <span class="text">Teachers</span>
-                            <span class="icon fa fa-angle-right"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="page-courses.html">
-                            <span class="text">Courses</span>
-                            <span class="icon fa fa-angle-right"></span>
-                        </a>
-                    </li>
-                    <li>
+                      </li>
+                      <li>
                         <a href="page-cooperation.html">
-                            <span class="text">Join Now.</span>
-                            <span class="icon fa fa-angle-right"></span>
+                          <span class="text">Cooperation</span>
                         </a>
-                    </li>
-                    <li>
-                        <a href={"http://localhost:4321/"}>
-                            <span class="text">Let's get started</span>
-                            <span class="icon fa fa-angle-right"></span>
+                      </li>
+                      <li>
+                        <a href="page-start.html">
+                          <span class="text">Getting Started!</span>
                         </a>
-                    </li>
-                </ul>
+                      </li>
+                    </ul>
+                    <p class="title">Quick Access</p>
+                    <ul class="sidenav-menu-ul">
+                      <li>
+                        <a href="page-teacher.html">
+                          <span class="text">Teacher</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-teachers.html">
+                          <span class="text">List of Teachers</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-course.html">
+                          <span class="text">Course Details</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-courses.html">
+                          <span class="text">List of Courses</span>
+                        </a>
+                      </li>
+                    </ul>
+                    <p class="title">Dashboard</p>
+                    <ul class="sidenav-menu-ul">
+                      <li>
+                        <a href="teacher/dashboard.html">
+                          <span class="text">Dashboard</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="teacher/dashboard-profile.html">
+                          <span class="text">Profile</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="teacher/dashboard-skills.html">
+                          <span class="text">Edit Skills</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="teacher/dashboard-classrooms.html">
+                          <span class="text">Classrooms</span>
+                        </a>
+                      </li>
+                    </ul>
+                    <p class="title">Communication</p>
+                    <ul class="sidenav-menu-ul">
+                      <li>
+                        <a href="page-about.html">
+                          <span class="text">About Us</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-contact.html">
+                          <span class="text">Contact Us</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-faq.html">
+                          <span class="text">FAQ</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-policy.html">
+                          <span class="text">Policy</span>
+                        </a>
+                      </li>
+                    </ul>
+                    <p class="title">Other Pages</p>
+                    <ul class="sidenav-menu-ul">
+                      <li>
+                        <a href="page-login.html">
+                          <span class="text">Sign-In</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-register.html">
+                          <span class="text">Sign-Up</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-departements.html">
+                          <span class="text">Departements</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="has-menu">
+                  <a href="#">
+                    <span class="text">Languages</span>
+                    <span class="icon fa fa-angle-right"></span>
+                  </a>
+                  <div class="mega-menu">
+                    <ul>
+                      <li class="el-flag">
+                        <div class="inner">
+                          <a href="page-departements.html">
+                            <img src="assets/images/flags/uk.svg" alt="alt" />
+                            <h3>English</h3>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="el-flag">
+                        <div class="inner">
+                          <a href="page-departements.html">
+                            <img
+                              src="assets/images/flags/germany.svg"
+                              alt="alt"
+                            />
+                            <h3>German</h3>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="el-flag">
+                        <div class="inner">
+                          <a href="page-departements.html">
+                            <img
+                              src="assets/images/flags/france.svg"
+                              alt="alt"
+                            />
+                            <h3>French</h3>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="el-flag">
+                        <div class="inner">
+                          <a href="page-departements.html">
+                            <img
+                              src="assets/images/flags/italy.svg"
+                              alt="alt"
+                            />
+                            <h3>Italian</h3>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="el-flag">
+                        <div class="inner">
+                          <a href="page-departements.html">
+                            <img
+                              src="assets/images/flags/china.svg"
+                              alt="alt"
+                            />
+                            <h3>Chinese</h3>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="el-flag">
+                        <div class="inner">
+                          <a href="page-departements.html">
+                            <img
+                              src="assets/images/flags/japan.svg"
+                              alt="alt"
+                            />
+                            <h3>Japanese</h3>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="el-flag">
+                        <div class="inner">
+                          <a href="page-departements.html">
+                            <img
+                              src="assets/images/flags/south-korea.svg"
+                              alt="alt"
+                            />
+                            <h3>Korean</h3>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="el-flag">
+                        <div class="inner">
+                          <a href="page-departements.html">
+                            <img
+                              src="assets/images/flags/russia.svg"
+                              alt="alt"
+                            />
+                            <h3>Russian</h3>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="el-flag">
+                        <div class="inner">
+                          <a href="page-departements.html">
+                            <img
+                              src="assets/images/flags/arabic.svg"
+                              alt="alt"
+                            />
+                            <h3>Arabic</h3>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="el-flag">
+                        <div class="inner">
+                          <a href="page-departements.html">
+                            <img
+                              src="assets/images/flags/turkey.svg"
+                              alt="alt"
+                            />
+                            <h3>Turkish</h3>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="el-flag">
+                        <div class="inner">
+                          <a href="page-departements.html">
+                            <img src="assets/images/flags/iran.svg" alt="alt" />
+                            <h3>Persian</h3>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="el-flag">
+                        <div class="inner">
+                          <a href="page-departements.html">
+                            <img
+                              src="assets/images/flags/spain.svg"
+                              alt="alt"
+                            />
+                            <h3>Spanish</h3>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <a href="page-teachers.html">
+                    <span class="text">Teachers</span>
+                    <span class="icon fa fa-angle-right"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="page-courses.html">
+                    <span class="text">Courses</span>
+                    <span class="icon fa fa-angle-right"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="page-cooperation.html">
+                    <span class="text">Join Now.</span>
+                    <span class="icon fa fa-angle-right"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href={"http://localhost:4321/"}>
+                    <span class="text">Let's get started</span>
+                    <span class="icon fa fa-angle-right"></span>
+                  </a>
+                </li>
+              </ul>
             </div>
+          </div>
         </div>
-    </div>
-    <span class="sidenav-close"></span>
-</div>
-    <span class="mega-menu-overlay"></span>
-    
-    <slot name="body-content" />
+        <span class="sidenav-close"></span>
+      </div>
+      <span class="mega-menu-overlay"></span>
 
-    <footer class="section app-footer app-footer-2">
-            <div class="footer-info">
-                <div class="container">
-                    <div class="el-cta el-cta-4">
-                        <h3>Get your child ahead of the curve!</h3>
-                        <p>Book a lesson now in under 3 minuts! </p>
-                        <a href={"http://localhost:4321/"} class="button button-md button-secondary">
-                            <span class="text text-light">Get Started!</span>
-                        </a>
+      <slot name="body-content" />
+
+      <footer class="section app-footer app-footer-2">
+        <div class="footer-widgets">
+          <div class="container">
+            <div class="footer-widgets-links">
+              <div class="row row-xl-5">
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+                  <div class="widget widget-links">
+                    <div class="widget-title">
+                      <h4>Quick Access</h4>
                     </div>
-                </div>
-            </div>
-            <div class="footer-widgets">
-                <div class="container">
-                    <div class="footer-widgets-links">
-                        <div class="row row-xl-5">
-                            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
-                                <div class="widget widget-links">
-                                    <div class="widget-title">
-                                        <h4>Quick Access</h4>
-                                    </div>
-                                    <div class="widget-body">
-                                        <ul>
-                                            <li>
-                                                <a href="page-cooperation.html">
-                                                    <span class="icon ti-angle-left"></span>
-                                                    <span class="text">Home</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="page-teachers.html">
-                                                    <span class="icon ti-angle-left"></span>
-                                                    <span class="text">About</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="page-courses.html">
-                                                    <span class="icon ti-angle-left"></span>
-                                                    <span class="text">Contact Us</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="page-departements.html">
-                                                    <span class="icon ti-angle-left"></span>
-                                                    <span class="text">FAQ</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="widget-body">
+                      <ul>
+                        <li>
+                          <a href="page-cooperation.html">
+                            <span class="icon ti-angle-left"></span>
+                            <span class="text">Home</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="page-teachers.html">
+                            <span class="icon ti-angle-left"></span>
+                            <span class="text">About</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="page-courses.html">
+                            <span class="icon ti-angle-left"></span>
+                            <span class="text">Contact Us</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="page-departements.html">
+                            <span class="icon ti-angle-left"></span>
+                            <span class="text">FAQ</span>
+                          </a>
+                        </li>
+                      </ul>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    <span class="footer-line"></span>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <p>© 2020 All Rights Reserved</p>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <ul class="el-social-links">
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-facebook"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-google"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-linkedin"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <span class="footer-line"></span>
+            <div class="row">
+              <div class="col-md-8">
+                <p>© 2020 All Rights Reserved</p>
+              </div>
+
+              <div class="col-md-4">
+                <ul class="el-social-links">
+                  <li>
+                    <a href="#">
+                      <span class="fa fa-facebook"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="fa fa-google"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="fa fa-linkedin"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="fa fa-twitter"></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </footer>
+          </div>
+        </div>
+      </footer>
 
-    <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script> 
-    <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"
+      ></script>
+      <script
+        is:inline
+        src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      ></script>
 
-    <script is:inline type="text/javascript" src="assets/js/main-scripts.js"></script>
-</body>
-
-</html>
+      <script is:inline type="text/javascript" src="assets/js/main-scripts.js"
+      ></script>
+    </body>
+  </html></doctype
+>
