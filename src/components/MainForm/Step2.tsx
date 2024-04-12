@@ -10,19 +10,10 @@ import { gradeLevels, type GradeLevel, type WhoNeedsTutoring } from "./types";
 import { studentDetails, updateStudentDetails } from "./useFormStore";
 
 const headerText = {
-  Child: "What grade level is your child in?",
-  Self: "What grade level are you in?",
-  Other: "What grade level is the student in?",
+  Child: "What year is your child in?",
+  Self: "What year are you in?",
+  Other: "What year is the student in?",
 } satisfies Record<WhoNeedsTutoring, string>;
-
-const text = {
-  "Elementary School": "Elementary School",
-  "Middle School": "Middle School",
-  "High School": "High School",
-  College: "College",
-  "Adult Learner": "Adult Learner",
-  Other: "Other",
-} satisfies Record<GradeLevel, string>;
 
 const Step1 = () => {
   const { handleStep, previousStep, nextStep } = useWizard();
@@ -61,7 +52,7 @@ const Step1 = () => {
                     value === studentDetails.get().gradeLevel
                   }
                   value={value}
-                  text={text[value]}
+                  text={value}
                   handleSubmit={handleSubmit}
                 />
                 <CheckIcon

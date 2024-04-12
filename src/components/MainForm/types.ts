@@ -1,11 +1,9 @@
 export const whoNeedsTutoring = ["Self", "Child", "Other"] as const;
 export const gradeLevels = [
-  "Elementary School",
-  "Middle School",
-  "High School",
-  "College",
-  "Adult Learner",
-  "Other",
+  "PreK/K",
+  "Year 1 to 6",
+  "Year 7 to 10",
+  "Year 11 or 12",
 ] as const;
 export const reasonsForTutoring = [
   "Help with class",
