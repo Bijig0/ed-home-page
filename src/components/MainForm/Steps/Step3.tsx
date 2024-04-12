@@ -29,7 +29,7 @@ const text = {
 } satisfies Record<ReasonForTutoring, string>;
 
 const Step1 = () => {
-  const { handleStep, previousStep, nextStep, activeStep } = useWizard();
+  const { previousStep, nextStep, activeStep } = useWizard();
 
   const handleSubmit = (value: ReasonForTutoring) => {
     updateStudentDetails({
@@ -39,8 +39,6 @@ const Step1 = () => {
   };
 
   console.log(whoNeedsTutoring);
-
-  const handleBack = () => previousStep();
 
   console.log(studentDetails.get());
 

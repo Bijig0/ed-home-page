@@ -6,10 +6,6 @@ import SelectButton from "../SelectButton";
 import { whoNeedsTutoring, type WhoNeedsTutoring } from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
 
-type FormValues = {
-  whoNeedsTutoring: WhoNeedsTutoring;
-};
-
 const text = {
   Child: "My child",
   Self: "I do",
@@ -20,7 +16,7 @@ const callbackLink =
   "https://calendly.com/bradysuryasie/eduline-tutoring-callback";
 
 const Step1 = () => {
-  const { handleStep, previousStep, nextStep } = useWizard();
+  const { nextStep } = useWizard();
 
   useEffect(() => {
     isStepOne.set(true);

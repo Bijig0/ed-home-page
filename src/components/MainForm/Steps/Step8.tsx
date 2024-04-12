@@ -20,9 +20,7 @@ type FormValues = {
 };
 
 const Step1 = () => {
-  const { handleStep, previousStep, nextStep, activeStep } = useWizard();
-
-  const handleBack = () => previousStep();
+  const { nextStep, activeStep } = useWizard();
 
   console.log(studentDetails);
 
@@ -32,7 +30,6 @@ const Step1 = () => {
 
   const {
     register,
-    watch,
     handleSubmit,
     formState: { errors },
     control,

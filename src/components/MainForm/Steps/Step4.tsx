@@ -10,10 +10,6 @@ import SelectButton from "../SelectButton";
 import { howSoon, type HowSoon } from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
 
-type FormValues = {
-  howSoon: HowSoon;
-};
-
 const headerText = {
   Child: "How soon does your child need help?",
   Self: "How soon do you need help?",

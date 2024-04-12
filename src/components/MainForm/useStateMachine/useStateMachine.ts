@@ -1,6 +1,6 @@
 import { useEffect, useReducer } from "react";
 import { R, assertNever, useConstant } from "./extras";
-import { type Machine, type UseStateMachine, $$t } from "./types";
+import { $$t, type Machine, type UseStateMachine } from "./types";
 
 const useStateMachineImpl = (definition: Machine.Definition.Impl) => {
   const [state, dispatch] = useReducer(
