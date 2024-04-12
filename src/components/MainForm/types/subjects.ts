@@ -1,10 +1,10 @@
 import type { years } from "./types";
 
-type Subject = string & {};
+type GenericSubject = string & {};
 
 type GenericYearDetails = {
   name: (typeof years)[number];
-  subjects: readonly Subject[];
+  subjects: readonly GenericSubject[];
 };
 
 const yearPreKOrK = {
@@ -102,5 +102,9 @@ const yearByYearDetails = {
 export type YearDetails = TransformYearDetails<
   UnionOfValues<typeof yearByYearDetails>
 >;
+
+type ExtractSubject<T extends YearDetails> = T extends T ? T["subject"] : never;
+
+export type Subject = ExtractSubject<YearDetails>;
 
 export default yearByYearDetails;
