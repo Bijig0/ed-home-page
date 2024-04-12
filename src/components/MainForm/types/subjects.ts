@@ -83,6 +83,15 @@ const year11or12 = {
   ],
 } as const;
 
+type UnionOfValues<T> = T[keyof T];
+
+type TransformYearDetails<T extends GenericYearDetails> = T extends T
+  ? {
+      name: T["name"];
+      subject: T["subjects"][number];
+    }
+  : never;
+
 const yearByYearDetails = {
   "PreK/K": yearPreKOrK,
   "Year 1 to 6": year1to6,
@@ -90,7 +99,8 @@ const yearByYearDetails = {
   "Year 11 or 12": year11or12,
 } satisfies Record<(typeof years)[number], GenericYearDetails>;
 
-export type YearDetails =
-  (typeof yearByYearDetails)[keyof typeof yearByYearDetails];
+export type YearDetails = TransformYearDetails<
+  UnionOfValues<typeof yearByYearDetails>
+>;
 
 export default yearByYearDetails;

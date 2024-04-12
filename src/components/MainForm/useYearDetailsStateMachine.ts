@@ -45,8 +45,14 @@ const useLessonTypeStateMachine = () => {
             target: "completed",
           },
         },
-        effect({ send }) {
-          send({ type: "LESSON_TYPE_FILLED", value: { lessonType: "online" } });
+        effect({ send, event }) {
+          const year = event.value;
+          updateStudentDetails({
+            studentDetails: {
+              yearAndSubject: { name: year, subject: "" },
+            },
+          });
+          send({ type: "YEAR_CHOSEN", value: { year: year } });
         },
       },
       completed: {
