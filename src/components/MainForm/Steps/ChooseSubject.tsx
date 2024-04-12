@@ -6,8 +6,8 @@ import BreadCrumb from "../BreadCrumb";
 import CheckIcon from "../CheckIcon";
 import ProgressBar from "../ProgressBar";
 import SelectButton from "../SelectButton";
-import yearByYearDetails from "../types/subjects";
-import { type GradeLevel, type WhoNeedsTutoring } from "../types/types";
+import yearByYearDetails, { type Subject } from "../types/subjects";
+import { type WhoNeedsTutoring } from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 const headerText = {
@@ -22,10 +22,10 @@ const ChooseSubjects = () => {
   const selectedYear = studentDetails.get().year;
   const subjects = yearByYearDetails[selectedYear].subjects;
 
-  const handleSubmit = (value: GradeLevel) => {
+  const handleSubmit = (value: Subject) => {
     updateStudentDetails({
       studentDetails: {
-        year: value,
+        subject: value,
       },
     });
     nextStep();
@@ -57,17 +57,19 @@ const ChooseSubjects = () => {
         <div className="my-2"></div>
         <form className="flex flex-col items-center justify-center">
           <ul className="p-0">
-            {firstHalfSubjects.map((value) => (
-              <div className="relative" key={value}>
+            {firstHalfSubjects.map((subject) => (
+              <div className="relative" key={subject}>
                 <SelectButton
-                  selected={(value) => value === studentDetails.get().subject}
-                  value={value}
-                  text={value}
+                  selected={(subject) =>
+                    subject === studentDetails.get().subject
+                  }
+                  value={subject}
+                  text={subject}
                   handleSubmit={handleSubmit}
                 />
                 <CheckIcon
                   className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2"
-                  enabled={value === studentDetails.get().subject}
+                  enabled={subject === studentDetails.get().subject}
                 />
               </div>
             ))}
