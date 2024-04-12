@@ -1,4 +1,4 @@
-import { IoDocumentTextSharp } from "react-icons/io5";
+import { FaCaretDown, FaQuoteLeft } from "react-icons/fa";
 import { useWizard } from "react-use-wizard";
 import BackButton from "../BackButton";
 import BackIcon from "../BackIcon";
@@ -80,8 +80,8 @@ const ChooseSubjects = () => {
           <BackButton />
         </div>
       </div>
-      <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
-        {secondHalfSubjects ? (
+      {secondHalfSubjects ? (
+        <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
           <form className="flex flex-col items-center justify-center">
             <ul className="p-0">
               {secondHalfSubjects.map((value) => (
@@ -100,19 +100,28 @@ const ChooseSubjects = () => {
               ))}
             </ul>
           </form>
-        ) : (
-          <div className="bg-light rounded-lg flex justify-center flex-col items-center px-8 py-8 gap-4">
-            <IoDocumentTextSharp className="icon" size={60} color="#f43f5e" />
-            <p className="text-base text-black font-primary font-light">
-              Our experienced tutors{" "}
-              <span className="inline text-black text-base font-primary font-semibold">
-                individualize their learning plans
-              </span>{" "}
-              to match each student's personal needs and goals!
+        </div>
+      ) : (
+        <div className="flex-[2_2_0%] relative self-end h-72 bg-light rounded-lg flex justify-center flex-col px-12 mb-4">
+          <div className="flex flex-col justify-end items-start gap-5">
+            <FaQuoteLeft className="icon" size={16} color="#f43f5e" />
+            <p className="text-black text-base font-primary font-light mt-2">
+              Varsity Tutors really helped me understand the concepts during my
+              Calculus 2 class. My tutor has such amazing patience and is open
+              to many questions! Lastly, was always on time and very prompt.
+              Highly suggest Varsity Tutors.
+            </p>
+            <FaCaretDown
+              className="icon absolute left-8 bottom-[-38px]"
+              color="white"
+              size={80}
+            />
+            <p className="text-black text-base font-primary font-light">
+              -- John Woo
             </p>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
