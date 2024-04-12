@@ -30,6 +30,22 @@ const { headerType } = Astro.props;
     </head>
 
     <body>
+      <div id="preloader" class="preloader">
+        <div class="preloader-inner">
+          <div class="preloader-6">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <!-- / -->
+      <!--Overlay-->
       <header class=`app-header app-header-1 ${headerType}`>
         <div class="container">
           <div class="header-wrap">
@@ -106,7 +122,7 @@ const { headerType } = Astro.props;
               </div>
               <ul>
                 <li>
-                  <a href="/">
+                  <a href="home.html">
                     <span class="text">Home</span>
                     <span class="icon fa fa-angle-right"></span>
                   </a>
@@ -384,7 +400,7 @@ const { headerType } = Astro.props;
                   </a>
                 </li>
                 <li>
-                  <a href={"http://localhost:4321/"}>
+                  <a href="page-start.html">
                     <span class="text">Let's get started</span>
                     <span class="icon fa fa-angle-right"></span>
                   </a>
