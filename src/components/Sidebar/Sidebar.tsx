@@ -83,9 +83,9 @@ const Sidebar = (props: Props) => {
             </div>
           </div>
         </div>
-        <span className="sidenav-close"></span>
+        <span onClick={toggleOpen} className="sidenav-close"></span>
       </div>
-      <span className="mega-menu-overlay"></span>
+      <span onClick={toggleOpen} className="mega-menu-overlay"></span>
     </>
   );
 };
