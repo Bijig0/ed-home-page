@@ -1,5 +1,6 @@
 import { FaCaretDown, FaQuoteLeft } from "react-icons/fa";
 import { useWizard } from "react-use-wizard";
+import { reviewThree } from "../../../reviews";
 import BackButton from "../BackButton";
 import BackIcon from "../BackIcon";
 import BreadCrumb from "../BreadCrumb";
@@ -106,10 +107,7 @@ const ChooseSubjects = () => {
           <div className="flex flex-col justify-end items-start gap-5">
             <FaQuoteLeft className="icon" size={16} color="#f43f5e" />
             <p className="text-black text-base font-primary font-light mt-2">
-              Varsity Tutors really helped me understand the concepts during my
-              Calculus 2 class. My tutor has such amazing patience and is open
-              to many questions! Lastly, was always on time and very prompt.
-              Highly suggest Varsity Tutors.
+              {reviewThree.text}
             </p>
             <FaCaretDown
               className="icon absolute left-8 bottom-[-38px]"
@@ -117,7 +115,7 @@ const ChooseSubjects = () => {
               size={80}
             />
             <p className="text-black text-base font-primary font-light">
-              -- John Woo
+              -- {reviewThree.author}
             </p>
           </div>
         </div>

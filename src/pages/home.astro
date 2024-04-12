@@ -5,6 +5,7 @@ import Shapes from '../components/MainForm/Shapes';
 import subjects from '../lib/subjects';
 import whyUs from '../lib/whyUs'
 import tutors from '../lib/tutors'
+import {reviewFour, reviewFive, reviewSix} from '../reviews';
 
 const HOME_LINK = "http://localhost:4321/home.html"
 ---
@@ -183,14 +184,14 @@ const HOME_LINK = "http://localhost:4321/home.html"
                             <div class="swiper-slide">
                                 <div class="item">
                                     <div class="content">
-                                        <p>You've saved our business! I can't say enough about you. We were treated like royalty. We can't understand how we've been living without you.</p>
+                                        <p>{reviewFour.text}</p>
                                     </div>
                                     <div class="author">
                                         <div class="avatar">
                                             <img src="assets/images/people/1.jpg" alt="alt" />
                                         </div>
-                                        <h4>Miranda Fox</h4>
-                                        <h5>Our Customer</h5>
+                                        <h4>{reviewFour.author}</h4>
+                                        <h5>Parent</h5>
                                     </div>
                                 </div>
                             </div>
@@ -198,14 +199,14 @@ const HOME_LINK = "http://localhost:4321/home.html"
                             <div class="swiper-slide">
                                 <div class="item">
                                     <div class="content">
-                                        <p>Dude, your stuff is the bomb! I love your system. It's all good. I was treated like royalty. Keep up the excellent work. I will definitely be ordering again!</p>
+                                        <p>{reviewFive.text}</p>
                                     </div>
                                     <div class="author">
                                         <div class="avatar">
                                             <img src="assets/images/people/2.jpg" alt="alt" />
                                         </div>
-                                        <h4>James Maxwell</h4>
-                                        <h5>Our Customer</h5>
+                                        <h4>{reviewFive.author}</h4>
+                                        <h5>Parent</h5>
                                     </div>
                                 </div>
                             </div>
@@ -213,18 +214,23 @@ const HOME_LINK = "http://localhost:4321/home.html"
                             <div class="swiper-slide">
                                 <div class="item">
                                     <div class="content">
-                                        <p>You've saved our business! I can't say enough about you. We were treated like royalty. We can't understand how we've been living without you.</p>
+                                        <p>{reviewSix.text}</p>
                                     </div>
                                     <div class="author">
                                         <div class="avatar">
                                             <img src="assets/images/people/3.jpg" alt="alt" />
                                         </div>
-                                        <h4>John Whoo</h4>
-                                        <h5>Our Customer</h5>
+                                        <h4>{reviewSix.author}</h4>
+                                        <h5>Parent</h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="flex justify-center items-center my-8">
+                            <a href="http://localhost:4321/home.html" class="button button-md button-light button-line-primary">
+                                <span class="title">Read More Reviews</span>
+                            </a>
+                        </div>    
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>

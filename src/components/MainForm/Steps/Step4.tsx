@@ -1,4 +1,6 @@
+import { FaCaretDown, FaQuoteLeft } from "react-icons/fa";
 import { useWizard } from "react-use-wizard";
+import { reviewOne } from "../../../reviews";
 import BackButton from "../BackButton";
 import BackIcon from "../BackIcon";
 import BreadCrumb from "../BreadCrumb";
@@ -7,7 +9,6 @@ import ProgressBar from "../ProgressBar";
 import SelectButton from "../SelectButton";
 import { howSoon, type HowSoon } from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
-import { FaQuoteLeft, FaCaretDown } from "react-icons/fa";
 
 type FormValues = {
   howSoon: HowSoon;
@@ -51,7 +52,7 @@ const Step1 = () => {
         <form className="flex flex-col items-center justify-center">
           <ul className="p-0">
             {howSoon.map((value) => (
-              <div className="relative">
+              <div className="relative" key={value}>
                 <SelectButton
                   selected={(value) => value === studentDetails.get().howSoon}
                   value={value}
@@ -75,10 +76,7 @@ const Step1 = () => {
         <div className="flex flex-col justify-end items-start gap-5">
           <FaQuoteLeft className="icon" size={16} color="#f43f5e" />
           <p className="text-black text-base font-primary font-light mt-2">
-            Varsity Tutors really helped me understand the concepts during my
-            Calculus 2 class. My tutor has such amazing patience and is open to
-            many questions! Lastly, was always on time and very prompt. Highly
-            suggest Varsity Tutors.
+            {reviewOne.text}
           </p>
           <FaCaretDown
             className="icon absolute left-8 bottom-[-38px]"
@@ -86,7 +84,7 @@ const Step1 = () => {
             size={80}
           />
           <p className="text-black text-base font-primary font-light">
-            -- John Woo
+            {reviewOne.author}
           </p>
         </div>
       </div>
