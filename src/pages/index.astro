@@ -7,8 +7,7 @@ import tutors from "../lib/tutors";
 import whyUs from "../lib/whyUs";
 import { reviewFive, reviewFour, reviewSix } from "../reviews";
 
-const HOME_LINK =
-  "/#:~:text=Australia%27s%20%231%20Top%20Rated%20Tutors";
+const HOME_LINK = "/#:~:text=Australia%27s%20%231%20Top%20Rated%20Tutors";
 ---
 
 <Layout headerType="empty">
@@ -38,8 +37,9 @@ const HOME_LINK =
           <!-- <figure class="section-shape shape-1">
             <img src="assets/images/shapes/1.svg" alt="Image Description" />
         </figure> -->
+
           <div class="display-center">
-            <div class="container">
+            <div class="container mt-16">
               <MainForm client:visible />
             </div>
           </div>
@@ -55,7 +55,7 @@ const HOME_LINK =
               {
                 subjects.map(({ name, src }) => {
                   return (
-                    <div class="col-6 col-sm-4 col-md-4 col-lg-2">
+                    <div class="hidden md:visible md:flex col-6 col-sm-4 col-md-4 col-lg-2">
                       <div>
                         <div class="item hover:transition-none animate-none">
                           <div class="inner flex items-center flex-col">
