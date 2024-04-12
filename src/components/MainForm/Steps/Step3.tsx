@@ -15,9 +15,9 @@ import {
 import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 const headerText = {
-  Child: "What does your child need help with?",
-  Self: "What do you need help with?",
-  Other: "What does the student need help with?",
+  Child: "What are your goals with your child's tutoring?",
+  Self: "What are your goals with tutoring?",
+  Other: "What are your goals with the student's tutoring?",
 } satisfies Record<WhoNeedsTutoring, string>;
 
 const text = {
