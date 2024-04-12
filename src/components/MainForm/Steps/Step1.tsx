@@ -36,7 +36,7 @@ const Step1 = () => {
     <div>
       <div className="text-center">
         <h1 className="text-white mx-auto mb-6 text-6xl text-center font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
-          Award Winning Tutors
+          Australia's #1 Top Rated Tutors
         </h1>
 
         <p className="text-light text-xl mb-7">
