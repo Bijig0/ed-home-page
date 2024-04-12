@@ -23,3 +23,14 @@
 .button-box-shadow {
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
 }
+
+.hidden-mobile-flex-normal {
+  display: none;
+}
+
+/* Style for non-mobile devices (tablets and desktops) */
+@media (min-width: 768px) {
+  .hidden-mobile-flex-normal {
+    display: flex;
+  }
+}

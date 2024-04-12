@@ -68,7 +68,7 @@ const ChooseYear = () => {
           <BackButton />
         </div>
       </div>
-      <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
+      <div className="hidden-mobile-flex-normal flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
         <div className="bg-light rounded-lg flex justify-center flex-col items-center px-8 py-8 gap-4">
           <IoDocumentTextSharp className="icon" size={60} color="#f43f5e" />
           <p className="text-base text-black font-primary font-light">

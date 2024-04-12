@@ -10340,3 +10340,14 @@ testimonial
   padding-top: 150px;
 }
 /*# sourceMappingURL=styles.css.map */
+
+.hidden-mobile-flex-normal {
+  display: none;
+}
+
+/* Style for non-mobile devices (tablets and desktops) */
+@media (min-width: 768px) {
+  .hidden-mobile-flex-normal {
+    display: flex;
+  }
+}
