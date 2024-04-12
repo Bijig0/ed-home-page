@@ -100,7 +100,7 @@ const Step1 = () => {
         )}
         {state.value === "choosingLocation" && (
           <>
-            <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
+            <h1 className="text-white mb-6 text-2xl md:text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
               Let's finish up your profile:
             </h1>
             <form
@@ -143,7 +143,7 @@ const Step1 = () => {
           <BackButton onClick={handleBack} />
         </div>
       </div>
-      <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
+      <div className="hidden-mobile-flex-normal flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
         <div className="bg-light rounded-lg flex justify-center flex-col items-center px-8 py-8">
           <h2 className="mb-4 bg-rose-200 text-red-600 px-4 py-2 rounded-lg md:w-84 md:mx-auto text-xs font-semibold tracking-widest uppercase title-font">
             EduLine Tutors

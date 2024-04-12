@@ -51,7 +51,7 @@ const Step1 = () => {
 
           <div className="my-4"></div>
         </div>
-        <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
+        <h1 className="text-white mb-6 text-2xl md:text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
           {headerText[studentDetails.get().whoNeedsTutoring]}
         </h1>
         <div className="my-2"></div>
@@ -80,7 +80,7 @@ const Step1 = () => {
           <BackButton />
         </div>
       </div>
-      <div className="flex-[2_2_0%] relative self-end h-72 bg-light rounded-lg flex justify-center flex-col px-12 gap-4">
+      <div className="hidden-mobile-flex-normal flex-[2_2_0%] relative self-end h-72 bg-light rounded-lg justify-center flex-col px-12 gap-4">
         <div className="flex flex-col justify-end items-start gap-5">
           <FaQuoteLeft className="icon" size={16} color="#f43f5e" />
           <p className="text-black text-base font-primary font-light mt-2">

@@ -41,7 +41,7 @@ const ChooseYear = () => {
 
           <div className="my-4"></div>
         </div>
-        <h1 className="text-white mb-0 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
+        <h1 className="text-white mb-0 text-2xl md:text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
           {headerText[studentDetails.get().whoNeedsTutoring]}
         </h1>
         <div className="my-2"></div>
