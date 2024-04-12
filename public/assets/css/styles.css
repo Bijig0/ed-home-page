@@ -7925,9 +7925,13 @@ Element: Responsive Video
   margin-bottom: -60px;
 }
 
+.el-floating-shapes {
+  opacity: 0.45;
+}
+
 .el-floating-shapes .shape {
   width: 99px;
-  z-index: 9;
+  z-index: -100;
   padding-top: 100%;
   position: absolute;
 }
