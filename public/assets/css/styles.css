@@ -6030,7 +6030,7 @@ Forms
 .el-heading {
   z-index: 12;
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 }
 
 .el-heading p {
@@ -10108,7 +10108,6 @@ testimonial
 .section-features.section-features-2 .item {
   text-align: center;
   position: relative;
-  margin-bottom: 60px;
 }
 
 .section-features.section-features-2 .item p {
@@ -10363,6 +10362,17 @@ testimonial
 /* Style for non-mobile devices (tablets and desktops) */
 @media (min-width: 768px) {
   .hidden-mobile-block-normal {
+    display: block;
+  }
+}
+
+.flex-mobile-block-normal {
+  display: flex;
+}
+
+/* Style for non-mobile devices (tablets and desktops) */
+@media (min-width: 768px) {
+  .flex-mobile-block-normal {
     display: block;
   }
 }

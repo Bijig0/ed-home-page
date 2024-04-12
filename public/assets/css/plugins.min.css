@@ -3940,10 +3940,6 @@ html {
   -ms-flex-direction: column-reverse !important;
   flex-direction: column-reverse !important;
 }
-.flex-wrap {
-  -ms-flex-wrap: wrap !important;
-  flex-wrap: wrap !important;
-}
 .flex-nowrap {
   -ms-flex-wrap: nowrap !important;
   flex-wrap: nowrap !important;
