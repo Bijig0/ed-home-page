@@ -7,7 +7,7 @@ type Tutor = {
 const tutors = [
   {
     name: "Miranda Fox",
-    description: "Lorem ipsum dolor sit amet consectetur elit sed do.",
+    description: "Syd, QLD. VCE Study Score 48/50. Loves bowling and boba tea",
     image:
       "https://www.austockphoto.com.au/imgcache/uploads/photos/compressed/asian-university-student-austockphoto-000111941.jpg?v=1.4.2",
   },
