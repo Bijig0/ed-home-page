@@ -7925,36 +7925,36 @@ Element: Responsive Video
   margin-bottom: -60px;
 }
 
-.section-hero .el-floating-shapes .shape {
+.el-floating-shapes .shape {
   width: 99px;
   z-index: 9;
   padding-top: 100%;
   position: absolute;
 }
 
-.section-hero .el-floating-shapes .shape img {
+.el-floating-shapes .shape img {
   top: 0;
   left: 0;
   width: 100%;
   position: absolute;
 }
 
-.section-hero .el-floating-shapes .shape.shape-1 {
+.el-floating-shapes .shape.shape-1 {
   top: 20%;
   left: 15%;
 }
 
-.section-hero .el-floating-shapes .shape.shape-2 {
+.el-floating-shapes .shape.shape-2 {
   top: 60%;
   left: 9%;
 }
 
-.section-hero .el-floating-shapes .shape.shape-3 {
+.el-floating-shapes .shape.shape-3 {
   top: 30%;
   right: 15%;
 }
 
-.section-hero .el-floating-shapes .shape.shape-4 {
+.el-floating-shapes .shape.shape-4 {
   top: 75%;
   right: 6%;
 }
