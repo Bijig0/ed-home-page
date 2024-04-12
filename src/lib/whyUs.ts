@@ -8,13 +8,13 @@ const whyUs = [
   {
     title: "Safety First",
     description:
-      "Our tutors are all personally vetted by the EduLine staff and all have valid WWC (Working With Children) checks. Your child's safety is of utmost importance and is taken into account with deep respect",
+      "Tutors are personally vetted and have valid WWC (Working With Children) checks. Your child's safety is of utmost importance",
     image: "https://img.icons8.com/bubbles/50/shield.png",
   },
   {
     title: "Teaching With A Passion",
     description:
-      "Our teachers are passionate about teaching and are committed to providing high-quality education to our students. We believe in the power of education and we are dedicated to helping our students achieve their full potential.",
+      "Our tutors pass through are filtered through academic screenings and a 3-step interview. Only the highest quality education for your child",
     image: "https://img.icons8.com/bubbles/50/training.png",
   },
   {
@@ -38,7 +38,7 @@ const whyUs = [
   {
     title: "First Lesson On Us",
     description:
-      "Your first lesson is covered by our 100% Happiness Guarantee, so if you don’t think the tutor we have selected is the right one for you there’s no charge.",
+      "Your first lesson is covered by our 100% Happiness Guarantee. Don't think your tutor's the right one? Don't worry, there's no charge",
     image: "https://img.icons8.com/bubbles/50/filled-like.png",
   },
 ] satisfies WhyUs[];

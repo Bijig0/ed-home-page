@@ -40,11 +40,11 @@ const Step1 = () => {
     <div>
       <div className="text-center">
         <h1 className="text-white mx-auto mb-6 text-6xl text-center font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
-          Award Winning Programming Tutors
+          Award Winning Tutors
         </h1>
 
         <p className="text-light text-xl mb-7">
-          Welcome! Let's match you with the perfect programming tutor
+          Welcome! Let's match you with the perfect tutor
         </p>
 
         <div className="flex text-center mt-6 mx-auto justify-center w-64 items-center px-6 py-2 font-semibold bg-rose-500 rounded-lg">
