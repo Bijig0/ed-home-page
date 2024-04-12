@@ -35,11 +35,11 @@ const Step1 = () => {
   return (
     <div>
       <div className="text-center">
-        <h1 className="text-white mx-auto mb-6 text-6xl text-center font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
+        <h1 className="text-white mx-auto mb-6 text-4xl md:text-6xl text-center font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
           Australia's #1 Top Rated Tutors
         </h1>
 
-        <p className="text-light text-xl mb-7">
+        <p className="text-light text-md md:text-xl mb-7">
           Welcome! Let's match you with the perfect tutor
         </p>
 
