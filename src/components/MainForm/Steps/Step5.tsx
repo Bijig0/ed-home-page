@@ -12,7 +12,7 @@ type FormValues = {
 };
 
 const Step1 = () => {
-  const { handleStep, previousStep, nextStep } = useWizard();
+  const { handleStep, previousStep, nextStep, activeStep } = useWizard();
 
   const handleBack = () => previousStep();
 
@@ -36,7 +36,7 @@ const Step1 = () => {
       <div className="flex flex-col items-start flex-[3_3_0%]">
         <div>
           <BreadCrumb />
-          <ProgressBar step={5} />
+          <ProgressBar step={activeStep} />
 
           <div className="my-4"></div>
         </div>

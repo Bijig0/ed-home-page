@@ -28,7 +28,7 @@ const text = {
 } satisfies Record<ReasonForTutoring, string>;
 
 const Step1 = () => {
-  const { handleStep, previousStep, nextStep } = useWizard();
+  const { handleStep, previousStep, nextStep, activeStep } = useWizard();
 
   const handleSubmit = (value: ReasonForTutoring) => {
     updateStudentDetails({
@@ -48,7 +48,7 @@ const Step1 = () => {
       <div className="flex flex-col items-start flex-[3_3_0%]">
         <div>
           <BreadCrumb />
-          <ProgressBar step={3} />
+          <ProgressBar step={activeStep} />
 
           <div className="my-4"></div>
         </div>

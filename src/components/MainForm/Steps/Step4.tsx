@@ -19,7 +19,7 @@ const headerText = {
 };
 
 const Step1 = () => {
-  const { nextStep } = useWizard();
+  const { nextStep, activeStep } = useWizard();
 
   const handleSubmit = (value: HowSoon) => {
     updateStudentDetails({
@@ -40,7 +40,7 @@ const Step1 = () => {
         </h1> */}
         <div>
           <BreadCrumb />
-          <ProgressBar step={4} />
+          <ProgressBar step={activeStep} />
         </div>
         <div className="my-4"></div>
         <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">

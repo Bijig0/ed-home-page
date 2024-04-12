@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useWizard } from "react-use-wizard";
 import BackButton from "../BackButton";
 import BackIcon from "../BackIcon";
 import BreadCrumb from "../BreadCrumb";
@@ -33,6 +34,8 @@ const Step1 = () => {
     });
   };
 
+  const { activeStep } = useWizard();
+
   const handleSelectLessonType = (value: LessonType) => {
     if (value === "online") {
       send({ type: "CHOOSE_ONLINE" });
@@ -55,7 +58,7 @@ const Step1 = () => {
       <div className="flex flex-col items-start flex-[3_3_0%]">
         <div>
           <BreadCrumb />
-          <ProgressBar step={6} />
+          <ProgressBar step={activeStep} />
 
           <div className="my-4"></div>
         </div>

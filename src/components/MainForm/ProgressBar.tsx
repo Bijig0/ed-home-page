@@ -1,10 +1,12 @@
+import { useWizard } from "react-use-wizard";
+
 type Props = {
   step: number;
-  total?: number;
 };
 
-const ProgressBar = ({ step, total = 8 }: Props) => {
-  const progressPercentage = (step / total) * 100;
+const ProgressBar = ({ step }: Props) => {
+  const { activeStep, stepCount } = useWizard();
+  const progressPercentage = (activeStep / (stepCount - 2)) * 100;
   return (
     <>
       <div
@@ -19,7 +21,7 @@ const ProgressBar = ({ step, total = 8 }: Props) => {
       <div className="my-2"></div>
       <div className="flex justify-center">
         <p className="font-primary text-sm text-light">
-          {step} of {total}
+          {activeStep} of {stepCount - 2}
         </p>
       </div>
     </>

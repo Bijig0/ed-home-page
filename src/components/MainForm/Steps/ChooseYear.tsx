@@ -17,7 +17,7 @@ const headerText = {
 } satisfies Record<WhoNeedsTutoring, string>;
 
 const ChooseYear = () => {
-  const { nextStep } = useWizard();
+  const { nextStep, activeStep } = useWizard();
 
   const years = Object.values(yearByYearDetails).map(({ name }) => name);
 
@@ -37,7 +37,7 @@ const ChooseYear = () => {
       <div className="flex flex-col items-start flex-[3_3_0%]">
         <div>
           <BreadCrumb />
-          <ProgressBar step={2} />
+          <ProgressBar step={activeStep} />
 
           <div className="my-4"></div>
         </div>
