@@ -5386,7 +5386,6 @@ Forms
 .el-card p,
 .el-panel p,
 .section-features.section-features-1 .item p {
-  font-size: 12px;
   font-family: "Poppins", sans-serif;
 }
 
@@ -5585,10 +5584,6 @@ Forms
 .el-panel .el-panel-body {
   padding: 30px;
   position: relative;
-}
-
-.el-panel .el-panel-body p {
-  font-size: 14px;
 }
 
 .el-panel .el-panel-body .el-panel-title {
