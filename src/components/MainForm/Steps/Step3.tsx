@@ -1,21 +1,21 @@
 import { FaCaretDown, FaQuoteLeft } from "react-icons/fa";
 import { useWizard } from "react-use-wizard";
-import BackButton from "./BackButton";
-import BackIcon from "./BackIcon";
-import BreadCrumb from "./BreadCrumb";
-import CheckIcon from "./CheckIcon";
-import ProgressBar from "./ProgressBar";
-import SelectButton from "./SelectButton";
+import BackButton from "../BackButton";
+import BackIcon from "../BackIcon";
+import BreadCrumb from "../BreadCrumb";
+import CheckIcon from "../CheckIcon";
+import ProgressBar from "../ProgressBar";
+import SelectButton from "../SelectButton";
 import {
   reasonsForTutoring,
   whoNeedsTutoring,
   type ReasonForTutoring,
   type WhoNeedsTutoring,
-} from "./types";
-import { studentDetails, updateStudentDetails } from "./useFormStore";
+} from "../types";
+import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 const headerText = {
-  Child: "What does your child help with?",
+  Child: "What does your child need help with?",
   Self: "What do you need help with?",
   Other: "What does the student need help with?",
 } satisfies Record<WhoNeedsTutoring, string>;

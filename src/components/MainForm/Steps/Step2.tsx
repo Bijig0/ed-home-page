@@ -1,13 +1,13 @@
 import { IoDocumentTextSharp } from "react-icons/io5";
 import { useWizard } from "react-use-wizard";
-import BackButton from "./BackButton";
-import BackIcon from "./BackIcon";
-import BreadCrumb from "./BreadCrumb";
-import CheckIcon from "./CheckIcon";
-import ProgressBar from "./ProgressBar";
-import SelectButton from "./SelectButton";
-import { gradeLevels, type GradeLevel, type WhoNeedsTutoring } from "./types";
-import { studentDetails, updateStudentDetails } from "./useFormStore";
+import BackButton from "../BackButton";
+import BackIcon from "../BackIcon";
+import BreadCrumb from "../BreadCrumb";
+import CheckIcon from "../CheckIcon";
+import ProgressBar from "../ProgressBar";
+import SelectButton from "../SelectButton";
+import { gradeLevels, type GradeLevel, type WhoNeedsTutoring } from "../types";
+import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 const headerText = {
   Child: "What year is your child in?",

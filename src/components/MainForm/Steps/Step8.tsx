@@ -5,14 +5,14 @@ import PhoneInput from "react-phone-number-input/input";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
 import { useWizard } from "react-use-wizard";
-import { isLastStep } from "../../globalStore";
-import BackButton from "./BackButton";
-import BackIcon from "./BackIcon";
-import BreadCrumb from "./BreadCrumb";
-import CheckIcon from "./CheckIcon";
-import ErrorText from "./ErrorText";
-import ProgressBar from "./ProgressBar";
-import { studentDetails, updateStudentDetails } from "./useFormStore";
+import { isLastStep } from "../../../globalStore";
+import BackButton from "../BackButton";
+import BackIcon from "../BackIcon";
+import BreadCrumb from "../BreadCrumb";
+import CheckIcon from "../CheckIcon";
+import ErrorText from "../ErrorText";
+import ProgressBar from "../ProgressBar";
+import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 type FormValues = {
   phoneNumber: string;

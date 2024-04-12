@@ -1,14 +1,14 @@
 import { useForm } from "react-hook-form";
 import { useWizard } from "react-use-wizard";
-import BackButton from "./BackButton";
-import BackIcon from "./BackIcon";
-import ErrorText from "./ErrorText";
-import { studentDetails, updateStudentDetails } from "./useFormStore";
-import BreadCrumb from "./BreadCrumb";
-import ProgressBar from "./ProgressBar";
+import BackButton from "../BackButton";
+import BackIcon from "../BackIcon";
+import BreadCrumb from "../BreadCrumb";
+import ErrorText from "../ErrorText";
+import ProgressBar from "../ProgressBar";
+import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 type FormValues = {
-  fullName: string;
+  email: string;
 };
 
 const Step1 = () => {
@@ -27,7 +27,7 @@ const Step1 = () => {
   } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
     console.log(data);
-    updateStudentDetails({ studentDetails: { fullName: data.fullName } });
+    updateStudentDetails({ studentDetails: { email: data.email } });
     nextStep();
   };
 
@@ -36,7 +36,7 @@ const Step1 = () => {
       <div className="flex flex-col items-start flex-[3_3_0%]">
         <div>
           <BreadCrumb />
-          <ProgressBar step={5} />
+          <ProgressBar step={7} />
 
           <div className="my-4"></div>
         </div>
@@ -51,26 +51,26 @@ const Step1 = () => {
           <div>
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="username"
+              htmlFor="email"
             >
-              Full Name *
+              Email *
             </label>
             <input
               className="border-px border-black h-16 text-lg shadow bg-light appearance-none border rounded w-80 px-4 py-2text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
+              id="email"
               type="text"
-              placeholder="Full Name"
-              {...register("fullName", {
-                required: "Full name is required",
+              placeholder="Email"
+              {...register("email", {
+                required: "Email is required",
                 pattern: {
-                  value: /^[a-zA-Z]+ [a-zA-Z]+$/,
-                  message:
-                    "Full name must be alphanumeric and contain a space between the first and last name",
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                  message: "Please enter a valid email address",
                 },
               })}
             />
-            {errors["fullName"] && (
-              <ErrorText>{errors["fullName"].message}</ErrorText>
+
+            {errors["email"] && (
+              <ErrorText>{errors["email"].message}</ErrorText>
             )}
           </div>
           <button
@@ -103,4 +103,5 @@ const Step1 = () => {
     </div>
   );
 };
+
 export default Step1;

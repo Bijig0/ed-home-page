@@ -1,13 +1,13 @@
 import { useForm } from "react-hook-form";
-import BackButton from "./BackButton";
-import BackIcon from "./BackIcon";
-import CheckIcon from "./CheckIcon";
-import ErrorText from "./ErrorText";
-import SelectButton from "./SelectButton";
-import { studentDetails } from "./useFormStore";
-import useLessonTypeStateMachine from "./useLessonTypeStateMachine";
-import BreadCrumb from "./BreadCrumb";
-import ProgressBar from "./ProgressBar";
+import BackButton from "../BackButton";
+import BackIcon from "../BackIcon";
+import BreadCrumb from "../BreadCrumb";
+import CheckIcon from "../CheckIcon";
+import ErrorText from "../ErrorText";
+import ProgressBar from "../ProgressBar";
+import SelectButton from "../SelectButton";
+import { studentDetails } from "../useFormStore";
+import useLessonTypeStateMachine from "../useLessonTypeStateMachine";
 
 type FormValues = {
   zipCode: string;

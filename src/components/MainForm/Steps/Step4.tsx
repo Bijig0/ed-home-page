@@ -1,12 +1,12 @@
 import { useWizard } from "react-use-wizard";
-import BackButton from "./BackButton";
-import BackIcon from "./BackIcon";
-import BreadCrumb from "./BreadCrumb";
-import CheckIcon from "./CheckIcon";
-import ProgressBar from "./ProgressBar";
-import SelectButton from "./SelectButton";
-import { howSoon, type HowSoon } from "./types";
-import { studentDetails, updateStudentDetails } from "./useFormStore";
+import BackButton from "../BackButton";
+import BackIcon from "../BackIcon";
+import BreadCrumb from "../BreadCrumb";
+import CheckIcon from "../CheckIcon";
+import ProgressBar from "../ProgressBar";
+import SelectButton from "../SelectButton";
+import { howSoon, type HowSoon } from "../types";
+import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 type FormValues = {
   howSoon: HowSoon;
