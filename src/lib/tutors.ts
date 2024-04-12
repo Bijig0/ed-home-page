@@ -12,29 +12,32 @@ const tutors = [
       "https://www.austockphoto.com.au/imgcache/uploads/photos/compressed/asian-university-student-austockphoto-000111941.jpg?v=1.4.2",
   },
   {
-    name: "James Maxwell",
-    description: "Lorem ipsum dolor sit amet consectetur elit sed do.",
+    name: "Emily Mckinee",
+    description:
+      "Syd, QLD: Bachelor of Arts (Hons) in English. Loves reading and writing",
     image: "assets/images/people/2.jpg",
   },
   {
-    name: "John Woo",
-    description: "Lorem ipsum dolor sit amet consectetur elit sed do.",
+    name: "Johnathan D",
+    description: "Melbourne, VIC: Melbourne High 2021 Dux. Belieber",
     image:
       "https://alchemytuition.com.au/wp-content/uploads/2022/08/Des-600x600-1.jpg",
   },
   {
-    name: "Emily Thompson",
-    description: "Lorem ipsum dolor sit amet consectetur elit sed do.",
+    name: "Mickey L.L",
+    description:
+      "Melbourne, VIC: Bachelor of Science Unimelb #1 Taylor Swift Fan",
     image: "assets/images/people/4.jpg",
   },
   {
     name: "Robert Fox",
-    description: "Lorem ipsum dolor sit amet consectetur elit sed do.",
+    description: "Melbourne, VIC: Master of I.T. Thinks AI is the future",
     image: "assets/images/people/5.jpg",
   },
   {
-    name: "Ava Taylor",
-    description: "Lorem ipsum dolor sit amet consectetur elit sed do.",
+    name: "Tom Zhu",
+    description:
+      "Melbourne, VIC: Bachelor of Science Unimelb. Loves reading and writing",
     image: "assets/images/people/6.jpg",
   },
 ] satisfies Tutor[];
