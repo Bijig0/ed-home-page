@@ -1,10 +1,13 @@
 ---
 import Sidebar from "../components/Sidebar/Sidebar";
+import { HOME_LINK } from "../globalStore";
 
 interface Props {
   headerType: "empty" | "boxed";
 }
 const { headerType } = Astro.props;
+
+const $HOME_LINK = HOME_LINK.get();
 ---
 
 <doctype html>
@@ -108,25 +111,25 @@ const { headerType } = Astro.props;
                     <div class="widget-body">
                       <ul>
                         <li>
-                          <a href="page-cooperation.html">
+                          <a href={$HOME_LINK}>
                             <span class="icon ti-angle-left"></span>
                             <span class="text">Home</span>
                           </a>
                         </li>
                         <li>
-                          <a href="page-teachers.html">
+                          <a href="page-about.html">
                             <span class="icon ti-angle-left"></span>
                             <span class="text">About</span>
                           </a>
                         </li>
                         <li>
-                          <a href="page-courses.html">
+                          <a href="page-contact.html">
                             <span class="icon ti-angle-left"></span>
                             <span class="text">Contact Us</span>
                           </a>
                         </li>
                         <li>
-                          <a href="page-departements.html">
+                          <a href="page-faq.html">
                             <span class="icon ti-angle-left"></span>
                             <span class="text">FAQ</span>
                           </a>
@@ -144,7 +147,7 @@ const { headerType } = Astro.props;
             <span class="footer-line"></span>
             <div class="row">
               <div class="col-md-8">
-                <p>© 2020 All Rights Reserved</p>
+                <p>© 2024 All Rights Reserved</p>
               </div>
 
               <div class="col-md-4">

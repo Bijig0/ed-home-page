@@ -1,5 +1,7 @@
+import { useStore } from "@nanostores/react";
 import { useState } from "react";
 import { ImCross } from "react-icons/im";
+import { HOME_LINK } from "../../globalStore";
 
 type Props = {
   headerType: "empty" | "boxed";
@@ -15,6 +17,8 @@ const Sidebar = (props: Props) => {
   };
 
   console.log({ open });
+
+  const $HOME_LINK = useStore(HOME_LINK);
 
   return (
     <>
@@ -45,7 +49,7 @@ const Sidebar = (props: Props) => {
             <div className="sidenav-body-inner">
               <div className="sidenav-links">
                 <a
-                  href="page-login.html"
+                  href={$HOME_LINK}
                   className="button button-md button-block button-line-primary"
                 >
                   <span className="text">Book Now!</span>
@@ -53,25 +57,25 @@ const Sidebar = (props: Props) => {
               </div>
               <ul>
                 <li>
-                  <a href="home.html">
+                  <a href={$HOME_LINK}>
                     <span className="text">Home</span>
                     <span className="icon fa fa-angle-right"></span>
                   </a>
                 </li>
                 <li>
-                  <a href="home.html">
+                  <a href="page-about.html">
                     <span className="text">About</span>
                     <span className="icon fa fa-angle-right"></span>
                   </a>
                 </li>
                 <li>
-                  <a href="home.html">
+                  <a href="page-contact.html">
                     <span className="text">Contact Us</span>
                     <span className="icon fa fa-angle-right"></span>
                   </a>
                 </li>
                 <li>
-                  <a href="home.html">
+                  <a href="page-faq.html">
                     <span className="text">FAQ</span>
                     <span className="icon fa fa-angle-right"></span>
                   </a>
