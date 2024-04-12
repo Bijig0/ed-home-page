@@ -1,14 +1,14 @@
 type WhyUs = {
-    title: string;
-    description: string;
-    image: string;
-}
+  title: string;
+  description: string;
+  image: string;
+};
 
 const whyUs = [
   {
     title: "Safety First",
     description:
-      "We are a team of experienced teachers who are dedicated to providing a safe and supportive learning environment for all students. We understand that safety is a top priority and we take every precaution to ensure that our students are protected at all times.",
+      "Our tutors are all personally vetted by the EduLine staff and all have valid WWC (Working With Children) checks. Your child's safety is of utmost importance and is taken into account with deep respect",
     image: "https://img.icons8.com/bubbles/50/shield.png",
   },
   {
@@ -20,25 +20,25 @@ const whyUs = [
   {
     title: "Stay In The Loop",
     description:
-      "We are always looking for ways to improve our teaching methods and provide our students with the best possible learning experience. We believe in continuous improvement and we are always looking for new ways to enhance our teaching approach.",
+      "We email session updates 24 hours after every lesson with a full report of your child's current progress. We believe in the power of feedback and communication.",
     image: "https://img.icons8.com/bubbles/50/link.png",
   },
   {
     title: "Don't fret about payments",
     description:
-      "We understand that payments can be a source of stress for many students. That's why we offer flexible payment options to make the process as smooth as possible. We also provide a detailed payment plan to help you understand the costs associated with our services.",
+      "No prepayments or terms upfront. We simply charge your debit or credit card 24 hours after each lesson. No penalty for missed lessons. Cancel anytime.",
     image: "https://img.icons8.com/bubbles/50/receive-cash.png",
   },
   {
     title: "Oh-So Easy Booking",
     description:
-      "We believe in open communication and transparency. We encourage our students to ask questions and seek clarification whenever needed. We also provide a dedicated support team to help you with any issues you may encounter.",
+      "Book now in a few simple clicks and less than 5 minutes and have a tutor ready within 72 hours!",
     image: "https://img.icons8.com/bubbles/50/chat.png",
   },
   {
     title: "First Lesson On Us",
     description:
-      "We understand that every student is unique and has different learning needs. That's why we offer a personalized learning experience tailored to your specific needs. We also provide a variety of resources and materials to help you succeed in your studies.",
+      "Your first lesson is covered by our 100% Happiness Guarantee, so if you don’t think the tutor we have selected is the right one for you there’s no charge.",
     image: "https://img.icons8.com/bubbles/50/filled-like.png",
   },
 ] satisfies WhyUs[];
