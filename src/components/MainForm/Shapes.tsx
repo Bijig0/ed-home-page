@@ -19,7 +19,7 @@ const Shapes = () => {
   console.log("rendering");
 
   return (
-    <div className="el-floating-shapes">
+    <div className="hidden-mobile-block-normal el-floating-shapes">
       <span className="shape shape-1">
         <img src="assets/images/shapes/shape1.png" alt="--Alternative--" />
       </span>

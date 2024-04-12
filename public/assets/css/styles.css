@@ -10355,3 +10355,14 @@ testimonial
     display: flex;
   }
 }
+
+.hidden-mobile-block-normal {
+  display: none;
+}
+
+/* Style for non-mobile devices (tablets and desktops) */
+@media (min-width: 768px) {
+  .hidden-mobile-block-normal {
+    display: block;
+  }
+}
