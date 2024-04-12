@@ -2,6 +2,7 @@ import { FaCaretDown, FaQuoteLeft } from "react-icons/fa";
 import { useWizard } from "react-use-wizard";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
+import BreadCrumb from "./BreadCrumb";
 import CheckIcon from "./CheckIcon";
 import ProgressBar from "./ProgressBar";
 import SelectButton from "./SelectButton";
@@ -12,12 +13,11 @@ import {
   type WhoNeedsTutoring,
 } from "./types";
 import { studentDetails, updateStudentDetails } from "./useFormStore";
-import BreadCrumb from "./BreadCrumb";
 
 const headerText = {
-  Child: "What grade level is your child in?",
-  Self: "What grade level are you in?",
-  Other: "What grade level is the student in?",
+  Child: "What does your child help with?",
+  Self: "What do you need help with?",
+  Other: "What does the student need help with?",
 } satisfies Record<WhoNeedsTutoring, string>;
 
 const text = {
