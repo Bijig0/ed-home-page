@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+import { FaGripLines } from "react-icons/fa";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import PhoneInput from "react-phone-number-input/input";
-
-import { useState } from "react";
 import "react-phone-number-input/style.css";
 import { useWizard } from "react-use-wizard";
 import { isLastStep } from "../../../globalStore";
@@ -159,15 +159,12 @@ const Step1 = () => {
       </div>
       <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
         <div className="bg-light rounded-lg flex justify-center flex-col items-center px-8 py-8">
-          <h2 className="mb-4 bg-rose-200 text-red-600 px-4 py-2 rounded-lg md:w-84 md:mx-auto text-xs font-semibold tracking-widest uppercase title-font">
-            DID YOU KNOW?
-          </h2>
-          <p className="text-grey text-md font-primary font-light">
-            Our experienced tutors{" "}
-            <span className="inline text-grey text-md font-primary font-semibold">
-              individualize their learning plans
-            </span>{" "}
-            to match each student's personal needs and goals!
+          <FaGripLines className="izcon" size={16} color="#f43f5e" />
+          <div className="my-2"></div>
+          <p className="text-black text-base font-primary font-light">
+            We know every student is unique. And they deserve a tutoring
+            experience as unique as their needs. With thousands of tutors
+            available, we're confident to find the one best for you.
           </p>
         </div>
       </div>

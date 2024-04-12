@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { FaStarOfLife } from "react-icons/fa";
 import { useWizard } from "react-use-wizard";
 import BackButton from "../BackButton";
 import BackIcon from "../BackIcon";
@@ -88,15 +89,18 @@ const Step1 = () => {
       </div>
       <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
         <div className="bg-light rounded-lg flex justify-center flex-col items-center px-8 py-8">
-          <h2 className="mb-4 bg-rose-200 text-red-600 px-4 py-2 rounded-lg md:w-84 md:mx-auto text-xs font-semibold tracking-widest uppercase title-font">
-            DID YOU KNOW?
-          </h2>
-          <p className="text-grey text-md font-primary font-light">
-            Our experienced tutors{" "}
-            <span className="inline text-grey text-md font-primary font-semibold">
-              individualize their learning plans
-            </span>{" "}
-            to match each student's personal needs and goals!
+          <FaStarOfLife className="icon" size={16} color="#f43f5e" />
+          <div className="my-2"></div>
+
+          <p className="text-black text-base font-primary font-light">
+            We believe in our EduLine Tutors.
+            <br />
+            <span className="inline text-black text-base font-primary font-semibold">
+              100% satisfaction guarantee!
+            </span>
+            <br />
+            If you aren't happy with your first lesson, it's on us! No payment
+            required!
           </p>
         </div>
       </div>

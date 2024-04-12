@@ -146,14 +146,11 @@ const Step1 = () => {
       <div className="flex flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
         <div className="bg-light rounded-lg flex justify-center flex-col items-center px-8 py-8">
           <h2 className="mb-4 bg-rose-200 text-red-600 px-4 py-2 rounded-lg md:w-84 md:mx-auto text-xs font-semibold tracking-widest uppercase title-font">
-            DID YOU KNOW?
+            EduLine Tutors
           </h2>
-          <p className="text-grey text-md font-primary font-light">
-            Our experienced tutors{" "}
-            <span className="inline text-grey text-md font-primary font-semibold">
-              individualize their learning plans
-            </span>{" "}
-            to match each student's personal needs and goals!
+          <p className="text-black text-base font-primary font-light">
+            Our tutors are filtered to have the highest academic standards and
+            hand-selected for the best teaching abilities!
           </p>
         </div>
       </div>
