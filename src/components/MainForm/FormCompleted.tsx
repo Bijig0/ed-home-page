@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useWizard } from "react-use-wizard";
 import { isLastStep } from "../../globalStore";
 import CheckIcon from "./CheckIcon";
-import { studentDetails } from "./useFormStore";
+import { studentDetails, updateStudentDetails } from "./useFormStore";
 
 type ErrorTextProps = {
   children: React.ReactNode;
@@ -55,6 +55,7 @@ const FormCompleted = () => {
 
   const handleBack = () => {
     isLastStep.set(false);
+    updateStudentDetails({ studentDetails: {} });
     goToStep(0);
   };
 

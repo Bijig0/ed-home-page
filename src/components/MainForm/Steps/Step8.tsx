@@ -115,9 +115,14 @@ const Step1 = () => {
             <div className="flex gap-2 items-center justify-left">
               <input
                 type="checkbox"
+                id="agreeToTermsOfUse"
                 {...register("agreeToTermsOfUse", { required: true })}
               />
-              <label htmlFor="agreeToTermsOfUse" className="m-0 text-gray-700">
+              <label
+                htmlFor="agreeToTermsOfUse"
+                id="agreeToTermsOfUse"
+                className="m-0 text-gray-700"
+              >
                 I agree to the terms of use
               </label>
             </div>
