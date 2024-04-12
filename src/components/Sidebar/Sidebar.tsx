@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ImCross } from "react-icons/im";
 
 type Props = {
   headerType: "empty" | "boxed";
@@ -39,10 +40,6 @@ const Sidebar = (props: Props) => {
         <div className="sidenav-menu">
           <div className="sidenav-head">
             <img src="assets/images/sidenav.jpg" alt="sidenav banner" />
-            <button
-              onClick={toggleOpen}
-              className="button button-close-sidenav"
-            ></button>
           </div>
           <div className="sidenav-body">
             <div className="sidenav-body-inner">
@@ -79,6 +76,9 @@ const Sidebar = (props: Props) => {
                     <span className="icon fa fa-angle-right"></span>
                   </a>
                 </li>
+                <div className="flex justify-center mt-3">
+                  <ImCross onClick={toggleOpen} width={20} height={20} />
+                </div>
               </ul>
             </div>
           </div>
