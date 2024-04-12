@@ -64,7 +64,7 @@ const Step1 = () => {
                   handleSubmit={handleSubmit}
                 />
                 <CheckIcon
-                  className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2"
+                  className="absolute right-[-2.25rem] md:right-[-3rem] top-1/2 transform -translate-y-1/2"
                   enabled={value === studentDetails.get().whoNeedsTutoring}
                 />
               </div>
