@@ -92,7 +92,7 @@ type TransformYearDetails<T extends GenericYearDetails> = T extends T
     }
   : never;
 
-const yearByYearDetails = {
+export const yearByYearDetails = {
   "PreK/K": yearPreKOrK,
   "Year 1 to 6": year1to6,
   "Year 7 to 10": year7to10,
@@ -101,7 +101,7 @@ const yearByYearDetails = {
 
 export type YearDetails = TransformYearDetails<
   UnionOfValues<typeof yearByYearDetails>
->;
+> & {};
 
 type ExtractSubject<T extends YearDetails> = T extends T ? T["subject"] : never;
 

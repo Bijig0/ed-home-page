@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Wizard } from "react-use-wizard";
 import FormCompleted from "./FormCompleted";
+import ChooseSubjects from "./Steps/ChooseSubjects";
 import Step1 from "./Steps/Step1";
 import Step2 from "./Steps/Step2";
 import Step3 from "./Steps/Step3";
@@ -18,6 +19,7 @@ const MainForm = () => {
       <QueryClientProvider client={queryClient}>
         <Wizard>
           <Step1 />
+          <ChooseSubjects />
           <Step2 />
           <Step3 />
           <Step4 />

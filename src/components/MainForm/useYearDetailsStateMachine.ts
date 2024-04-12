@@ -87,6 +87,9 @@ const useLessonTypeStateMachine = () => {
           CHOOSE_SUBJECT: {
             target: "completed",
           },
+          BACK: {
+            target: "choosingYear",
+          },
         },
       },
       completed: {

@@ -6,11 +6,8 @@ import BreadCrumb from "../BreadCrumb";
 import CheckIcon from "../CheckIcon";
 import ProgressBar from "../ProgressBar";
 import SelectButton from "../SelectButton";
-import {
-  gradeLevels,
-  type GradeLevel,
-  type WhoNeedsTutoring,
-} from "../types/types";
+import yearByYearDetails from "../types/subjects";
+import { type GradeLevel, type WhoNeedsTutoring } from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 const headerText = {
@@ -22,7 +19,7 @@ const headerText = {
 const ChooseSubjects = () => {
   const { handleStep, previousStep, nextStep } = useWizard();
 
-  const gradeLevel = studentDetails.get().gradeLevel;
+  const years = Object.values(yearByYearDetails).map(({ name }) => name);
 
   const handleSubmit = (value: GradeLevel) => {
     updateStudentDetails({
@@ -34,11 +31,8 @@ const ChooseSubjects = () => {
   console.log(studentDetails.get());
 
   return (
-    <div className="flex ">
+    <div className="flex">
       <div className="flex flex-col items-start flex-[3_3_0%]">
-        {/* <h1 className="text-4xl text-white font-primary">
-          {headerText[studentDetails.whoNeedsTutoring]}
-        </h1> */}
         <div>
           <BreadCrumb />
           <ProgressBar step={2} />
@@ -51,11 +45,11 @@ const ChooseSubjects = () => {
         <div className="my-2"></div>
         <form className="flex flex-col items-center justify-center">
           <ul className="p-0">
-            {gradeLevels.map((value) => (
+            {years.map((value) => (
               <div className="relative" key={value}>
                 <SelectButton
                   selected={(value) =>
-                    value === studentDetails.get().gradeLevel
+                    value === studentDetails.get().yearAndSubject?.name
                   }
                   value={value}
                   text={value}
@@ -63,7 +57,7 @@ const ChooseSubjects = () => {
                 />
                 <CheckIcon
                   className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2"
-                  enabled={value === studentDetails.get().gradeLevel}
+                  enabled={value === studentDetails.get().yearAndSubject?.name}
                 />
               </div>
             ))}
