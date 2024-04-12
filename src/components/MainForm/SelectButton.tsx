@@ -1,14 +1,9 @@
-import type {
-  AllStudentDetailsValues,
-  LessonType,
-  StudentDetails,
-} from "./types";
-import { studentDetails } from "./useFormStore";
+import type { AllStudentDetailsValues, LessonType } from "./types/types";
 
 type Props<T> = {
   value: T;
   text: string;
-  selected: (value: T) => boolean; 
+  selected: (value: T) => boolean;
   handleSubmit: (value: T) => void;
 };
 

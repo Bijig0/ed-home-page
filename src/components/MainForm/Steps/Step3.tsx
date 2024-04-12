@@ -11,7 +11,7 @@ import {
   whoNeedsTutoring,
   type ReasonForTutoring,
   type WhoNeedsTutoring,
-} from "../types";
+} from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 const headerText = {

@@ -1,5 +1,5 @@
 import { useWizard } from "react-use-wizard";
-import type { LessonType } from "./types";
+import type { LessonType } from "./types/types";
 import { updateStudentDetails } from "./useFormStore";
 import useStateMachine, { t } from "./useStateMachine/useStateMachine";
 

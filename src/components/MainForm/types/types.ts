@@ -13,8 +13,16 @@ export const reasonsForTutoring = [
 ] as const;
 export const howSoon = ["Right away", "In a few weeks", "Not sure"] as const;
 
+export const years = [
+  "PreK/K",
+  "Year 1 to 6",
+  "Year 7 to 10",
+  "Year 11 or 12",
+] as const;
+
 export type WhoNeedsTutoring = (typeof whoNeedsTutoring)[number];
 export type GradeLevel = (typeof gradeLevels)[number];
+export type Year = (typeof years)[number];
 export type ReasonForTutoring = (typeof reasonsForTutoring)[number];
 export type HowSoon = (typeof howSoon)[number];
 
@@ -27,16 +35,9 @@ export type LessonType =
       zipCode: string;
     };
 
-// first name
-// zip code
-// email
-// phone number
-// and agree to terms of use
-// Describe the student
-
 export type StudentDetails = {
   whoNeedsTutoring: WhoNeedsTutoring;
-  gradeLevel: GradeLevel;
+  yearAndSubject: Year;
   reasonForTutoring: ReasonForTutoring;
   howSoon: HowSoon;
   fullName: string;

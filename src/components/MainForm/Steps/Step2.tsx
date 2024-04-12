@@ -6,7 +6,11 @@ import BreadCrumb from "../BreadCrumb";
 import CheckIcon from "../CheckIcon";
 import ProgressBar from "../ProgressBar";
 import SelectButton from "../SelectButton";
-import { gradeLevels, type GradeLevel, type WhoNeedsTutoring } from "../types";
+import {
+  gradeLevels,
+  type GradeLevel,
+  type WhoNeedsTutoring,
+} from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 const headerText = {

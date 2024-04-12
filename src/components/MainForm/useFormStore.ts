@@ -1,5 +1,5 @@
 import { map } from "nanostores";
-import type { PartialFormState, StudentDetails } from "./types";
+import type { PartialFormState, StudentDetails } from "./types/types";
 
 export const studentDetails = map<StudentDetails>();
 

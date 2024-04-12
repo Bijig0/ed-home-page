@@ -1,15 +1,10 @@
+import type { years } from "./types";
+
 type Subject = string & {};
 
-const years = [
-  "PreK/K",
-  "Year 1 to 6",
-  "Year 7 to 10",
-  "Year 11 or 12",
-] as const;
-
-type YearDetails = {
+type GenericYearDetails = {
   name: (typeof years)[number];
-  subjects: Subject[];
+  subjects: readonly Subject[];
 };
 
 const yearPreKOrK = {
@@ -22,7 +17,7 @@ const yearPreKOrK = {
     "NAPLAN Preparation",
     "Selective School Preparation",
   ],
-} satisfies YearDetails;
+} as const satisfies GenericYearDetails;
 
 const year1to6 = {
   name: "Year 1 to 6" as const,
@@ -34,7 +29,7 @@ const year1to6 = {
     "NAPLAN Preparation",
     "Selective School Preparation",
   ],
-};
+} as const;
 
 const year7to10 = {
   name: "Year 7 to 10" as const,
@@ -46,7 +41,7 @@ const year7to10 = {
     "NAPLAN Preparation",
     "Selective School Preparation",
   ],
-};
+} as const;
 
 const year11or12 = {
   name: "Year 11 or 12" as const,
@@ -86,13 +81,15 @@ const year11or12 = {
     "VCE Psychology",
     "VCE General Support",
   ],
-};
+} as const;
 
 const yearByYearDetails = {
   "PreK/K": yearPreKOrK,
   "Year 1 to 6": year1to6,
   "Year 7 to 10": year7to10,
   "Year 11 or 12": year11or12,
-} satisfies Record<(typeof years)[number], YearDetails>;
+} satisfies Record<(typeof years)[number], GenericYearDetails>;
+
+type YearDetails = typeof yearByYearDetails[keyof typeof yearByYearDetails];
 
 export default yearByYearDetails;

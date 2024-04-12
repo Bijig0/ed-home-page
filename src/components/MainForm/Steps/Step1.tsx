@@ -3,7 +3,7 @@ import { useWizard } from "react-use-wizard";
 import { isStepOne } from "../../../globalStore";
 import CheckIcon from "../CheckIcon";
 import SelectButton from "../SelectButton";
-import { whoNeedsTutoring, type WhoNeedsTutoring } from "../types";
+import { whoNeedsTutoring, type WhoNeedsTutoring } from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 type FormValues = {
