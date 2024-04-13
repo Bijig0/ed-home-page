@@ -10,23 +10,19 @@ const faqList = [
   },
   {
     title: "How does tutoring work at Hi-Up?",
-    text: "Some shit here",
-  },
-  {
-    title: "How can I start tutoring for my child (or me)?",
-    text: "No, you don't need personal insurance coverage to book a car with Gifleet. When booking a car in Australia, you’ll choose between the Premier (if available), Standard, and Minimum protection plans. Each plan includes varying limits on financial responsibility for damage to a host’s vehicle. All trips include $20,000,000 in legal liability protection for damage to other people’s property. All protection is provided by Gifleet's insurance policy.*",
+    text: "Start a booking by clicking the 'Book Now' button at the navigation bar and we'll connect you with a tutor in under 72 hours. Afterwards, we'll send you a confirmation message with your tutor's details, and you can commence you or your child's tutoring immediately!",
   },
   {
     title: "Does Hi-Up do both online and in-person lessons?",
-    text: "Yes, multiple guests can drive the car you booked with Gifleet, as long as they are all approved to drive. The primary driver (whoever booked the car) can add additional drivers with no fees or additional charges. Only the primary driver can request to add drivers; Turo hosts cannot do it for you. We encourage you to request to add additional drivers before your trip starts, though you can request to add a driver while a trip is in progress. To speed up the process, have your additional driver create a Turo account and get approved to drive before you request to add them. All drivers must have a valid driver’s licence and meet the age requirements for the car you’ve booked. Please let a representative know of any further enquiries.",
+    text: "Yes, we have multiple tutors with a wide range of time availability for online tutoring alongside multiple tutors located around the entire Victoria and QLD area. Simply reach out and we'll let you know about in-person availability",
   },
   {
     title: "How do payments work?",
-    text: "You can cancel and get a full refund up to  24 hours before your trip starts. If you book a trip with less than  24 hours’ notice, you have one hour after booking to cancel free of charge. If you cancel after the free cancellation period ends, you will be charged a small cancellation fee. In the rare event a host cancels, you’ll be notified immediately so you can book another car, or we’ll help you find one. Your refund can be temporarily held to expedite rebooking, or the funds can be returned to your bank account — your choice.",
+    text: "Once you've had your first lesson, we'll ask for your session feedback. If all goes well, we'll ask once for payment info and that's it! We'll charge you automatically 24 hours after every lesson henceforth.",
   },
   {
     title: "Who will be tutoring my child (or me)?",
-    text: "If there's an emergency or an issue with the car, call our emergency roadside assistance provider, available  24/7. We’ll make sure you’re safe, then help you get back on your way.",
+    text: "Our tutors are hand-selected prior academic high school graduates who are all triple screened with valid Working With Children Checks (WWCC)",
   },
 ] satisfies FAQ[];
 
