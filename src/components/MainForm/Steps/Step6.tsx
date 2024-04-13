@@ -68,7 +68,7 @@ const Step1 = () => {
         {state.value === "choosingLessonType" && (
           <>
             <h1 className="text-white mb-6 text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
-              Do you want it online or in-person
+              Do you want online or in-person tutoring?
             </h1>
             <div className="my-2"></div>
             <form className="flex flex-col items-center justify-center">
