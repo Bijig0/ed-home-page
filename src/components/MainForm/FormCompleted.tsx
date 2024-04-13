@@ -53,6 +53,13 @@ const FormCompleted = () => {
     sendEmailMutate();
   }, []);
 
+  // Tech debt cuz im lazy, Book a meeting should auomatically go to booking complete page
+  useEffect(() => {
+    if (isSuccess) {
+      window.location.href = "/page-booking-complete";
+    }
+  }, [isSuccess]);
+
   const handleBack = () => {
     isLastStep.set(false);
     updateStudentDetails({ studentDetails: {} });
