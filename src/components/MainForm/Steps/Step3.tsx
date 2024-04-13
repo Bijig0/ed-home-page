@@ -80,7 +80,7 @@ const Step1 = () => {
           <BackButton />
         </div>
       </div>
-      <div className="hidden-mobile-flex-normal flex-[2_2_0%] relative self-end h-72 bg-light rounded-lg justify-center flex-col px-12 gap-4">
+      <div className="hidden-mobile-flex-normal flex-[2_2_0%] relative self-end h-80 bg-light rounded-lg justify-center flex-col px-12 gap-4">
         <div className="flex flex-col justify-end items-start gap-5">
           <FaQuoteLeft className="icon" size={16} color="#f43f5e" />
           <p className="text-black text-base font-primary font-light mt-2">
