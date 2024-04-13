@@ -9,7 +9,7 @@ export const reviewOne = {
 };
 
 export const reviewTwo = {
-  text: "My daughter needed a tutor for maths in her HSC and we were assigned Taylor, who was outstanding and also went above and beyond to ensure additional lessons in the lead up to exams!! He gave her such a sense of confidence going into write her final exam today! Highly recommend both EduLine and Taylor!!",
+  text: "My daughter needed a tutor for maths in her HSC and we were assigned Taylor, who was outstanding and also went above and beyond to ensure additional lessons in the lead up to exams!! He gave her such a sense of confidence going into write her final exam today! Highly recommend both Hi-Up and Taylor!!",
   author: "Sarah J",
 };
 

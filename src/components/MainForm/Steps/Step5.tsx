@@ -8,7 +8,7 @@ import ProgressBar from "../ProgressBar";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 type FormValues = {
-  fullName: string;
+  parentName: string;
 };
 
 const Step1 = () => {
@@ -25,7 +25,7 @@ const Step1 = () => {
   } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
     console.log(data);
-    updateStudentDetails({ studentDetails: { fullName: data.fullName } });
+    updateStudentDetails({ studentDetails: { parentName: data.parentName } });
     nextStep();
   };
 
@@ -51,24 +51,23 @@ const Step1 = () => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="username"
             >
-              Full Name *
+              Parent Name *
             </label>
             <input
               className="border-px border-black h-16 text-lg shadow bg-light appearance-none border rounded w-80 px-4 py-2text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
               type="text"
               placeholder="Full Name"
-              {...register("fullName", {
+              {...register("parentName", {
                 required: "Full name is required",
                 pattern: {
-                  value: /^[a-zA-Z]+ [a-zA-Z]+$/,
-                  message:
-                    "Full name must be alphanumeric and contain a space between the first and last name",
+                  value: /^[a-zA-Z]+$/,
+                  message: "Full name must only have letters",
                 },
               })}
             />
-            {errors["fullName"] && (
-              <ErrorText>{errors["fullName"].message}</ErrorText>
+            {errors["parentName"] && (
+              <ErrorText>{errors["parentName"].message}</ErrorText>
             )}
           </div>
           <button
@@ -90,7 +89,7 @@ const Step1 = () => {
             DID YOU KNOW?
           </h2>
           <p className="text-black text-base font-primary font-light">
-            Parents and kids love Eduline! Eduline has served{" "}
+            Parents and kids love Hi-Up! Hi-Up has served{" "}
             <span className="inline text-black text-base font-primary font-semibold">
               over 400
             </span>{" "}

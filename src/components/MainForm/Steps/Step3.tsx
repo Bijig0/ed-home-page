@@ -22,9 +22,9 @@ const headerText = {
 } satisfies Record<WhoNeedsTutoring, string>;
 
 const text = {
-  "Help with class": "I need help with a class",
-  "Preparing for est": "I'm preparing for a test",
-  "Want to learn something new": "I want to learn something new",
+  "General Support": "General Support",
+  "Help With A Test": "Help With A Test",
+  "Long Term Improvement": "Long Term Improvement",
   Other: "Other",
 } satisfies Record<ReasonForTutoring, string>;
 

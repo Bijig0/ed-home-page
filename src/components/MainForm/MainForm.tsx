@@ -12,6 +12,7 @@ import Step5 from "./Steps/Step5";
 import Step6 from "./Steps/Step6";
 import Step7 from "./Steps/Step7";
 import Step8 from "./Steps/Step8";
+import InputStudentName from "./Steps/inputStudentName";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const MainForm = () => {
             <Step3 />
             <Step4 />
             <Step5 />
+            <InputStudentName />
             <Step6 />
             <Step7 />
             <Step8 />

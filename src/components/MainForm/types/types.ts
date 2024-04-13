@@ -8,9 +8,9 @@ export const gradeLevels = [
   "Year 11 or 12",
 ] as const;
 export const reasonsForTutoring = [
-  "Help with class",
-  "Preparing for est",
-  "Want to learn something new",
+  "Long Term Improvement",
+  "Help With A Test",
+  "General Support",
   "Other",
 ] as const;
 export const howSoon = ["Right away", "In a few weeks", "Not sure"] as const;
@@ -43,7 +43,8 @@ export type StudentDetails = {
   subject: Subject;
   reasonForTutoring: ReasonForTutoring;
   howSoon: HowSoon;
-  fullName: string;
+  parentName: string;
+  studentName: string;
   lessonType: LessonType;
   email: string;
   phoneNumber: string;

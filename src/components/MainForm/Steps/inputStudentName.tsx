@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import { FaStarOfLife } from "react-icons/fa";
 import { useWizard } from "react-use-wizard";
 import BackButton from "../BackButton";
 import BackIcon from "../BackIcon";
@@ -9,7 +8,7 @@ import ProgressBar from "../ProgressBar";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 type FormValues = {
-  email: string;
+  studentName: string;
 };
 
 const Step1 = () => {
@@ -26,7 +25,7 @@ const Step1 = () => {
   } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
     console.log(data);
-    updateStudentDetails({ studentDetails: { email: data.email } });
+    updateStudentDetails({ studentDetails: { studentName: data.studentName } });
     nextStep();
   };
 
@@ -50,26 +49,25 @@ const Step1 = () => {
           <div>
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="email"
+              htmlFor="username"
             >
-              Email *
+              Student Name *
             </label>
             <input
               className="border-px border-black h-16 text-lg shadow bg-light appearance-none border rounded w-80 px-4 py-2text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="email"
+              id="username"
               type="text"
-              placeholder="Email"
-              {...register("email", {
-                required: "Email is required",
+              placeholder="Full Name"
+              {...register("studentName", {
+                required: "Full name is required",
                 pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                  message: "Please enter a valid email address",
+                  value: /^[a-zA-Z]+$/,
+                  message: "Full name must only have letters",
                 },
               })}
             />
-
-            {errors["email"] && (
-              <ErrorText>{errors["email"].message}</ErrorText>
+            {errors["studentName"] && (
+              <ErrorText>{errors["studentName"].message}</ErrorText>
             )}
           </div>
           <button
@@ -87,23 +85,19 @@ const Step1 = () => {
       </div>
       <div className="hidden-mobile-flex-normal flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
         <div className="bg-light rounded-lg flex justify-center flex-col items-center px-8 py-8">
-          <FaStarOfLife className="icon" size={16} color="#f43f5e" />
-          <div className="my-2"></div>
-
+          <h2 className="mb-4 bg-rose-200 text-red-600 px-4 py-2 rounded-lg md:w-84 md:mx-auto text-xs font-semibold tracking-widest uppercase title-font">
+            DID YOU KNOW?
+          </h2>
           <p className="text-black text-base font-primary font-light">
-            We believe in our Hi-Up Tutors.
-            <br />
+            Parents and kids love Hi-Up! Hi-Up has served{" "}
             <span className="inline text-black text-base font-primary font-semibold">
-              100% satisfaction guarantee!
-            </span>
-            <br />
-            If you aren't happy with your first lesson, it's on us! No payment
-            required!
+              over 400
+            </span>{" "}
+            satisfied local Australian families!
           </p>
         </div>
       </div>
     </div>
   );
 };
-
 export default Step1;

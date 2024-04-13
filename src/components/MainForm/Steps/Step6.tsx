@@ -146,7 +146,7 @@ const Step1 = () => {
       <div className="hidden-mobile-flex-normal flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
         <div className="bg-light rounded-lg flex justify-center flex-col items-center px-8 py-8">
           <h2 className="mb-4 bg-rose-200 text-red-600 px-4 py-2 rounded-lg md:w-84 md:mx-auto text-xs font-semibold tracking-widest uppercase title-font">
-            EduLine Tutors
+            Hi-Up Tutors
           </h2>
           <p className="text-black text-base font-primary font-light">
             Our tutors are filtered to have the highest academic standards and
