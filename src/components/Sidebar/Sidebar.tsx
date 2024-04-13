@@ -22,7 +22,9 @@ const Sidebar = (props: Props) => {
 
   return (
     <>
-      <header className={`app-header app-header-1 ${headerType}`}>
+      <header
+        className={`app-header app-header-1 ${headerType} block-mobile-hidden-normal`}
+      >
         <div className="container">
           <div className="header-wrap">
             <button

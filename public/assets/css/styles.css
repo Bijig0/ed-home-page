@@ -10376,3 +10376,14 @@ testimonial
     display: block;
   }
 }
+
+.block-mobile-hidden-normal {
+  display: block;
+}
+
+/* Style for non-mobile devices (tablets and desktops) */
+@media (min-width: 768px) {
+  .block-mobile-hidden-normal {
+    display: none;
+  }
+}
