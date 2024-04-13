@@ -33,7 +33,7 @@ const Sidebar = (props: Props) => {
             </button>
             <div className="header-logo">
               <a href="/" className="primary-logo">
-                <span className="text-1">Edu</span>
+                <span className="text-1">Hi Up</span>
                 <span className="text-2"></span>
               </a>
             </div>
