@@ -3,7 +3,6 @@ import { useWizard } from "react-use-wizard";
 import BackButton from "../BackButton";
 import BackIcon from "../BackIcon";
 import BreadCrumb from "../BreadCrumb";
-import CheckIcon from "../CheckIcon";
 import ProgressBar from "../ProgressBar";
 import SelectButton from "../SelectButton";
 import yearByYearDetails from "../types/subjects";
@@ -34,7 +33,7 @@ const ChooseYear = () => {
 
   return (
     <div className="flex">
-      <div className="flex flex-col items-center flex-[3_3_0%]">
+      <div className="px-8 max-w-full md:flex md:flex-col md:items-start md:flex-shrink md:flex-[3_3_0%]">
         <div>
           <BreadCrumb />
           <ProgressBar step={activeStep} />
@@ -46,20 +45,14 @@ const ChooseYear = () => {
         </h1>
         <div className="my-2"></div>
         <form className="flex flex-col items-center justify-center">
-            {years.map((value) => (
-              <div className="relative" key={value}>
-                <SelectButton
-                  selected={(value) => value === studentDetails.get().year}
-                  value={value}
-                  text={value}
-                  handleSubmit={handleSubmit}
-                />
-                <CheckIcon
-                  className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2"
-                  enabled={value === studentDetails.get().year}
-                />
-              </div>
-            ))}
+          {years.map((value) => (
+            <SelectButton
+              selected={(value) => value === studentDetails.get().year}
+              value={value}
+              text={value}
+              handleSubmit={handleSubmit}
+            />
+          ))}
         </form>
         <div className="flex items-center justify-start">
           <BackIcon />

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useWizard } from "react-use-wizard";
 import { isStepOne } from "../../../globalStore";
-import CheckIcon from "../CheckIcon";
 import SelectButton from "../SelectButton";
 import { whoNeedsTutoring, type WhoNeedsTutoring } from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
@@ -51,22 +50,16 @@ const Step1 = () => {
 
         <div className="my-4"></div>
 
-        <form className="mx-auto px-4 sm:px-16 md:px-64 lg:px-90 md:max-w-[65rem] flex flex-col items-center justify-center">
+        <form className="mx-auto px-4 flex flex-col items-center justify-center">
           {whoNeedsTutoring.map((value) => (
-            <div className="relative w-full" key={value}>
-              <SelectButton
-                selected={(value) =>
-                  value === studentDetails.get().whoNeedsTutoring
-                }
-                value={value}
-                text={text[value]}
-                handleSubmit={handleSubmit}
-              />
-              <CheckIcon
-                className="absolute right-[-2.25rem] md:right-[-3rem] top-1/2 transform -translate-y-1/2"
-                enabled={value === studentDetails.get().whoNeedsTutoring}
-              />
-            </div>
+            <SelectButton
+              selected={(value) =>
+                value === studentDetails.get().whoNeedsTutoring
+              }
+              value={value}
+              text={text[value]}
+              handleSubmit={handleSubmit}
+            />
           ))}
         </form>
         <div className="flex justify-center items-center">

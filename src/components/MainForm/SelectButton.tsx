@@ -1,4 +1,6 @@
+import CheckIcon from "./CheckIcon";
 import type { AllStudentDetailsValues, LessonType } from "./types/types";
+import { studentDetails } from "./useFormStore";
 
 type Props<T> = {
   value: T;
@@ -14,20 +16,21 @@ const SelectButton = <
 ) => {
   const { value, text, selected, handleSubmit } = props;
   return (
-    <li
-      key={value}
-      onClick={() => handleSubmit(value)}
-      data-selected={selected(value)}
-      className="cursor-pointer data-[selected=true]:bg-cyan-500 data-[selected=true]:text-white flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md min-h-14"
-    >
-      <label className="text-lg cursor-pointer">{text}</label>
+    <label className="w-96 max-w-full flex items-center justify-center flex-shrink relative cursor-pointer data-[selected=true]:bg-cyan-500 data-[selected=true]:text-white text-center my-2 hover:bg-cyan-500 bg-white hover:text-white rounded-md min-h-14">
       <input
-        className="hover:text-white hidden"
+        id={`radio-${value}`}
         value={value}
         name="question3"
         type="radio"
+        className="sr-only"
+        onClick={() => handleSubmit(value)}
       />
-    </li>
+      {text}
+      <CheckIcon
+        className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2"
+        enabled={value === studentDetails.get().year}
+      />
+    </label>
   );
 };
 
