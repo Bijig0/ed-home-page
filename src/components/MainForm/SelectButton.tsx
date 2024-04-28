@@ -18,7 +18,7 @@ const SelectButton = <
       key={value}
       onClick={() => handleSubmit(value)}
       data-selected={selected(value)}
-      className="cursor-pointer data-[selected=true]:bg-cyan-500 data-[selected=true]:text-white flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md w-96 md:w-button max-w-full min-h-14"
+      className="cursor-pointer data-[selected=true]:bg-cyan-500 data-[selected=true]:text-white flex items-center justify-center block my-2 overflow-hidden hover:bg-cyan-500 bg-white hover:text-white rounded-md min-h-14"
     >
       <label className="text-lg cursor-pointer">{text}</label>
       <input

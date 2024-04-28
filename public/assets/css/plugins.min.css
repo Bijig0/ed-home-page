@@ -4897,17 +4897,9 @@ html {
 .py-4 {
   padding-top: 1.5rem !important;
 }
-.pr-4,
-.px-4 {
-  padding-right: 1.5rem !important;
-}
 .pb-4,
 .py-4 {
   padding-bottom: 1.5rem !important;
-}
-.pl-4,
-.px-4 {
-  padding-left: 1.5rem !important;
 }
 .p-5 {
   padding: 3rem !important;

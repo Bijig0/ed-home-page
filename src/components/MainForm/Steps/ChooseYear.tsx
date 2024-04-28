@@ -34,7 +34,7 @@ const ChooseYear = () => {
 
   return (
     <div className="flex">
-      <div className="flex flex-col items-start flex-[3_3_0%]">
+      <div className="flex flex-col items-center flex-[3_3_0%]">
         <div>
           <BreadCrumb />
           <ProgressBar step={activeStep} />
@@ -46,7 +46,6 @@ const ChooseYear = () => {
         </h1>
         <div className="my-2"></div>
         <form className="flex flex-col items-center justify-center">
-          <ul className="p-0">
             {years.map((value) => (
               <div className="relative" key={value}>
                 <SelectButton
@@ -61,7 +60,6 @@ const ChooseYear = () => {
                 />
               </div>
             ))}
-          </ul>
         </form>
         <div className="flex items-center justify-start">
           <BackIcon />
