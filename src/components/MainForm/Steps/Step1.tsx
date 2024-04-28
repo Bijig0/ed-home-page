@@ -11,8 +11,7 @@ const text = {
   Other: "Someone else",
 } satisfies Record<WhoNeedsTutoring, string>;
 
-const callbackLink =
-  "https://calendly.com/bradysuryasie/eduline-tutoring-callback";
+const callbackLink = "https://calendly.com/ceo-bewr/hi-up-tutoring-callback";
 
 const Step1 = () => {
   const { nextStep } = useWizard();

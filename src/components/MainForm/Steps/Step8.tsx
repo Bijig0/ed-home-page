@@ -39,7 +39,7 @@ const Step1 = () => {
   };
 
   const createOrRetrieveMeetingLink = (): URL => {
-    const baseLink = "https://calendly.com/bradysuryasie/edututor/";
+    const baseLink = "https://calendly.com/ceo-bewr/hi-up-tutoring-callback";
     const meetingLink = new URL(baseLink);
 
     meetingLink.searchParams.set("name", studentDetails.get().parentName);
