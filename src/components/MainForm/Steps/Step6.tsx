@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useWizard } from "react-use-wizard";
 import ErrorText from "../ErrorText";
+import FormPartLayout from "../FormPartLayout";
 import LeftSideFormPartLayout from "../LeftSideFormPartLayout";
 import SelectButton from "../SelectButton";
 import { studentDetails } from "../useFormStore";
@@ -50,7 +51,7 @@ const Step1 = () => {
     `${value.charAt(0).toUpperCase()}${value.slice(1)}`;
 
   return (
-    <div className="flex ">
+    <FormPartLayout>
       {state.value === "choosingLessonType" && (
         <LeftSideFormPartLayout
           activeStep={activeStep}
@@ -120,7 +121,7 @@ const Step1 = () => {
           </p>
         </div>
       </div>
-    </div>
+    </FormPartLayout>
   );
 };
 

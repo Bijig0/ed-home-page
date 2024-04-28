@@ -1,6 +1,5 @@
 import CheckIcon from "./CheckIcon";
 import type { AllStudentDetailsValues, LessonType } from "./types/types";
-import { studentDetails } from "./useFormStore";
 
 type Props<T> = {
   value: T;
@@ -18,6 +17,7 @@ const SelectButton = <
   console.log(selected(value));
   return (
     <label
+      key={value}
       data-selected={selected(value)}
       className="w-[28rem] text-lg max-w-full flex items-center justify-center flex-shrink relative cursor-pointer data-[selected=true]:bg-cyan-500 data-[selected=true]:text-white text-center my-2 hover:bg-cyan-500 bg-white hover:text-white rounded-md min-h-14"
     >

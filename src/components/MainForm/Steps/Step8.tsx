@@ -8,6 +8,7 @@ import { useWizard } from "react-use-wizard";
 import { isLastStep } from "../../../globalStore";
 import CheckIcon from "../CheckIcon";
 import ErrorText from "../ErrorText";
+import FormPartLayout from "../FormPartLayout";
 import LeftSideFormPartLayout from "../LeftSideFormPartLayout";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
 
@@ -62,7 +63,7 @@ const Step1 = () => {
   console.log({ stepOneCompleted });
 
   return (
-    <div className="flex">
+    <FormPartLayout>
       <LeftSideFormPartLayout
         activeStep={activeStep}
         headerText="Let's finish up your profile"
@@ -156,7 +157,7 @@ const Step1 = () => {
           </p>
         </div>
       </div>
-    </div>
+    </FormPartLayout>
   );
 };
 

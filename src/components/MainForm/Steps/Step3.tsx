@@ -1,11 +1,7 @@
 import { FaCaretDown, FaQuoteLeft } from "react-icons/fa";
 import { useWizard } from "react-use-wizard";
 import { reviewTwo } from "../../../reviews";
-import BackButton from "../BackButton";
-import BackIcon from "../BackIcon";
-import BreadCrumb from "../BreadCrumb";
-import CheckIcon from "../CheckIcon";
-import ProgressBar from "../ProgressBar";
+import LeftSideFormPartLayout from "../LeftSideFormPartLayout";
 import SelectButton from "../SelectButton";
 import {
   reasonsForTutoring,
@@ -14,7 +10,7 @@ import {
   type WhoNeedsTutoring,
 } from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
-import LeftSideFormPartLayout from "../LeftSideFormPartLayout";
+import FormPartLayout from "../FormPartLayout";
 
 const headerText = {
   Child: "What are your goals with your child's tutoring?",
@@ -44,7 +40,7 @@ const Step1 = () => {
   console.log(studentDetails.get());
 
   return (
-    <div className="flex">
+    <FormPartLayout>
       <LeftSideFormPartLayout
         activeStep={activeStep}
         headerText={headerText[studentDetails.get().whoNeedsTutoring]}
@@ -77,7 +73,7 @@ const Step1 = () => {
           </p>
         </div>
       </div>
-    </div>
+    </FormPartLayout>
   );
 };
 

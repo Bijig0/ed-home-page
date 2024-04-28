@@ -34,15 +34,15 @@ const Step1 = () => {
   return (
     <div>
       <div className="text-center">
-        <h1 className="text-white mx-auto mb-6 text-4xl md:text-6xl text-center font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
+        <h1 className="text-white mx-auto px-4 mb-6 text-4xl md:text-6xl text-center font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
           Australia's #1 Top Rated Tutors
         </h1>
 
-        <p className="text-light text-md md:text-xl mb-7">
+        <p className="text-light text-md md:text-xl px-4 mb-7">
           Welcome! Let's match you with the perfect tutor
         </p>
 
-        <div className="flex text-center mt-6 mx-auto justify-center w-3/4 md:w-64 items-center px-6 py-2 font-semibold bg-rose-500 rounded-lg">
+        <div className="flex text-center mt-6 mx-auto justify-center w-1/2 md:w-64 items-center px-6 py-2 font-semibold bg-rose-500 rounded-lg">
           <p className="text-light text-lg text-center m-0">
             Who needs tutoring?
           </p>
@@ -50,7 +50,7 @@ const Step1 = () => {
 
         <div className="my-4"></div>
 
-        <form className="mx-auto px-4 flex flex-col items-center justify-center">
+        <form className="mx-auto px-16 flex flex-col items-center justify-center">
           {whoNeedsTutoring.map((value) => (
             <SelectButton
               selected={(value) =>

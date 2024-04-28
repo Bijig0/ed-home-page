@@ -1,16 +1,12 @@
 import { FaCaretDown, FaQuoteLeft } from "react-icons/fa";
 import { useWizard } from "react-use-wizard";
 import { reviewThree } from "../../../reviews";
-import BackButton from "../BackButton";
-import BackIcon from "../BackIcon";
-import BreadCrumb from "../BreadCrumb";
-import CheckIcon from "../CheckIcon";
-import ProgressBar from "../ProgressBar";
+import FormPartLayout from "../FormPartLayout";
+import LeftSideFormPartLayout from "../LeftSideFormPartLayout";
 import SelectButton from "../SelectButton";
 import yearByYearDetails, { type Subject } from "../types/subjects";
 import { type WhoNeedsTutoring } from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
-import LeftSideFormPartLayout from "../LeftSideFormPartLayout";
 
 const headerText = {
   Child: "What subject does your child need help with?",
@@ -36,7 +32,7 @@ const ChooseSubjects = () => {
   console.log(studentDetails.get());
 
   return (
-    <div className="flex">
+    <FormPartLayout >
       <LeftSideFormPartLayout
         activeStep={activeStep}
         headerText={headerText[studentDetails.get().whoNeedsTutoring]}
@@ -67,7 +63,7 @@ const ChooseSubjects = () => {
           </p>
         </div>
       </div>
-    </div>
+    </FormPartLayout>
   );
 };
 

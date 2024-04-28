@@ -1,11 +1,8 @@
 import { IoDocumentTextSharp } from "react-icons/io5";
 import { useWizard } from "react-use-wizard";
-import BackButton from "../BackButton";
-import BackIcon from "../BackIcon";
-import BreadCrumb from "../BreadCrumb";
-import ProgressBar from "../ProgressBar";
-import SelectButton from "../SelectButton";
+import FormPartLayout from "../FormPartLayout";
 import LeftSideFormPartLayout from "../LeftSideFormPartLayout";
+import SelectButton from "../SelectButton";
 import yearByYearDetails from "../types/subjects";
 import { type GradeLevel, type WhoNeedsTutoring } from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
@@ -33,7 +30,7 @@ const ChooseYear = () => {
   console.log(studentDetails.get());
 
   return (
-    <div className="flex">
+    <FormPartLayout>
       <LeftSideFormPartLayout
         activeStep={activeStep}
         headerText={headerText[studentDetails.get().whoNeedsTutoring]}
@@ -59,7 +56,7 @@ const ChooseYear = () => {
           </p>
         </div>
       </div>
-    </div>
+    </FormPartLayout>
   );
 };
 

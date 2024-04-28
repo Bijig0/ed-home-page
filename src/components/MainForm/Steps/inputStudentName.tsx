@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useWizard } from "react-use-wizard";
 import ErrorText from "../ErrorText";
+import FormPartLayout from "../FormPartLayout";
 import LeftSideFormPartLayout from "../LeftSideFormPartLayout";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
 
@@ -27,7 +28,7 @@ const Step1 = () => {
   };
 
   return (
-    <div className="flex">
+    <FormPartLayout>
       <LeftSideFormPartLayout<FormValues>
         activeStep={activeStep}
         headerText="Let's finish up your profile"
@@ -81,7 +82,7 @@ const Step1 = () => {
           </p>
         </div>
       </div>
-    </div>
+    </FormPartLayout>
   );
 };
 export default Step1;
