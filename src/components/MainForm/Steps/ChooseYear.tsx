@@ -5,6 +5,7 @@ import BackIcon from "../BackIcon";
 import BreadCrumb from "../BreadCrumb";
 import ProgressBar from "../ProgressBar";
 import SelectButton from "../SelectButton";
+import LeftSideFormPartLayout from "../LeftSideFormPartLayout";
 import yearByYearDetails from "../types/subjects";
 import { type GradeLevel, type WhoNeedsTutoring } from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
@@ -33,32 +34,19 @@ const ChooseYear = () => {
 
   return (
     <div className="flex">
-      <div className="px-8 max-w-full md:flex md:flex-col md:items-start md:flex-shrink md:flex-[3_3_0%]">
-        <div>
-          <BreadCrumb />
-          <ProgressBar step={activeStep} />
-
-          <div className="my-4"></div>
-        </div>
-        <h1 className="text-white mb-0 text-2xl md:text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
-          {headerText[studentDetails.get().whoNeedsTutoring]}
-        </h1>
-        <div className="my-2"></div>
-        <form className="flex flex-col items-center justify-center">
-          {years.map((value) => (
-            <SelectButton
-              selected={(value) => value === studentDetails.get().year}
-              value={value}
-              text={value}
-              handleSubmit={handleSubmit}
-            />
-          ))}
-        </form>
-        <div className="flex items-center justify-start">
-          <BackIcon />
-          <BackButton />
-        </div>
-      </div>
+      <LeftSideFormPartLayout
+        activeStep={activeStep}
+        headerText={headerText[studentDetails.get().whoNeedsTutoring]}
+      >
+        {years.map((value) => (
+          <SelectButton
+            selected={(value) => value === studentDetails.get().year}
+            value={value}
+            text={value}
+            handleSubmit={handleSubmit}
+          />
+        ))}
+      </LeftSideFormPartLayout>
       <div className="hidden-mobile-flex-normal flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
         <div className="bg-light rounded-lg flex justify-center flex-col items-center px-8 py-8 gap-4">
           <IoDocumentTextSharp className="icon" size={60} color="#f43f5e" />
