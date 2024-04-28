@@ -52,24 +52,22 @@ const Step1 = () => {
         <div className="my-4"></div>
 
         <form className="px-4 flex flex-col items-center justify-center">
-          <ul className="px-16">
-            {whoNeedsTutoring.map((value) => (
-              <div className="relative" key={value}>
-                <SelectButton
-                  selected={(value) =>
-                    value === studentDetails.get().whoNeedsTutoring
-                  }
-                  value={value}
-                  text={text[value]}
-                  handleSubmit={handleSubmit}
-                />
-                <CheckIcon
-                  className="absolute right-[-2.25rem] md:right-[-3rem] top-1/2 transform -translate-y-1/2"
-                  enabled={value === studentDetails.get().whoNeedsTutoring}
-                />
-              </div>
-            ))}
-          </ul>
+          {whoNeedsTutoring.map((value) => (
+            <div className="relative w-full" key={value}>
+              <SelectButton
+                selected={(value) =>
+                  value === studentDetails.get().whoNeedsTutoring
+                }
+                value={value}
+                text={text[value]}
+                handleSubmit={handleSubmit}
+              />
+              <CheckIcon
+                className="absolute right-[-2.25rem] md:right-[-3rem] top-1/2 transform -translate-y-1/2"
+                enabled={value === studentDetails.get().whoNeedsTutoring}
+              />
+            </div>
+          ))}
         </form>
         <div className="flex justify-center items-center">
           <div className="divider divider-line bg-light"></div>
