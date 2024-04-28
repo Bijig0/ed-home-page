@@ -1,16 +1,25 @@
+import type { UseFormHandleSubmit } from "react-hook-form";
 import BackButton from "./BackButton";
 import BackIcon from "./BackIcon";
 import BreadCrumb from "./BreadCrumb";
 import ProgressBar from "./ProgressBar";
 
-type Props = {
+type OnSubmit<T extends Record<PropertyKey, any>> = UseFormHandleSubmit<
+  T,
+  undefined
+>;
+
+type Props<T extends Record<PropertyKey, any>> = {
   activeStep: number;
   headerText: string;
   children: React.ReactNode;
+  onSubmit?: ReturnType<OnSubmit<T>>;
 };
 
-const LeftSideFormPartLayout = (props: Props) => {
-  const { activeStep, headerText, children } = props;
+const LeftSideFormPartLayout = <T extends Record<PropertyKey, any>>(
+  props: Props<T>
+) => {
+  const { activeStep, headerText, children, onSubmit } = props;
   return (
     <div className="px-16 max-w-full md:flex md:flex-col md:items-start md:flex-shrink md:flex-[3_3_0%]">
       <div>
@@ -23,7 +32,10 @@ const LeftSideFormPartLayout = (props: Props) => {
         {headerText}
       </h1>
       <div className="my-4"></div>
-      <form className="flex flex-col items-start justify-center">
+      <form
+        className="flex flex-col items-start justify-center"
+        onSubmit={onSubmit}
+      >
         {children}
       </form>
       <div className="my-2" />
