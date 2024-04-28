@@ -53,7 +53,7 @@ const Step1 = () => {
 
         <form className="px-4 flex flex-col items-center justify-center">
           {whoNeedsTutoring.map((value) => (
-            <div className="relative w-full" key={value}>
+            <div className="relative w-full md:w-auto" key={value}>
               <SelectButton
                 selected={(value) =>
                   value === studentDetails.get().whoNeedsTutoring
