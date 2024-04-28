@@ -1,11 +1,8 @@
 import { useForm } from "react-hook-form";
 import { FaStarOfLife } from "react-icons/fa";
 import { useWizard } from "react-use-wizard";
-import BackButton from "../BackButton";
-import BackIcon from "../BackIcon";
-import BreadCrumb from "../BreadCrumb";
 import ErrorText from "../ErrorText";
-import ProgressBar from "../ProgressBar";
+import LeftSideFormPartLayout from "../LeftSideFormPartLayout";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
 
 type FormValues = {
@@ -32,21 +29,12 @@ const Step1 = () => {
 
   return (
     <div className="flex">
-      <div className="flex flex-col items-start flex-[3_3_0%]">
-        <div>
-          <BreadCrumb />
-          <ProgressBar step={activeStep} />
-
-          <div className="my-4"></div>
-        </div>
-        <h1 className="text-white mb-6 text-2xl md:text-4xl font-semibold leading-none tracking-tighter text-black lg:max-w-2xl">
-          Let's finish up your profile:
-        </h1>
-        <div className="my-2"></div>
-        <form
-          className="flex flex-col items-start justify-center gap-4"
-          onSubmit={handleSubmit(onSubmit)}
-        >
+      <LeftSideFormPartLayout
+        activeStep={activeStep}
+        headerText="Let's finish up your profile"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <div className="flex flex-col items-start justify-center gap-4">
           <div>
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -79,12 +67,8 @@ const Step1 = () => {
             Continue
           </button>
           <div className="my-1"></div>
-        </form>
-        <div className="flex items-center justify-start">
-          <BackIcon />
-          <BackButton />
         </div>
-      </div>
+      </LeftSideFormPartLayout>
       <div className="hidden-mobile-flex-normal flex-[2_2_0%] flex-col justify-end text-center p-8 items-center font-semibold">
         <div className="bg-light rounded-lg flex justify-center flex-col items-center px-8 py-8">
           <FaStarOfLife className="icon" size={16} color="#f43f5e" />
