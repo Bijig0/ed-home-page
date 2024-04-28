@@ -20,9 +20,9 @@ const MainForm = () => {
   const $isStepOne = useStore(isStepOne);
   return (
     <div
-      className={`container mt-12 ${$isStepOne ? "pt-16" : "pt-12"} pb-16 md:pt-24 md:pb-32`}
+      className={`mt-12 ${$isStepOne ? "pt-16" : "pt-12"} pb-16 md:pt-24 md:pb-32`}
     >
-      <div className="main-form">
+      <div className="">
         <QueryClientProvider client={queryClient}>
           <Wizard>
             <Step1 />
