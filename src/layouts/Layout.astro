@@ -10,170 +10,168 @@ const { headerType } = Astro.props;
 const $HOME_LINK = HOME_LINK.get();
 ---
 
-<doctype html>
-  <html lang="en" dir="ltr">
-    <head>
-      <title>Hi-Up</title>
-      <meta charset="UTF-8" />
-      <meta name="keywords" content="" />
-      <meta name="description" content="" />
-      <meta name="theme-color" content="#ffffff" />
-      <meta name="msapplication-TileColor" content="#9f00a7" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="favicon.ico" />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Poppins:100,300,500,600,700,900&display=swap"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
-        rel="stylesheet"
-      />
-      <link rel="stylesheet" href="assets/css/plugins.min.css" />
-      <link rel="stylesheet" href="assets/css/styles.css" />
-      <link rel="stylesheet" href="assets/css/theme-preview.css" />
-    </head>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Hi-Up</title>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#9f00a7" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:100,300,500,600,700,900&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/theme-preview.css" />
+  </head>
 
-    <body>
-      <!-- / -->
-      <!--Overlay-->
-      <header class=`app-header app-header-1 ${headerType}`>
-        <div class="container">
-          <div class="header-wrap">
-            <div class="header-menu">
-              <ul>
-                <li>
-                  <a href="page-about.html">
-                    <span class="text">About</span>
-                    <span class="icon fa fa-angle-left"></span>
-                  </a>
-                </li>
-                <li>
-                  <a href="page-contact.html">
-                    <span class="text">Contact Us</span>
-                    <span class="icon fa fa-angle-left"></span>
-                  </a>
-                </li>
-                <li>
-                  <a href="page-faq.html">
-                    <span class="text">FAQ</span>
-                    <span class="icon fa fa-angle-left"></span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="header-logo">
-              <a href="/" class="primary-logo">
-                <span class="text-1">Hi Up</span>
-                <span class="text-2"></span>
-              </a>
-            </div>
-            <div class="header-links flex justify-end gap-3">
-              <a
-                href="/#:~:text=Australia%27s%20%231%20Top%20Rated%20Tutors"
-                class="button button-md button-light button-line-primary"
-              >
-                <span class="title">Book Now!</span>
-              </a>
-            </div>
+  <body>
+    <!-- / -->
+    <!--Overlay-->
+    <header class=`app-header app-header-1 ${headerType}`>
+      <div class="container">
+        <div class="header-wrap">
+          <div class="header-menu">
+            <ul>
+              <li>
+                <a href="page-about.html">
+                  <span class="text">About</span>
+                  <span class="icon fa fa-angle-left"></span>
+                </a>
+              </li>
+              <li>
+                <a href="page-contact.html">
+                  <span class="text">Contact Us</span>
+                  <span class="icon fa fa-angle-left"></span>
+                </a>
+              </li>
+              <li>
+                <a href="page-faq.html">
+                  <span class="text">FAQ</span>
+                  <span class="icon fa fa-angle-left"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="header-logo">
+            <a href="/" class="primary-logo">
+              <span class="text-1">Hi Up</span>
+              <span class="text-2"></span>
+            </a>
+          </div>
+          <div class="header-links flex justify-end gap-3">
+            <a
+              href="/#:~:text=Australia%27s%20%231%20Top%20Rated%20Tutors"
+              class="button button-md button-light button-line-primary"
+            >
+              <span class="title">Book Now!</span>
+            </a>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <Sidebar headerType={headerType} client:load />
+    <Sidebar headerType={headerType} client:load />
 
-      <slot name="body-content" />
+    <slot name="body-content" />
 
-      <footer class="section app-footer app-footer-2">
-        <div class="footer-widgets">
-          <div class="container">
-            <div class="footer-widgets-links text-center">
-              <div class="row row-xl-5 justify-center">
-                <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
-                  <div class="widget widget-links">
-                    <div class="widget-title">
-                      <h4>Quick Access</h4>
-                    </div>
-                    <div class="widget-body">
-                      <ul>
-                        <li>
-                          <a href={$HOME_LINK}>
-                            <span class="icon ti-angle-left"></span>
-                            <span class="text">Home</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="page-about.html">
-                            <span class="icon ti-angle-left"></span>
-                            <span class="text">About</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="page-contact.html">
-                            <span class="icon ti-angle-left"></span>
-                            <span class="text">Contact Us</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="page-faq.html">
-                            <span class="icon ti-angle-left"></span>
-                            <span class="text">FAQ</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+    <footer class="section app-footer app-footer-2">
+      <div class="footer-widgets">
+        <div class="container">
+          <div class="footer-widgets-links text-center">
+            <div class="row row-xl-5 justify-center">
+              <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+                <div class="widget widget-links">
+                  <div class="widget-title">
+                    <h4>Quick Access</h4>
+                  </div>
+                  <div class="widget-body">
+                    <ul>
+                      <li>
+                        <a href={$HOME_LINK}>
+                          <span class="icon ti-angle-left"></span>
+                          <span class="text">Home</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-about.html">
+                          <span class="icon ti-angle-left"></span>
+                          <span class="text">About</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-contact.html">
+                          <span class="icon ti-angle-left"></span>
+                          <span class="text">Contact Us</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-faq.html">
+                          <span class="icon ti-angle-left"></span>
+                          <span class="text">FAQ</span>
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container">
-            <span class="footer-line"></span>
-            <div class="row">
-              <div class="col-md-8">
-                <p>© 2024 All Rights Reserved</p>
-              </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <span class="footer-line"></span>
+          <div class="row">
+            <div class="col-md-8">
+              <p>© 2024 All Rights Reserved</p>
+            </div>
 
-              <div class="col-md-4">
-                <ul class="el-social-links">
-                  <li>
-                    <a href="#">
-                      <span class="fa fa-facebook"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <span class="fa fa-google"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <span class="fa fa-linkedin"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <span class="fa fa-twitter"></span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+            <div class="col-md-4">
+              <ul class="el-social-links">
+                <li>
+                  <a href="#">
+                    <span class="fa fa-facebook"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="fa fa-google"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="fa fa-linkedin"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="fa fa-twitter"></span>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </footer>
+      </div>
+    </footer>
 
-      <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"
-      ></script>
-      <script
-        is:inline
-        src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-      ></script>
+    <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"
+    ></script>
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    ></script>
 
-      <script is:inline type="text/javascript" src="assets/js/main-scripts.js"
-      ></script>
-    </body>
-  </html></doctype
->
+    <script is:inline type="text/javascript" src="assets/js/main-scripts.js"
+    ></script>
+  </body>
+</html>

@@ -24,6 +24,7 @@ const LeftSideFormPartLayout = <T extends Record<PropertyKey, any>>(
     <div className="px-16 max-w-full md:flex md:flex-col md:items-start md:flex-shrink md:flex-[3_3_0%]">
       <div>
         <BreadCrumb />
+        <div className="my-2" />
         <ProgressBar step={activeStep} />
 
         <div className="my-4"></div>
