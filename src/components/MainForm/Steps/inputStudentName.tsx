@@ -61,7 +61,7 @@ const Step1 = () => {
               {...register("studentName", {
                 required: "Full name is required",
                 pattern: {
-                  value: /^[a-zA-Z]+$/,
+                  value: /^\w+( \w+)*$/,
                   message: "Full name must only have letters",
                 },
               })}
