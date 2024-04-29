@@ -10,11 +10,11 @@ const ProgressBar = ({ step }: Props) => {
   return (
     <>
       <div
-        className="flex bg-gray-300 w-80 max-w-full sm:w-[450px] h-3 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700"
+        className="flex bg-gray-300 w-80 max-w-full sm:w-[450px] h-3 rounded-full overflow-hidden "
         role="progressbar"
       >
         <div
-          className="flex flex-col justify-center rounded-full overflow-hidden bg-blue-600 text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-blue-500"
+          className="flex flex-col justify-center rounded-full overflow-hidden bg-cyan-500 text-xs text-white text-center whitespace-nowrap"
           style={{ width: `${progressPercentage}%` }}
         ></div>
       </div>

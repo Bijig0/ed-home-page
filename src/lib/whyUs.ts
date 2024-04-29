@@ -14,7 +14,7 @@ const whyUs = [
   {
     title: "Teaching With A Passion",
     description:
-      "Our tutors pass through are filtered through academic screenings and a 3-step interview. Only the highest quality education for your child",
+      "Our tutors are filtered through academic screenings and a 3-step interview. Only the highest quality education for your child",
     image: "https://img.icons8.com/bubbles/50/training.png",
   },
   {
