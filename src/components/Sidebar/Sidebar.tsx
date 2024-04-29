@@ -33,25 +33,27 @@ const Sidebar = (props: Props) => {
             >
               <span></span>
             </button>
-            <div className="header-logo">
-              <a href="/" className="primary-logo">
-                <span className="text-1">Hi Up</span>
-                <span className="text-2"></span>
-              </a>
-            </div>
           </div>
         </div>
       </header>
       <div className={`app-sidenav app-sidenav-1 ${open ? "active" : ""}`}>
         <div className="sidenav-menu">
-          <div className="sidenav-head">
-            <img src="assets/images/sidenav.jpg" alt="sidenav banner" />
-          </div>
+          <div className="my-12" />
+          <a href="/" className="primary-logo flex items-center justify-center">
+            <span className="text-1 font-primary text-[#5975f6] font-bold underline text-3xl">
+              Hi Up
+            </span>
+            <span className="text-2"></span>
+          </a>
+          <div className="my-4" />
           <div className="sidenav-body">
             <div className="sidenav-body-inner">
               <div className="sidenav-links">
                 <a
-                  href={$HOME_LINK}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleOpen();
+                  }}
                   className="button button-md button-block button-line-primary"
                 >
                   <span className="text">Book Now!</span>
@@ -82,6 +84,7 @@ const Sidebar = (props: Props) => {
                     <span className="icon fa fa-angle-right"></span>
                   </a>
                 </li>
+                <div className="my-4" />
                 <div className="flex justify-center mt-3">
                   <ImCross onClick={toggleOpen} width={20} height={20} />
                 </div>
