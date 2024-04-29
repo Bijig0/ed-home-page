@@ -37,7 +37,7 @@ const Step1 = () => {
           Australia's #1 Top Rated Tutors
         </h1>
 
-        <p className="text-light text-md md:text-xl px-4 mb-7">
+        <p className="text-light text-[16px] md:text-xl px-4 mb-7">
           Welcome! Let's match you with the perfect tutor
         </p>
 
