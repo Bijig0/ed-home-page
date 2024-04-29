@@ -10,7 +10,7 @@ const ProgressBar = ({ step }: Props) => {
   return (
     <>
       <div
-        className="flex w-80 max-w-full sm:w-[450px] h-3 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700"
+        className="flex bg-gray-300 w-80 max-w-full sm:w-[450px] h-3 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700"
         role="progressbar"
       >
         <div
