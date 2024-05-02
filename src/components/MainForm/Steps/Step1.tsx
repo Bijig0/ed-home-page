@@ -74,7 +74,7 @@ const Step1 = () => {
           href={callbackLink}
           className="bg-white hover:bg-[#eee] animate-none hover:transition-none hover:transform-none hover:text-black text-[#5b70f9] text-md text-center w-80 px-6 py-4 font-semibold rounded-lg"
         >
-          Skip The Questions And Request A Callback
+          Request A Callback Instead
         </a>
       </div>
     </div>
