@@ -1,0 +1,351 @@
+@tailwind base;
+@tailwind components;
+
+/* Generic */
+body {
+  @apply font-sans antialiased min-h-screen;
+}
+
+/* Container */
+.container {
+  @apply mx-auto max-w-4xl px-4 md:px-0;
+}
+
+.content {
+  @apply min-h-screen;
+}
+/* Spacer */
+.spacer {
+  @apply bg-slate-200 dark:bg-slate-700;
+  /* @apply my-4; */
+  @apply h-[1px] w-full;
+  &-v {
+    @apply h-full w-[1px];
+  }
+}
+
+.header {
+  @apply flex gap-4 border-b py-3;
+  &__logo-img {
+    @apply w-16 h-16 rounded-full overflow-hidden;
+  }
+
+  &__meta {
+    @apply flex-1;
+  }
+
+  &__title {
+    @apply text-4xl font-extrabold md:text-5xl;
+    --text-opacity: 1;
+    color: rgba(107, 33, 168, var(--text-opacity));
+  }
+
+  &__meta-more {
+    @apply flex;
+  }
+
+  &__desc {
+    @apply text-xl flex-1 dark:text-gray-200;
+  }
+
+  &__nav {
+    @apply flex;
+  }
+
+  &__ref-list {
+    @apply flex gap-3 text-gray-400 list-none m-0;
+    --text-opacity: 1;
+    color: rgba(161, 161, 170, var(--text-opacity));
+  }
+
+  a {
+    @apply no-underline;
+  }
+}
+
+.nav {
+  /* @apply py-3; */
+  &__list {
+    @apply inline-flex list-none gap-8 text-xl font-semibold py-2 flex-wrap m-0;
+    --text-opacity: 1;
+    color: rgba(107, 33, 168, var(--text-opacity));
+  }
+  a {
+    @apply no-underline;
+  }
+}
+
+footer,
+.footer {
+  @apply py-6 border-t;
+}
+
+/** Typography **/
+h1 {
+  @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+}
+h2 {
+  @apply mt-10 scroll-m-20 border-b border-b-slate-200 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 dark:border-b-slate-700;
+}
+h3 {
+  @apply mt-8 scroll-m-20 text-2xl font-semibold tracking-tight;
+}
+p {
+  @apply leading-7 [&:not(:first-child)]:mt-6;
+}
+a {
+  @apply font-medium text-slate-900 underline underline-offset-4 dark:text-slate-50;
+}
+ul {
+  @apply my-6 ml-6 list-disc [&>li]:mt-2;
+}
+
+/* Page */
+.page {
+  &__content {
+    min-height: 36rem;
+  }
+  &__header {
+    @apply py-4 mb-1;
+  }
+
+  &__title {
+    @apply text-5xl font-extrabold font-primary;
+  }
+
+  &__desc {
+    @apply text-gray-400;
+  }
+}
+
+/* Admin Page */
+.admin-shell {
+  display: flex;
+  &__sidebar {
+    @apply w-1/12 border-r flex flex-col gap-6 text-center items-center;
+  }
+  &__content {
+    @apply w-11/12 px-8;
+  }
+}
+
+.admin-page {
+  &__heading {
+    @apply flex w-full gap-2 bg-gray-50 px-4 py-3 border-t border-b uppercase font-primary font-semibold;
+  }
+  &__actionbar {
+    @apply flex justify-end gap-4 m-0;
+  }
+}
+
+.action-btn {
+  @apply w-12 h-12 bg-gray-100 flex justify-center items-center rounded-md hover:bg-blue-600 hover:text-white;
+  &.active {
+    @apply text-white;
+  }
+}
+
+.action-tile {
+  @apply w-1/3 p-8 bg-blue-100 rounded-md shadow-md hover:bg-blue-600 hover:text-white no-underline;
+  &__title {
+    @apply text-2xl;
+  }
+}
+
+.toolbar {
+  @apply flex justify-end gap-4 m-0;
+}
+
+.form {
+  @apply w-full px-10 py-8;
+}
+.form--shadowed {
+  @apply bg-gray-50 rounded-md shadow-md;
+}
+.form legend {
+  @apply font-primary pb-4 text-4xl border-b mb-4;
+}
+.form-control {
+  @apply w-full mb-6;
+}
+.form-control > label {
+  @apply block uppercase font-semibold text-gray-600 text-base;
+}
+.form-control > input,
+select,
+textarea {
+  @apply w-full font-normal border py-2 px-4 text-gray-700 hover:bg-gray-50 focus:border-indigo-500 rounded-md focus:outline-none;
+}
+.form-control > select {
+  @apply py-2;
+}
+.form-control > input.has-error,
+textarea.has-error {
+  @apply border-red-700;
+}
+.form-control > .error {
+  @apply h-3 py-1 text-xs text-red-600;
+}
+.form-control-grp {
+  @apply w-full mb-6 flex gap-3 justify-between items-center;
+}
+
+/* https://github.com/saadeghi/daisyui/blob/master/src/components/styled/button.css */
+.btn {
+  @apply uppercase no-underline active:scale-95 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2;
+  @apply focus:ring-slate-400 focus:ring-offset-2 dark:hover:bg-slate-800 dark:hover:text-slate-100 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900 data-[state=open]:bg-slate-100 dark:data-[state=open]:bg-slate-800;
+
+  /** Variant **/
+  & {
+    @apply bg-slate-900 text-white hover:bg-slate-700 dark:bg-slate-50 dark:text-slate-900;
+  }
+  &-destructive {
+    @apply bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600;
+  }
+  &-outline {
+    @apply bg-transparent border border-slate-200 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-100;
+  }
+  &-subtle {
+    @apply bg-slate-100 text-slate-900 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-100;
+  }
+  &-ghost {
+    @apply bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 dark:text-slate-100 dark:hover:text-slate-100 data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent;
+  }
+  &-link {
+    @apply bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-slate-900 dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent;
+  }
+
+  &-primary {
+    &:hover,
+    &.btn-active {
+      /* @apply border-primary-focus bg-primary-focus; */
+    }
+    &:focus-visible {
+      /* outline: 2px solid hsl(var(--p)); */
+    }
+  }
+
+  /** Sizes **/
+  & {
+    @apply h-10 py-2 px-4;
+  }
+  &-sm {
+    @apply h-9 px-3 rounded-md;
+  }
+  &-lg {
+    @apply h-11 px-8 rounded-md;
+  }
+  & {
+    /* @apply border-neutral bg-neutral text-neutral-content no-underline;
+        &:hover,
+        &-active {
+          @apply border-neutral-focus bg-neutral-focus;
+        }
+        &:focus-visible {
+          outline: 2px solid hsl(var(--nf));
+          outline-offset: 2px;
+        } */
+  }
+}
+
+.btn-group,
+.btn-group.btn-group-horizontal {
+  .btn:not(:first-child):not(:last-child) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .btn:first-child:not(:last-child) {
+    @apply -ml-px -mt-0;
+    border-top-left-radius: var(--rounded-btn, 0.5rem);
+    border-top-right-radius: 0;
+    border-bottom-left-radius: var(--rounded-btn, 0.5rem);
+    border-bottom-right-radius: 0;
+  }
+  .btn:last-child:not(:first-child) {
+    border-top-left-radius: 0;
+    border-top-right-radius: var(--rounded-btn, 0.5rem);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: var(--rounded-btn, 0.5rem);
+  }
+}
+
+.cb {
+  @apply h-4 w-4 rounded-sm border border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:text-slate-50 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900;
+}
+
+.alert {
+  @apply relative pointer-events-auto flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 transition-all;
+  & {
+    @apply bg-white border-slate-200 dark:bg-slate-800 dark:border-slate-700;
+  }
+  &-destructive {
+    @apply bg-red-600 text-white border-red-600 dark:border-red-600;
+  }
+}
+
+.post-preview-list {
+  @apply flex flex-col gap-3;
+}
+
+.post-preview {
+  @apply flex gap-6;
+  & > div:first-child {
+    @apply sm:w-20 md:w-32;
+  }
+
+  & > article {
+    @apply flex-1;
+  }
+
+  &__date {
+    @apply flex flex-col w-full text-center;
+    &__day {
+      @apply text-6xl font-semibold dark:text-gray-300;
+    }
+    &__month-n-year {
+      @apply text-gray-400;
+    }
+  }
+
+  &__title {
+    @apply text-2xl font-semibold font-primary hover:underline mb-2;
+  }
+
+  &__desc {
+    @apply text-lg leading-6 line-clamp-2 dark:text-white;
+  }
+}
+
+.post {
+  &__header {
+    @apply py-4 mb-1;
+  }
+
+  &__tags {
+    @apply inline-flex gap-2;
+  }
+
+  &__tag {
+    @apply text-gray-400 hover:font-primary;
+  }
+
+  &__title {
+    @apply text-5xl font-extrabold font-primary;
+  }
+
+  &__desc {
+    @apply text-gray-500 dark:text-gray-100;
+  }
+
+  &__author {
+    @apply no-underline dark:text-white hover:font-primary;
+  }
+
+  &__date {
+    @apply text-gray-400;
+  }
+}
+
+@tailwind utilities;
