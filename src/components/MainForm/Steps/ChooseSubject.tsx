@@ -1,3 +1,4 @@
+import { useMediaQuery } from "react-responsive";
 import { useWizard } from "react-use-wizard";
 import FormPartLayout from "../FormPartLayout";
 import LeftSideFormPartLayout from "../LeftSideFormPartLayout";
@@ -5,7 +6,6 @@ import SelectButton from "../SelectButton";
 import yearByYearDetails, { type Subject } from "../types/subjects";
 import { type WhoNeedsTutoring } from "../types/types";
 import { studentDetails, updateStudentDetails } from "../useFormStore";
-import { useMediaQuery } from "react-responsive";
 
 const headerText = {
   Child: "What subject does your child need help with?",
@@ -57,8 +57,8 @@ const ChooseSubjects = () => {
           ))}
         </LeftSideFormPartLayout>
 
-        <div className="flex flex-1">
-          <div className="flex flex-col justify-end ">
+        <div className="flex flex-1 md:mb-10">
+          <div className="flex flex-col justify-end">
             {secondHalfSubjects.map((subject) => (
               <SelectButton
                 key={subject}
