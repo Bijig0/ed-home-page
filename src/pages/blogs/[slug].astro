@@ -1,8 +1,23 @@
 ---
+import { sanityClient } from "sanity:client";
 import BlogPostLayout from "../../layouts/BlogPostLayout.astro";
+import { POSTS_QUERY } from "../../sanity/lib/queries";
 export async function getStaticPaths() {
-  return [{ params: { slug: "abc" } }];
+  const posts = await sanityClient.fetch(POSTS_QUERY);
+
+  const returnValue = posts.map((post) => ({
+    params: { slug: post.slug.current },
+    props: { post },
+  }));
+
+  // console.log({ returnValue });
+
+  return returnValue;
 }
+
+const { post } = Astro.props;
+console.log({ post });
+
 ---
 
 <BlogPostLayout>

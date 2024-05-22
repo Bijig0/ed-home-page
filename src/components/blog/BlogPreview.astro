@@ -3,8 +3,9 @@ interface Props {
   categories: string[];
   title: string;
   publishedAt: string;
+  postUrl: string;
 }
-const { categories, title, publishedAt } = Astro.props;
+const { categories, title, publishedAt, postUrl } = Astro.props;
 ---
 
 <div class="border-b border-grey-lighter pb-8">
@@ -18,7 +19,7 @@ const { categories, title, publishedAt } = Astro.props;
     })
   }
   <a
-    href="/post"
+    href={postUrl}
     class="block font-body text-lg font-semibold text-primary transition-colors hover:text-green dark:text-white dark:hover:text-secondary"
     >{title}</a
   >
