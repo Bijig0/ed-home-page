@@ -1,11 +1,13 @@
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
+import sanity from "@sanity/astro";
 import { defineConfig } from "astro/config";
 
-import sanity from "@sanity/astro";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  site: import.meta.env.SITE_URL || "https://www.hiuptuition.com",
   integrations: [
     react(),
     tailwind(),
@@ -15,5 +17,6 @@ export default defineConfig({
       useCdn: false,
       studioBasePath: "/studio",
     }),
+    sitemap(),
   ],
 });
