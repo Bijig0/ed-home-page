@@ -26,6 +26,7 @@
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.5.12",
+    "astro-portabletext": "^0.10.0",
     "date-fns": "^3.6.0",
     "deepmerge-ts": "^5.1.0",
     "jquery": "^3.7.1",
